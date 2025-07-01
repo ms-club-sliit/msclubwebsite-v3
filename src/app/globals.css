@@ -17,10 +17,10 @@
   animation: fade-in-up 0.6s ease-out both;
 }
 
-
 .input-style {
   @apply w-full px-4 py-3 rounded-md bg-[#1E293B] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500;
 }
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -39,9 +39,6 @@ body {
 
 .ant-card-actions > li {
   border-right: none !important;
-}
-.input-style {
-  @apply w-full px-4 py-3 rounded-md bg-[#1E293B] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500;
 }
 
 /* Mobile-specific optimizations for form inputs */
@@ -88,8 +85,4 @@ body {
     @apply py-2;
     min-height: 40px;
   }
-
-.ant-card-actions > li {
-  border-right: none !important;
-
 }
