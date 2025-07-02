@@ -22,7 +22,7 @@ export default function AboutUs() {
     >
       <div className="min-h-screen bg-[#0d1524] text-white">
         {/* Hero Section */}
-        <div className="container mx-auto px-10 py-12">
+        <div className="container mx-auto px-10 ">
           {/* Two-Column Layout */}
           <div className="grid md:grid-cols-2 gap-8 mb-20">
             {/* Left Column - Stacked Cards */}
