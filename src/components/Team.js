@@ -4,7 +4,7 @@ import React from 'react'
 import Image from 'next/image'
 import { Card, Button, ConfigProvider } from "antd"
 import { useState, useEffect } from "react";
-import teamMembers from "./team-members.json";
+import boardMembers from "../data/boardMembers.json";
 import {
   LeftOutlined,
   RightOutlined,
@@ -18,8 +18,8 @@ export default function Team() {
   const [currentYearIndex, setCurrentYearIndex] = useState(0);
   const [isClient, setIsClient] = useState(false);
 
-  const years = teamMembers.map((team) => team.year);
-  const currentTeam = teamMembers[currentYearIndex];
+  const years = boardMembers.map((team) => team.year);
+  const currentTeam = boardMembers[currentYearIndex];
   
   useEffect(() => {
     setIsClient(true);
@@ -39,13 +39,13 @@ export default function Team() {
 
   const handlePrevious = () => {
     setCurrentYearIndex((prev) =>
-      prev > 0 ? prev - 1 : teamMembers.length - 1
+      prev > 0 ? prev - 1 : boardMembers.length - 1
     );
   };
 
   const handleNext = () => {
     setCurrentYearIndex((prev) =>
-      prev < teamMembers.length - 1 ? prev + 1 : 0
+      prev < boardMembers.length - 1 ? prev + 1 : 0
     );
   };
 
