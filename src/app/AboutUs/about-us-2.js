@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { Card, Button, ConfigProvider } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
-import JoinOurSection from "./join-our-section";
-import Team from "./Team";
+import JoinOurSection from "../../components/join-our-section";
+import Team from "../../components/Team";
 
 export default function AboutUs() {
   return (
