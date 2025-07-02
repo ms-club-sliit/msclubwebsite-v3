@@ -1,15 +1,18 @@
 import React from "react";
+import Image from "next/image"; // ✅ Next.js optimized image component
 import { CodeIcon, EyeIcon } from "lucide-react";
 
 const EventCard = ({ title, description, image }) => {
   return (
     <div className="bg-[#0e1a33] rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105 duration-300">
-      <div className="h-48 overflow-hidden">
-        <img
+      <div className="h-48 relative w-full">
+        <Image
           src={image}
           alt={title}
-          className="w-full h-full object-cover"
-          loading="lazy"
+          layout="fill"
+          objectFit="cover"
+          className="rounded-t-lg"
+          priority={false}
         />
       </div>
       <div className="p-6">

@@ -1,5 +1,7 @@
-import React from 'react'
-import BenefitCard from './BenefitCard'
+"use client";
+import React from 'react';
+import Link from 'next/link'; // ✅ Import Link
+import BenefitCard from './BenefitCard';
 import {
   CodeIcon,
   UsersIcon,
@@ -8,7 +10,7 @@ import {
   Users2Icon,
   AwardIcon,
   ArrowRightIcon,
-} from 'lucide-react'
+} from 'lucide-react';
 
 const BenefitsSection = () => {
   const benefits = [
@@ -48,7 +50,7 @@ const BenefitsSection = () => {
       description:
         'Gain recognition for your projects and contributions to the tech community',
     },
-  ]
+  ];
 
   return (
     <section className="py-16 px-6 md:px-12 bg-[#0c1629]">
@@ -71,17 +73,17 @@ const BenefitsSection = () => {
           ))}
         </div>
         <div className="text-center mt-8">
-          <a
-            href="#"
+          <Link
+            href="/membership"
             className="inline-flex items-center text-gray-300 hover:text-white"
           >
             Learn more about our membership{' '}
             <ArrowRightIcon className="ml-2 w-4 h-4" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default BenefitsSection
+export default BenefitsSection;

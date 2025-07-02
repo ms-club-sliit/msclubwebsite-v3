@@ -1,15 +1,18 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 const Header = () => {
   return (
     <header className="py-4 px-6 md:px-12 flex items-center bg-gray-900 shadow-md">
       <div className="flex items-center mr-auto">
-        <img
-          src="ms_club_logo_light.png"
+        <Image
+          src="/ms_club_logo_light.png"
           alt="MS Club SLIIT Logo"
-          className="h-10 w-auto"
+          width={40}
+          height={40}
+          className="w-auto h-10"
         />
       </div>
       <nav className="hidden md:flex items-center space-x-8 mr-8">
