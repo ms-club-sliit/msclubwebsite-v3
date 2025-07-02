@@ -51,7 +51,7 @@ export default function Team() {
 
   if (!isClient) {
     return (
-      <div className="min-h-screen bg-[#0d1524] text-white flex items-center justify-center">
+      <div className="min-h-screen bg-[#0C1428] text-white flex items-center justify-center">
         <div className="text-lg">Loading...</div>
       </div>
     );
@@ -103,35 +103,31 @@ export default function Team() {
           {currentTeam.board.map((member) => (
             <Card
               key={`${member.id}-${currentTeam.year}`}
-              className="h-auto"
+              className="h-auto border border-gray-500 rounded-2xl p-1"
               style={{
-                backgroundColor: "#101930",
-                borderColor: "#334155",
+                backgroundColor: "#0d1524",
+                borderColor: "#6b7280",
+                
               }}
               styles={{
                 body: { padding: "0", backgroundColor: "#101930" },
                 actions: {
                   backgroundColor: "#101930",
                   borderTop: "none",
+                  border: "none",
+                  textAlign: "left",
+                  justifyContent: "flex-start",
+                  paddingLeft: "16px",
+                  gap: "0px",
+                  display: "flex",
                 },
               }}
-              cover={
-                <div className="h-72 overflow-hidden flex items-center justify-center bg-gray-800">
-                  <Image
-                    src={member.image || "/kanji.png"}
-                    alt={`${member.name} - ${member.position}`}
-                    width={300}
-                    height={300}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              }
               actions={[
                 <Button
                   key="linkedin"
                   type="text"
                   icon={<LinkedinFilled />}
-                  style={{ color: "#e2e8f0" }}
+                  style={{ color: "#e2e8f0", margin: "0", padding: "4px 8px" }}
                   onClick={() =>
                     member.socialmedia?.linkedin &&
                     window.open(member.socialmedia.linkedin, "_blank")
@@ -141,7 +137,7 @@ export default function Team() {
                   key="github"
                   type="text"
                   icon={<GithubFilled />}
-                  style={{ color: "#e2e8f0" }}
+                  style={{ color: "#e2e8f0", margin: "0", padding: "4px 8px" }}
                   onClick={() =>
                     member.socialmedia?.twitter &&
                     window.open(member.socialmedia.twitter, "_blank")
@@ -151,7 +147,7 @@ export default function Team() {
                   key="facebook"
                   type="text"
                   icon={<FacebookFilled />}
-                  style={{ color: "#e2e8f0" }}
+                  style={{ color: "#e2e8f0", margin: "0", padding: "4px 8px" }}
                   onClick={() =>
                     member.socialmedia?.facebook &&
                     window.open(member.socialmedia.facebook, "_blank")
@@ -161,7 +157,7 @@ export default function Team() {
                   key="instagram"
                   type="text"
                   icon={<InstagramOutlined />}
-                  style={{ color: "#e2e8f0" }}
+                  style={{ color: "#e2e8f0", margin: "0", padding: "4px 8px" }}
                   onClick={() =>
                     member.socialmedia?.instagram &&
                     window.open(member.socialmedia.instagram, "_blank")
@@ -169,6 +165,17 @@ export default function Team() {
                 />,
               ]}
             >
+              <div className="h-72 overflow-hidden rounded-t-3xl flex items-center justify-center bg-[#101930]">
+                <div className="w-full h-full flex items-center justify-center p-2">
+                  <Image
+                    src={member.image || "/kanji.png"}
+                    alt={`${member.name} - ${member.position}`}
+                    width={300}
+                    height={300}
+                    className="w-full h-full object-cover rounded-2xl"
+                  />
+                </div>
+              </div>
               <div className="p-4">
                 <h4 className="font-semibold text-white mb-2 text-lg">
                   {member.name}
