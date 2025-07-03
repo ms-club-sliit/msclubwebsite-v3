@@ -85,7 +85,7 @@ export default function Team() {
           />
           <h2 className="text-2xl md:text-3xl font-bold text-center">
             Meet Our Team{" "}
-            <span className="text-blue-400">{currentTeam.year}</span>
+            <span className="text-blue-400">{currentTeam.year}/{parseInt(currentTeam.year) + 1}</span>
           </h2>
           <Button
             shape="circle"

@@ -40,10 +40,11 @@ export default function AboutUs() {
               </div>
               <div className="flex flex-col mt-10">
                 <Card
-                  className="bg-[#101930]/60 border-slate-700 backdrop-blur-lg"
+                  className="bg-[#212144]/60 border-slate-700 backdrop-blur-lg"
                   style={{
-                    backgroundColor: "rgba(16, 25, 48, 0.9)",
+                    backgroundColor: "rgba(29, 41, 68, 0.6)",
                     borderColor: "#334155",
+                    backdropFilter: "blur(16px)",
                   }}
                   styles={{
                     body: {
@@ -53,7 +54,7 @@ export default function AboutUs() {
                     },
                   }}
                 >
-                  <h3 className="text-xl font-semibold mb-4 text-white">
+                  <h3 className="text-2xl font-semibold mb-4 text-white">
                     Our Mission
                   </h3>
                   <p className="text-slate-300 text-sm leading-relaxed">
@@ -80,13 +81,14 @@ export default function AboutUs() {
           </div>
 
           {/* Strategy and Vision Section */}
-          <div className="mb-20">
+          <div className="mb-20 -mt-10">
             <div className="grid grid-cols-2 gap-8">
               <Card
-                className="bg-[#101930]/60 border-slate-700 backdrop-blur-lg"
+                className="bg-[#1d2944]/60 border-slate-700 backdrop-blur-lg"
                 style={{
-                  backgroundColor: "rgba(16, 25, 48, 0.9)",
+                  backgroundColor: "rgba(29, 41, 68, 0.6)",
                   borderColor: "#334155",
+                  backdropFilter: "blur(16px)",
                 }}
                 styles={{
                   body: {
@@ -96,35 +98,36 @@ export default function AboutUs() {
                   },
                 }}
               >
-                <h3 className="text-xl font-semibold mb-4 text-white">
-                  Our Strategy
-                </h3>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  Initiate projects, workshops and competitions to expose club
-                  members to various technologies, concepts and ideas.
-                </p>
-              </Card>
-
-              <Card
-                className="bg-[#101930]/60 border-slate-700 backdrop-blur-lg"
-                style={{
-                  backgroundColor: "rgba(16, 25, 48, 0.9)",
-                  borderColor: "#334155",
-                }}
-                styles={{
-                  body: {
-                    padding: "24px",
-                    backgroundColor: "transparent",
-                    color: "white",
-                  },
-                }}
-              >
-                <h3 className="text-xl font-semibold mb-4 text-white">
+                <h3 className="text-2xl font-semibold mb-4 text-white">
                   Our Vision
                 </h3>
                 <p className="text-slate-300 text-sm leading-relaxed">
                   To be one of the most active student communities by providing
                   value and nurturing curious minds.
+                </p>
+              </Card>
+
+              <Card
+                className="bg-[#2c4444]/60 border-slate-700 backdrop-blur-lg"
+                style={{
+                  backgroundColor: "rgba(29, 41, 68, 0.6)",
+                  borderColor: "#334155",
+                  backdropFilter: "blur(16px)",
+                }}
+                styles={{
+                  body: {
+                    padding: "24px",
+                    backgroundColor: "transparent",
+                    color: "white",
+                  },
+                }}
+              >
+                <h3 className="text-2xl font-semibold mb-4 text-white">
+                  Our Strategy
+                </h3>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  Initiate projects, workshops and competitions to expose club
+                  members to various technologies, concepts and ideas.
                 </p>
               </Card>
             </div>
