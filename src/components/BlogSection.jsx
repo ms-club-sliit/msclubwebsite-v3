@@ -70,7 +70,7 @@ const BlogSection = () => {
     );
 
     return (
-        <div>
+        <section className="bg-[#0F172A] min-h-screen pb-20">
             <div className="relative bg-custom-radial rounded-[53px] lg:mx-20 py-20 px-16 z-0">
                 <Image
                     src="/line-pattern.png"
@@ -116,7 +116,7 @@ const BlogSection = () => {
                     </div>
                 )}
             </div>
-        </div>
+        </section>
     );
 };
 
