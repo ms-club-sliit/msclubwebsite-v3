@@ -103,11 +103,11 @@ export default function Team() {
           {currentTeam.board.map((member) => (
             <Card
               key={`${member.id}-${currentTeam.year}`}
-              className="h-auto border border-gray-500 rounded-2xl p-1"
+              className="h-auto border border-gray-500 rounded-2xl p-1 backdrop-blur-lg"
               style={{
                 backgroundColor: "#0d1524",
                 borderColor: "#6b7280",
-                
+                backdropFilter: "blur(8px)",
               }}
               styles={{
                 body: { padding: "0", backgroundColor: "#101930" },
