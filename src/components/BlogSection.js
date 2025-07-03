@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, use } from 'react';
+import React, { useState, useEffect } from 'react';
 import BlogCard from '@/components/BlogCard';
 import Image from 'next/image';
 import { fetchBlogPosts } from '@/api/blogPosts';
@@ -116,7 +116,7 @@ const BlogSection = () => {
                     </div>
                 )}
             </div>
-        </div >
+        </div>
     );
 };
 
