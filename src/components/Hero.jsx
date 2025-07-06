@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 const Hero = () => {
   return (
@@ -59,11 +60,13 @@ const Hero = () => {
             <div className="absolute w-[500px] h-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-950/40 blur-md -z-20" />
 
             {/* MS Logo with up-and-down animation */}
-            <div className="relative group animate-float-gentle">
-              <img
+            <div className="relative w-[300px] h-[300px] group animate-float-gentle">
+              <Image
                 src="/ms_club_logo_light.png"
-                alt="MS Club SLIIT Logo"
-                className="object-contain w-full h-full drop-shadow-2xl"
+                alt="MS Club Logo"
+                fill
+                style={{ objectFit: "contain" }}
+                priority
               />
 
               {/* Glow effects */}
