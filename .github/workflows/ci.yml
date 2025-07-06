@@ -1,4 +1,3 @@
-name: Next.js CI
 
 on:
   pull_request:
@@ -6,6 +5,7 @@ on:
 
 jobs:
   build-and-lint:
+    name: Build and Lint
     runs-on: ubuntu-latest
 
     steps:
