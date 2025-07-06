@@ -7,11 +7,8 @@ import boardMembers from "../data/boardMembers.json";
 import {
   LeftOutlined,
   RightOutlined,
-  GithubFilled,
-  FacebookFilled,
-  InstagramOutlined,
-  LinkedinFilled,
 } from "@ant-design/icons";
+import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 
 export default function Team() {
   const [currentYearIndex, setCurrentYearIndex] = useState(0);
@@ -130,74 +127,7 @@ export default function Team() {
                   }}
                   styles={{
                     body: { padding: "0" },
-                    actions: {
-                      backgroundColor: "transparent",
-                      borderTop: "none",
-                      border: "none",
-                      textAlign: "left",
-                      justifyContent: "flex-start",
-                      paddingLeft: "16px",
-                      display: "flex",
-                    },
                   }}
-                  actions={[
-                    <Button
-                      key="linkedin"
-                      type="text"
-                      icon={<LinkedinFilled />}
-                      style={{
-                        color: "#e2e8f0",
-                        margin: "0",
-                        padding: "4px 8px",
-                      }}
-                      onClick={() =>
-                        member.socialmedia?.linkedin &&
-                        window.open(member.socialmedia.linkedin, "_blank")
-                      }
-                    />,
-                    <Button
-                      key="github"
-                      type="text"
-                      icon={<GithubFilled />}
-                      style={{
-                        color: "#e2e8f0",
-                        margin: "0",
-                        padding: "4px 8px",
-                      }}
-                      onClick={() =>
-                        member.socialmedia?.twitter &&
-                        window.open(member.socialmedia.twitter, "_blank")
-                      }
-                    />,
-                    <Button
-                      key="facebook"
-                      type="text"
-                      icon={<FacebookFilled />}
-                      style={{
-                        color: "#e2e8f0",
-                        margin: "0",
-                        padding: "4px 8px",
-                      }}
-                      onClick={() =>
-                        member.socialmedia?.facebook &&
-                        window.open(member.socialmedia.facebook, "_blank")
-                      }
-                    />,
-                    <Button
-                      key="instagram"
-                      type="text"
-                      icon={<InstagramOutlined />}
-                      style={{
-                        color: "#e2e8f0",
-                        margin: "0",
-                        padding: "4px 8px",
-                      }}
-                      onClick={() =>
-                        member.socialmedia?.instagram &&
-                        window.open(member.socialmedia.instagram, "_blank")
-                      }
-                    />,
-                  ]}
                 >
                   <div className="relative z-10">
                     <div className="h-60 overflow-hidden rounded-t-3xl flex items-center justify-center bg-[#101930]">
@@ -215,9 +145,37 @@ export default function Team() {
                       <h4 className="font-semibold text-white mb-1 text-base">
                         {member.name}
                       </h4>
-                      <p className="text-blue-400 text-ba">
+                      <p className="text-blue-400 text-sm mb-3">
                         {member.position}
                       </p>
+                      
+                      {/* Social Media Icons */}
+                      <div className="flex justify-start items-center gap-3">
+                        <button
+                          onClick={() => member.socialmedia?.linkedin && window.open(member.socialmedia.linkedin, "_blank")}
+                          className="p-2 rounded-full bg-blue-600/20 hover:bg-blue-600/40 transition-colors duration-200"
+                        >
+                          <FaLinkedin className="w-4 h-4 text-blue-400" />
+                        </button>
+                        <button
+                          onClick={() => member.socialmedia?.twitter && window.open(member.socialmedia.twitter, "_blank")}
+                          className="p-2 rounded-full bg-gray-600/20 hover:bg-gray-600/40 transition-colors duration-200"
+                        >
+                          <FaGithub className="w-4 h-4 text-gray-400" />
+                        </button>
+                        <button
+                          onClick={() => member.socialmedia?.facebook && window.open(member.socialmedia.facebook, "_blank")}
+                          className="p-2 rounded-full bg-blue-800/20 hover:bg-blue-800/40 transition-colors duration-200"
+                        >
+                          <FaFacebook className="w-4 h-4 text-blue-500" />
+                        </button>
+                        <button
+                          onClick={() => member.socialmedia?.instagram && window.open(member.socialmedia.instagram, "_blank")}
+                          className="p-2 rounded-full bg-pink-600/20 hover:bg-pink-600/40 transition-colors duration-200"
+                        >
+                          <FaInstagram className="w-4 h-4 text-pink-400" />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </Card>
