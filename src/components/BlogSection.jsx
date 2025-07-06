@@ -71,10 +71,11 @@ const BlogSection = () => {
   return (
     <section className="bg-[#0F172A] min-h-screen pb-20">
       <div
-        className="bg-custom-radial rounded-[53px] lg:mx-20 py-20 px-16 z-0"
+        className="bg-custom-radial bg-no-repeat rounded-[53px] lg:mx-20 py-20 px-16 z-0"
         style={{
           backgroundImage: 'url("/assets/contactBgImage.png")',
           backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         {/* Header Section */}
