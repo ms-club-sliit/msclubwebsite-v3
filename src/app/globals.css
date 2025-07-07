@@ -135,3 +135,10 @@ body {
     min-height: 40px;
   }
 }
+
+.event-showcase {
+  background-image: url("../../public/assets/contactBgImage.png");
+  background-size :contain;
+  background-position: left top;
+  background-repeat: no-repeat;
+}
