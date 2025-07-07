@@ -9,8 +9,8 @@ const InputField = ({
   type = "text",
   value,
   onChange,
-  placeholder,
-  required,
+  placeholder = "",
+  required = false,
 }) => {
   const getAutoComplete = (inputType) => {
     if (inputType === "email") return "email";
@@ -52,12 +52,6 @@ InputField.propTypes = {
   required: PropTypes.bool,
 };
 
-InputField.defaultProps = {
-  type: "text",
-  placeholder: "",
-  required: false,
-};
-
 // 🔧 Reusable Textarea
 const TextareaField = ({
   id,
@@ -65,8 +59,8 @@ const TextareaField = ({
   rows = 3,
   value,
   onChange,
-  placeholder,
-  required,
+  placeholder = "",
+  required = false,
 }) => (
   <div>
     <label
@@ -99,14 +93,15 @@ TextareaField.propTypes = {
   required: PropTypes.bool,
 };
 
-TextareaField.defaultProps = {
-  rows: 3,
-  placeholder: "",
-  required: false,
-};
-
 // 🔧 Reusable Select
-const SelectField = ({ id, label, options, value, onChange, required }) => (
+const SelectField = ({
+  id,
+  label,
+  options,
+  value,
+  onChange,
+  required = false,
+}) => (
   <div>
     <label
       htmlFor={id}
@@ -140,10 +135,6 @@ SelectField.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   required: PropTypes.bool,
-};
-
-SelectField.defaultProps = {
-  required: false,
 };
 
 const JoinUsFormSection = () => {
