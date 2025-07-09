@@ -1,8 +1,19 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
 
-const Hero = () => {
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+
+const Hero = ({
+  logoLink = "/ms_club_logo_light.png",
+  title = "MS CLUB OF SLIIT",
+  paragraph = "A MLSA driven student community aiming to bridge the skill gap between an Undergraduate and an Industry Professional.",
+  button1Text = "Join the Club",
+  button1Link = "/join-us",
+  button2Text = "Explore Events",
+  button2Link = "/events",
+  showSecondButton = true,
+}) => {
   return (
     <section className="relative min-h-screen py-20 px-6 md:px-12 bg-[#0c1629] text-white flex flex-col md:flex-row items-center justify-between overflow-hidden">
       {/* Animated Background Elements */}
@@ -30,40 +41,43 @@ const Hero = () => {
       <div className="relative z-10 pl-12 mb-10 ml-6 md:w-1/2 md:mb-0 animate-slide-in-left">
         <div className="relative">
           <h1 className="mb-6 text-4xl font-bold leading-tight md:text-6xl lg:text-7xl">
-            <span className="text-white">MS CLUB OF</span>
-            <br />
-            <span className="text-white">SLIIT</span>
+            <span className="text-white">{title}</span>
           </h1>
         </div>
 
         <p className="max-w-xl mb-10 text-lg leading-relaxed text-gray-300 md:text-xl animate-fade-in-up-delayed">
-          A MLSA driven student community aiming to bridge the skill gap between
-          an Undergraduate and an Industry Professional.
+          {paragraph}
         </p>
 
         <div className="flex flex-col gap-4 sm:flex-row animate-fade-in-up-delayed-2">
-          <button className="px-8 py-4 font-semibold text-white transition-all duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-700 hover:scale-105 hover:shadow-xl">
-            Join the Club
-          </button>
+          <Link href={button1Link}>
+            <button className="px-8 py-4 font-semibold text-white transition-all duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-700 hover:scale-105 hover:shadow-xl">
+              {button1Text}
+            </button>
+          </Link>
 
-          <button className="px-8 py-4 font-semibold text-white transition-all duration-300 transform border-2 border-gray-500 rounded-lg hover:border-blue-400 hover:scale-105 backdrop-blur-sm bg-white/5 hover:bg-white/10">
-            Explore Events
-          </button>
+          {showSecondButton && (
+            <Link href={button2Link}>
+              <button className="px-8 py-4 font-semibold text-white transition-all duration-300 transform border-2 border-gray-500 rounded-lg hover:border-blue-400 hover:scale-105 backdrop-blur-sm bg-white/5 hover:bg-white/10">
+                {button2Text}
+              </button>
+            </Link>
+          )}
         </div>
       </div>
 
-      {/* MS Club Logo */}
+      {/* Logo */}
       <div className="relative z-10 flex justify-center md:w-1/2">
         <div className="relative animate-slide-in-right">
           <div className="relative flex items-center justify-center w-80 h-80 md:w-96 md:h-96">
             {/* Darker light blue circle highlight */}
             <div className="absolute w-[500px] h-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-950/40 blur-md -z-20" />
 
-            {/* MS Logo with up-and-down animation */}
+            {/* Logo with up-and-down animation */}
             <div className="relative w-[300px] h-[300px] group animate-float-gentle">
               <Image
-                src="/ms_club_logo_light.png"
-                alt="MS Club Logo"
+                src={logoLink}
+                alt="Logo"
                 fill
                 style={{ objectFit: "contain" }}
                 priority

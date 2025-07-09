@@ -1,13 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import { Card, Button, ConfigProvider } from "antd";
-import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+import { Card, ConfigProvider } from "antd";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import JoinOurSection from "../../components/join-our-section";
 import Team from "../../components/Team";
 
 export default function AboutUs() {
   return (
+    <>
+    <Header />
+
     <ConfigProvider
       theme={{
         components: {
@@ -141,5 +145,7 @@ export default function AboutUs() {
         </div>
       </div>
     </ConfigProvider>
+    <Footer />
+    </>
   );
 }
