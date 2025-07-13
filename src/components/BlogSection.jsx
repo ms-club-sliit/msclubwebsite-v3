@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import BlogCard from "@/components/BlogCard";
+import BackgroundContainer from "@/components/BackgroundContainer";
 import { fetchBlogPosts } from "@/api/blogPosts";
 
 const BlogSection = () => {
@@ -70,14 +71,7 @@ const BlogSection = () => {
 
   return (
     <section className="bg-[#0F172A] min-h-screen pb-20">
-      <div
-        className="bg-custom-radial bg-no-repeat rounded-[53px] lg:mx-20 py-20 px-16 z-0"
-        style={{
-          backgroundImage: 'url("/assets/contactBgImage.png")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+      <BackgroundContainer>
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 md:mb-0">
@@ -115,7 +109,7 @@ const BlogSection = () => {
             </div>
           </div>
         )}
-      </div>
+      </BackgroundContainer>
     </section>
   );
 };
