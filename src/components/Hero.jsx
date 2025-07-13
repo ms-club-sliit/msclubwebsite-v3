@@ -1,33 +1,28 @@
 "use client";
-import React, { useEffect, useState } from "react";
+
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const Hero = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth) * 100,
-        y: (e.clientY / window.innerHeight) * 100,
-      });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
+const Hero = ({
+  logoLink = "/ms_club_logo_light.png",
+  title = "MS CLUB OF SLIIT",
+  paragraph = "A MLSA driven student community aiming to bridge the skill gap between an Undergraduate and an Industry Professional.",
+  button1Text = "Join the Club",
+  button1Link = "/join-us",
+  button2Text = "Explore Events",
+  button2Link = "/events",
+  showSecondButton = true,
+}) => {
   return (
-    <section className="relative min-h-screen py-20 px-6 md:px-12 bg-gray-900 text-white flex flex-col md:flex-row items-center justify-between overflow-hidden">
+    <section className="relative min-h-screen py-20 px-6 md:px-12 bg-[#0c1629] text-white flex flex-col md:flex-row items-center justify-between overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-
         {/* Simple Floating Dots */}
-        {[...Array(12)].map((_, i) => (
+        {[...Array(15)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-blue-400/20 rounded-full animate-float-simple"
+            className="absolute w-1 h-1 rounded-full bg-blue-300/30 animate-float-simple"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -36,109 +31,72 @@ const Hero = () => {
             }}
           />
         ))}
-        
-        {/* Dynamic Gradient Orbs */}
-        <div 
-          className="absolute w-96 h-96 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl animate-drift-1"
-          style={{
-            transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`,
-          }}
-        />
-        <div 
-          className="absolute w-80 h-80 bg-gradient-to-r from-purple-500/15 to-pink-500/15 rounded-full blur-3xl animate-drift-2"
-          style={{
-            transform: `translate(${mousePosition.x * -0.015}px, ${mousePosition.y * -0.015}px)`,
-          }}
-        />
+
+        {/* Static Gradient Orbs */}
+        <div className="absolute rounded-full w-96 h-96 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 blur-3xl animate-drift-1" />
+        <div className="absolute rounded-full w-80 h-80 bg-gradient-to-r from-purple-500/8 to-blue-500/8 blur-3xl animate-drift-2" />
       </div>
 
       {/* Left Text Content */}
-      <div className="md:w-1/2 mb-10 md:mb-0 animate-slide-in-left relative z-10">
+      <div className="relative z-10 pl-12 mb-10 ml-6 md:w-1/2 md:mb-0 animate-slide-in-left">
         <div className="relative">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent animate-gradient-shift">
-              MS CLUB
-            </span>
-            <br />
-            <span className="text-white animate-typewriter">OF SLIIT</span>
+          <h1 className="mb-6 text-4xl font-bold leading-tight md:text-6xl lg:text-7xl">
+            <span className="text-white">{title}</span>
           </h1>
-          
-          {/* Glow effect behind title */}
-          <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-2xl rounded-lg animate-pulse-glow -z-10" />
         </div>
-        
-        <p className="text-gray-300 text-lg md:text-xl mb-10 max-w-xl leading-relaxed animate-fade-in-up-delayed">
-          A MLSA-driven student community aiming to bridge the skill gap
-          between undergraduates and industry professionals.
+
+        <p className="max-w-xl mb-10 text-lg leading-relaxed text-gray-300 md:text-xl animate-fade-in-up-delayed">
+          {paragraph}
         </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up-delayed-2">
-          <Link
-            href="#join"
-            className="group relative bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl overflow-hidden"
-          >
-            <span className="relative z-10 font-semibold">Join the Club</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
-            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur opacity-30 group-hover:opacity-60 transition-opacity duration-300 -z-10" />
+
+        <div className="flex flex-col gap-4 sm:flex-row animate-fade-in-up-delayed-2">
+          <Link href={button1Link}>
+            <button className="px-8 py-4 font-semibold text-white transition-all duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-700 hover:scale-105 hover:shadow-xl">
+              {button1Text}
+            </button>
           </Link>
-          
-          <Link
-            href="#events"
-            className="group relative border-2 border-gray-600 hover:border-blue-400 text-white px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/5 hover:bg-white/10"
-          >
-            <span className="relative z-10 font-semibold">Explore Events</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
-          </Link>
+
+          {showSecondButton && (
+            <Link href={button2Link}>
+              <button className="px-8 py-4 font-semibold text-white transition-all duration-300 transform border-2 border-gray-500 rounded-lg hover:border-blue-400 hover:scale-105 backdrop-blur-sm bg-white/5 hover:bg-white/10">
+                {button2Text}
+              </button>
+            </Link>
+          )}
         </div>
       </div>
 
-      {/* Logo Visual with Enhanced Effects */}
-      <div className="md:w-1/2 flex justify-center relative z-10">
-        <div className="w-80 h-80 md:w-96 md:h-96 relative flex items-center justify-center animate-slide-in-right">
-          
-          {/* Outer rotating rings */}
-          <div className="absolute inset-0 border-2 border-blue-500/30 rounded-full animate-spin-slow" />
-          <div className="absolute inset-4 border border-purple-500/20 rounded-full animate-spin-reverse" />
-          
-          {/* Main logo container */}
-          <div className="relative group w-72 h-72 md:w-80 md:h-80">
-            <Image
-              src="/ms_club_logo_light.png"
-              alt="MS Club SLIIT Logo"
-              width={320}
-              height={320}
-              priority
-              className="object-contain w-full h-full relative z-20 transition-all duration-700 
-                         group-hover:scale-110 group-hover:rotate-6 
-                         filter drop-shadow-2xl group-hover:drop-shadow-[0_0_40px_rgba(59,130,246,0.9)]
-                         animate-float-gentle animate-glow-pulse"
-            />
+      {/* Logo */}
+      <div className="relative z-10 flex justify-center md:w-1/2">
+        <div className="relative animate-slide-in-right">
+          <div className="relative flex items-center justify-center w-80 h-80 md:w-96 md:h-96">
+            {/* Darker light blue circle highlight */}
+            <div className="absolute w-[500px] h-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-950/40 blur-md -z-20" />
 
-            {/* Multiple glow layers */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-purple-500/30 blur-3xl rounded-full 
-                            group-hover:from-blue-400/50 group-hover:to-purple-400/50 transition-all duration-700 animate-pulse-slow z-10" />
-            
-            <div className="absolute inset-2 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 blur-2xl rounded-full 
-                            group-hover:from-cyan-300/40 group-hover:to-blue-300/40 transition-all duration-500 animate-pulse-slower z-10" />
-            
-            {/* Energy rings */}
-            <div className="absolute inset-0 border border-blue-400/40 rounded-full animate-ping-slow" />
-            <div className="absolute inset-8 border border-purple-400/30 rounded-full animate-ping-slower" />
+            {/* Logo with up-and-down animation */}
+            <div className="relative w-[300px] h-[300px] group animate-float-gentle">
+              <Image
+                src={logoLink}
+                alt="Logo"
+                fill
+                style={{ objectFit: "contain" }}
+                priority
+              />
+
+              {/* Glow effects */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 blur-2xl animate-pulse-slow -z-10" />
+              <div className="absolute rounded-full inset-4 bg-gradient-to-r from-green-400/15 to-blue-400/15 blur-xl animate-pulse-slower -z-10" />
+            </div>
           </div>
-          
-          {/* Floating tech elements */}
-          <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-lg animate-float-orbit-1 shadow-lg" />
-          <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full animate-float-orbit-2 shadow-lg" />
-          <div className="absolute top-1/4 -left-8 w-4 h-4 bg-gradient-to-br from-green-400 to-emerald-400 rounded-full animate-float-orbit-3 shadow-lg" />
+
+          {/* Floating decorative elements */}
+          <div className="absolute w-6 h-6 rounded-lg shadow-lg -top-4 -right-4 bg-gradient-to-br from-blue-400 to-cyan-400 animate-float-orbit-1 opacity-70" />
+          <div className="absolute w-5 h-5 rounded-full shadow-lg -bottom-4 -left-4 bg-gradient-to-br from-green-400 to-emerald-400 animate-float-orbit-2 opacity-70" />
+          <div className="absolute w-4 h-4 rounded-full shadow-lg top-1/4 -left-8 bg-gradient-to-br from-yellow-400 to-orange-400 animate-float-orbit-3 opacity-70" />
         </div>
       </div>
 
       <style jsx>{`
-        @keyframes gradient-shift {
-          0%, 100% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-        }
-
         @keyframes slide-in-left {
           from {
             opacity: 0;
@@ -173,101 +131,109 @@ const Hero = () => {
         }
 
         @keyframes float-gentle {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          33% { transform: translateY(-8px) rotate(1deg); }
-          66% { transform: translateY(-4px) rotate(-1deg); }
-        }
-
-        @keyframes float-random {
-          0%, 100% { transform: translateY(0px) translateX(0px); }
-          25% { transform: translateY(-20px) translateX(10px); }
-          50% { transform: translateY(-40px) translateX(-5px); }
-          75% { transform: translateY(-20px) translateX(-10px); }
-        }
-
-        @keyframes float-orbit-1 {
-          0% { transform: translateY(0px) rotate(0deg); }
-          100% { transform: translateY(-20px) rotate(360deg); }
-        }
-
-        @keyframes float-orbit-2 {
-          0% { transform: translateY(0px) rotate(0deg); }
-          100% { transform: translateY(-15px) rotate(-360deg); }
-        }
-
-        @keyframes float-orbit-3 {
-          0% { transform: translateY(0px) rotate(0deg); }
-          100% { transform: translateY(-25px) rotate(180deg); }
-        }
-
-        @keyframes pulse-slow {
-          0%, 100% { opacity: 0.3; transform: scale(1); }
-          50% { opacity: 0.6; transform: scale(1.05); }
-        }
-
-        @keyframes pulse-slower {
-          0%, 100% { opacity: 0.2; transform: scale(1); }
-          50% { opacity: 0.4; transform: scale(1.03); }
-        }
-
-        @keyframes pulse-glow {
-          0%, 100% { opacity: 0.3; }
-          50% { opacity: 0.6; }
-        }
-
-        @keyframes glow-pulse {
-          0%, 100% { filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.5)); }
-          50% { filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.8)); }
-        }
-
-        @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-
-        @keyframes spin-reverse {
-          from { transform: rotate(360deg); }
-          to { transform: rotate(0deg); }
-        }
-
-        @keyframes ping-slow {
-          75%, 100% {
-            transform: scale(1.1);
-            opacity: 0;
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-15px);
           }
         }
 
-        @keyframes ping-slower {
-          75%, 100% {
-            transform: scale(1.2);
-            opacity: 0;
+        @keyframes float-orbit-1 {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-20px) rotate(180deg);
+          }
+        }
+
+        @keyframes float-orbit-2 {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-25px) rotate(-180deg);
+          }
+        }
+
+        @keyframes float-orbit-3 {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-18px) rotate(180deg);
+          }
+        }
+
+        @keyframes pulse-slow {
+          0%,
+          100% {
+            opacity: 0.2;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.4;
+            transform: scale(1.05);
+          }
+        }
+
+        @keyframes pulse-slower {
+          0%,
+          100% {
+            opacity: 0.15;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.3;
+            transform: scale(1.03);
+          }
+        }
+
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
           }
         }
 
         @keyframes float-simple {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-30px); }
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-30px);
+          }
         }
 
         @keyframes drift-1 {
-          0%, 100% { transform: translate(0px, 0px); }
-          33% { transform: translate(30px, -30px); }
-          66% { transform: translate(-20px, 20px); }
+          0%,
+          100% {
+            transform: translate(0px, 0px);
+          }
+          33% {
+            transform: translate(30px, -30px);
+          }
+          66% {
+            transform: translate(-20px, 20px);
+          }
         }
 
         @keyframes drift-2 {
-          0%, 100% { transform: translate(0px, 0px); }
-          50% { transform: translate(-40px, -20px); }
-        }
-
-        @keyframes typewriter {
-          from { width: 0; }
-          to { width: 100%; }
-        }
-
-        .animate-gradient-shift {
-          background-size: 200% 200%;
-          animation: gradient-shift 4s ease infinite;
+          0%,
+          100% {
+            transform: translate(0px, 0px);
+          }
+          50% {
+            transform: translate(-40px, -20px);
+          }
         }
 
         .animate-slide-in-left {
@@ -295,15 +261,15 @@ const Hero = () => {
         }
 
         .animate-float-orbit-1 {
-          animation: float-orbit-1 8s ease-in-out infinite;
+          animation: float-orbit-1 6s ease-in-out infinite;
         }
 
         .animate-float-orbit-2 {
-          animation: float-orbit-2 6s ease-in-out infinite;
+          animation: float-orbit-2 8s ease-in-out infinite;
         }
 
         .animate-float-orbit-3 {
-          animation: float-orbit-3 10s ease-in-out infinite;
+          animation: float-orbit-3 7s ease-in-out infinite;
         }
 
         .animate-pulse-slow {
@@ -314,28 +280,8 @@ const Hero = () => {
           animation: pulse-slower 4s ease-in-out infinite;
         }
 
-        .animate-pulse-glow {
-          animation: pulse-glow 2s ease-in-out infinite;
-        }
-
-        .animate-glow-pulse {
-          animation: glow-pulse 3s ease-in-out infinite;
-        }
-
         .animate-spin-slow {
           animation: spin-slow 20s linear infinite;
-        }
-
-        .animate-spin-reverse {
-          animation: spin-reverse 15s linear infinite;
-        }
-
-        .animate-ping-slow {
-          animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
-        }
-
-        .animate-ping-slower {
-          animation: ping-slower 4s cubic-bezier(0, 0, 0.2, 1) infinite;
         }
 
         .animate-drift-1 {
@@ -344,12 +290,6 @@ const Hero = () => {
 
         .animate-drift-2 {
           animation: drift-2 25s ease-in-out infinite;
-        }
-
-        .animate-typewriter {
-          overflow: hidden;
-          white-space: nowrap;
-          animation: typewriter 2s steps(40, end) 1s both;
         }
       `}</style>
     </section>

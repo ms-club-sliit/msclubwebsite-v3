@@ -17,10 +17,128 @@
   animation: fade-in-up 0.6s ease-out both;
 }
 
-
 .event-showcase {
   background-image: url("../../public/assets/contactBgImage.png");
   background-size :contain;
   background-position: left top;
   background-repeat: no-repeat;
+}
+
+.input-style {
+  @apply w-full px-4 py-3 rounded-md bg-[#1E293B] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.ant-card-actions > li {
+  border-right: none !important;
+}
+
+/* Mobile-specific optimizations for form inputs */
+@media (max-width: 640px) {
+  .input-style {
+    /* Prevent zoom on iOS when font-size is less than 16px */
+    font-size: 16px !important;
+    /* Better touch targets - minimum 44px recommended by Apple */
+    min-height: 48px;
+    /* Slightly larger padding for easier touch interaction */
+    @apply px-3 py-4;
+  }
+  
+  /* Improved textarea for mobile */
+  textarea.input-style {
+    min-height: 100px;
+    /* Ensure resize handle is visible on mobile */
+    resize: vertical;
+  }
+  
+  /* Better button interaction on mobile */
+  button {
+    /* Prevent button highlight on mobile tap */
+    -webkit-tap-highlight-color: transparent;
+    /* Ensure minimum touch target size */
+    min-height: 48px;
+  }
+}
+
+/* Focus states optimized for mobile */
+@media (max-width: 640px) {
+  .input-style:focus {
+    /* Larger focus ring for mobile */
+    @apply ring-4 ring-blue-400;
+    /* Prevent page zoom when focusing inputs */
+    transform: none;
+  }
+}
+
+/* Landscape orientation optimizations */
+@media (max-width: 896px) and (orientation: landscape) {
+  .input-style {
+    /* Smaller padding in landscape mode to save space */
+    @apply py-2;
+    min-height: 40px;
+  }
+}
+.input-style {
+  @apply w-full px-4 py-3 rounded-md bg-[#1E293B] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+/* Mobile-specific optimizations for form inputs */
+@media (max-width: 640px) {
+  .input-style {
+    /* Prevent zoom on iOS when font-size is less than 16px */
+    font-size: 16px !important;
+    /* Better touch targets - minimum 44px recommended by Apple */
+    min-height: 48px;
+    /* Slightly larger padding for easier touch interaction */
+    @apply px-3 py-4;
+  }
+  
+  /* Improved textarea for mobile */
+  textarea.input-style {
+    min-height: 100px;
+    /* Ensure resize handle is visible on mobile */
+    resize: vertical;
+  }
+  
+  /* Better button interaction on mobile */
+  button {
+    /* Prevent button highlight on mobile tap */
+    -webkit-tap-highlight-color: transparent;
+    /* Ensure minimum touch target size */
+    min-height: 48px;
+  }
+}
+
+/* Focus states optimized for mobile */
+@media (max-width: 640px) {
+  .input-style:focus {
+    /* Larger focus ring for mobile */
+    @apply ring-4 ring-blue-400;
+    /* Prevent page zoom when focusing inputs */
+    transform: none;
+  }
+}
+
+/* Landscape orientation optimizations */
+@media (max-width: 896px) and (orientation: landscape) {
+  .input-style {
+    /* Smaller padding in landscape mode to save space */
+    @apply py-2;
+    min-height: 40px;
+  }
 }

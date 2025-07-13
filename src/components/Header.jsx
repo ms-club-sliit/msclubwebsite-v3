@@ -19,21 +19,33 @@ const Header = () => {
         <Link href="/" className="text-white hover:text-blue-400 transition">
           Home
         </Link>
-        <Link href="/about" className="text-white hover:text-blue-400 transition">
+        <Link
+          href="/about"
+          className="text-white hover:text-blue-400 transition"
+        >
           About
         </Link>
-        <Link href="/blogs" className="text-white hover:text-blue-400 transition">
+        <Link
+          href="/blogs"
+          className="text-white hover:text-blue-400 transition"
+        >
           Blogs
         </Link>
-        <Link href="/events" className="text-white hover:text-blue-400 transition">
+        <Link
+          href="/events"
+          className="text-white hover:text-blue-400 transition"
+        >
           Events
         </Link>
-        <Link href="/contact" className="text-white hover:text-blue-400 transition">
+        <Link
+          href="/contact"
+          className="text-white hover:text-blue-400 transition"
+        >
           Contact
         </Link>
       </nav>
       <Link
-        href="/join"
+        href="/join-us"
         className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm transition"
       >
         Join Us
