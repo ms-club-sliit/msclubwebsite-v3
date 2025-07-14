@@ -15,7 +15,7 @@ const Hero = ({
   showSecondButton = true,
 }) => {
   return (
-    <section className="relative min-h-screen py-20 px-6 md:px-12 bg-[#0c1629] text-white flex flex-col md:flex-row items-center justify-between overflow-hidden">
+    <section className="relative min-h-screen py-section-y px-section-x md:px-12 bg-hero-bg text-white flex flex-col md:flex-row items-center justify-between overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Simple Floating Dots */}
