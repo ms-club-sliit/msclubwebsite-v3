@@ -42,7 +42,7 @@ const AboutSection = () => {
     <BackgroundContainer>
       <div className="relative w-full max-w-6xl mx-auto">
         {/* Content box */}
-        <div className="bg-[#0f1a2e]/20 backdrop-blur-sm rounded-2xl border-l-2 border-t-2 border-[#4a5c7a]/60 p-8 md:p-12 shadow-2xl shadow-black/20">
+        <div className="bg-[#0f1a2e]/20 backdrop-blur-sm rounded-2xl  p-8 md:p-12 shadow-2xl shadow-black/20">
           {/* Header */}
           <div className="mb-12 text-center">
             <h2 className="mb-6 text-4xl font-bold text-white md:text-5xl">
