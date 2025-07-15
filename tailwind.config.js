@@ -7,10 +7,18 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'primary-bg': '#0F172A',
+        'card-bg': '#33415580',
+      },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "custom-radial": "radial-gradient(150% 150% at 0% 0%, rgba(30, 58, 138, 0.3) 7.75%, rgba(15, 23, 42, 0.3) 79.39%)",
+        "secondary-bg": "radial-gradient(150% 150% at 0% 0%, rgba(30, 58, 138, 0.3) 7.75%, rgba(15, 23, 42, 0.3) 79.39%)",
+        "hero-bg": "background: linear-gradient(180deg, #0F172A 0%, #081223 100%)",
+        "footer-bg": "linear-gradient(135deg, rgba(30, 58, 138, 0.3) 25%, rgba(15, 23, 42, 0.3) 95.71%)",
+      },
+      spacing: {
+        'section-x': '1.5rem', // 24px
+        'section-y': '3rem',   // 48px
       },
     },
   },

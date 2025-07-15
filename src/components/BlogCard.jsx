@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const BlogCard = ({ blog }) => {
     return (
-        <div className="bg-[#33415580] rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+        <div className="bg-card-bg rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
             {/* Blog Image */}
             <div className="relative w-[400px] h-[192px] bg-gray-700 overflow-hidden">
                 <Image
@@ -38,5 +38,4 @@ const BlogCard = ({ blog }) => {
         </div>
     );
 };
-
 export default BlogCard;

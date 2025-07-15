@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import BlogCard from "@/components/BlogCard";
+import BackgroundContainer from "@/components/BackgroundContainer";
 import { fetchBlogPosts } from "@/api/blogPosts";
 
 const BlogSection = () => {
@@ -69,14 +70,8 @@ const BlogSection = () => {
   );
 
   return (
-    <section className="bg-[#0F172A] min-h-screen pb-20">
-      <div
-        className="bg-custom-radial rounded-[53px] lg:mx-20 py-20 px-16 z-0"
-        style={{
-          backgroundImage: 'url("/assets/contactBgImage.png")',
-          backgroundSize: "cover",
-        }}
-      >
+    <section className="bg-primary-bg min-h-screen py-section-y px-section-x sm:px-2 sm:py-6">
+      <BackgroundContainer>
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 md:mb-0">
@@ -93,13 +88,13 @@ const BlogSection = () => {
               placeholder="Search Blogs..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 bg-[#1E293B] rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+              className="w-full pl-10 pr-4 py-3 bg-[#1E293B] rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-base sm:text-lg sm:py-3 sm:pl-10 sm:pr-4"
             />
           </div>
         </div>
 
         {/* Blog Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-14">
           {filteredBlogs.map((blog) => (
             <BlogCard key={blog.id} blog={blog} />
           ))}
@@ -114,7 +109,7 @@ const BlogSection = () => {
             </div>
           </div>
         )}
-      </div>
+      </BackgroundContainer>
     </section>
   );
 };
