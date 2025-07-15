@@ -27,7 +27,11 @@ export default function ContactPage() {
           {/* Social Icons Section */}
           <div className="pt-11 flex flex-wrap justify-between w-full max-w-[480px] mx-auto z-10 gap-4 md:gap-0">
             {/* Facebook */}
-            <div className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px] mb-4">
+            <a className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px] mb-4"
+                href="https://www.facebook.com/msclubsliit"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
               <FaFacebookF className="text-blue-500 text-3xl" />
               <div>
                 <div className="text-white font-semibold text-base leading-7">
@@ -37,10 +41,14 @@ export default function ContactPage() {
                   @msclubofficial
                 </div>
               </div>
-            </div>
+            </a>
 
             {/* Instagram */}
-            <div className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px] mb-4">
+            <a className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px] mb-4"
+                href="https://www.instagram.com/msclub.sliit"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
               <FaInstagram className="text-pink-500 text-3xl" />
               <div>
                 <div className="text-white font-semibold text-base leading-7">
@@ -50,10 +58,14 @@ export default function ContactPage() {
                   @msclubofficial
                 </div>
               </div>
-            </div>
+            </a>
 
             {/* LinkedIn */}
-            <div className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px] mb-4">
+            <a className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px] mb-4"
+                href="https://www.linkedin.com/company/msclubsliit"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
               <FaLinkedinIn className="text-blue-300 text-3xl" />
               <div>
                 <div className="text-white font-semibold text-base leading-7">
@@ -63,10 +75,14 @@ export default function ContactPage() {
                   @msclubofficial
                 </div>
               </div>
-            </div>
+            </a>
 
             {/* GitHub */}
-            <div className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px] mb-4">
+            <a className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px] mb-4"
+                href="https://github.com/ms-club-sliit"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
               <FaGithub className="text-gray-300 text-3xl" />
               <div>
                 <div className="text-white font-semibold text-base leading-7">
@@ -76,7 +92,7 @@ export default function ContactPage() {
                   @msclubofficial
                 </div>
               </div>
-            </div>
+            </a>
           </div>
 
           {/* FAQ Title */}
