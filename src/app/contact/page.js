@@ -27,7 +27,7 @@ export default function ContactPage() {
           {/* Social Icons Section */}
           <div className="pt-11 flex flex-wrap justify-between w-full max-w-[480px] mx-auto z-10 gap-4 md:gap-0">
             {/* Facebook */}
-            <div className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px]">
+            <div className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px] mb-4">
               <FaFacebookF className="text-blue-500 text-3xl" />
               <div>
                 <div className="text-white font-semibold text-base leading-7">
@@ -40,7 +40,7 @@ export default function ContactPage() {
             </div>
 
             {/* Instagram */}
-            <div className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px]">
+            <div className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px] mb-4">
               <FaInstagram className="text-pink-500 text-3xl" />
               <div>
                 <div className="text-white font-semibold text-base leading-7">
@@ -53,7 +53,7 @@ export default function ContactPage() {
             </div>
 
             {/* LinkedIn */}
-            <div className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px]">
+            <div className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px] mb-4">
               <FaLinkedinIn className="text-blue-300 text-3xl" />
               <div>
                 <div className="text-white font-semibold text-base leading-7">
@@ -66,7 +66,7 @@ export default function ContactPage() {
             </div>
 
             {/* GitHub */}
-            <div className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px]">
+            <div className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px] mb-4">
               <FaGithub className="text-gray-300 text-3xl" />
               <div>
                 <div className="text-white font-semibold text-base leading-7">
