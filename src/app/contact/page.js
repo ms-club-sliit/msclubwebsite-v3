@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Hero from "@/components/Hero";
 import {
   FaFacebookF,
   FaInstagram,
@@ -11,6 +12,15 @@ export default function ContactPage() {
   return (
     <>
     <Header />
+    <Hero
+        title="Let’s Connect"
+        paragraph="Stay updated with our latest events, Projects and announcement by following us."
+        button1Text="Follow us on Social Media"
+        button1Link=""
+        showSecondButton={true}
+        button2Text="Subscribe on Youtube"
+        button2Link=""
+      />
     <div className="min-h-screen bg-[#0f172a] overflow-x-hidden flex justify-center px-4 py-10">
       <div
         className="relative rounded-[53px] bg-center bg-cover bg-no-repeat w-full max-w-[980px] min-h-[732px] px-6 md:px-10"

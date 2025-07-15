@@ -11,7 +11,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#070d18] py-12 px-6 md:px-12 text-gray-400">
+    <footer className="bg-footer-bg py-12 px-6 md:px-12 text-gray-400">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between mb-12 gap-12">
           {/* Brand Section */}
