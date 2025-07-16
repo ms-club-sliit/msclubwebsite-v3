@@ -34,9 +34,44 @@ body {
 }
 
 
+/* Navigation button hover effects */
+.team-nav-button {
+  background: linear-gradient(145deg, rgba(16, 25, 48, 0.9), rgba(30, 41, 68, 0.9));
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(100, 116, 139, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-nav-button:hover {
+  background: linear-gradient(145deg, rgba(37, 99, 235, 0.4), rgba(59, 130, 246, 0.3));
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.2);
+}
+
+.team-nav-button:active {
+  transform: scale(0.95);
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+  /* Custom button sizes for navigation */
+  .w-13 {
+    width: 3.25rem;
+  }
+  
+  .h-13 {
+    height: 3.25rem;
+  }
+  
+  .w-15 {
+    width: 3.75rem;
+  }
+  
+  .h-15 {
+    height: 3.75rem;
   }
 }
 
