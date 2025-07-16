@@ -129,12 +129,12 @@ export default function Team() {
                         />
                       </div>
                     </div>
-                    <div className="p-3 sm:p-4 md:p-2 flex-grow flex flex-col justify-between">
+                    <div className="sm:p-4 md:p-2 flex-grow flex flex-col justify-between">
                       <div className="text-left">
-                        <h4 className="font-semibold text-white mb-1 sm:mb-2 text-sm sm:text-base md:text-base leading-tight line-clamp-2">
+                        <h4 className="font-semibold text-white sm:mb-2 text-sm sm:text-base md:text-base leading-tight line-clamp-2">
                           {member.name}
                         </h4>
-                        <p className="text-blue-400 text-xs sm:text-sm md:text-sm mb-3 sm:mb-4 line-clamp-2">
+                        <p className="text-blue-400 text-xs sm:text-sm md:text-sm sm:mb-4 line-clamp-2">
                           {member.position}
                         </p>
                       </div>
