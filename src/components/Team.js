@@ -75,7 +75,7 @@ export default function Team() {
               <Button
                 shape="circle"
                 icon={<LeftOutlined className="text-xs sm:text-sm md:text-base lg:text-lg" />}
-                className="w-8 h-8 sm:w-11 sm:h-11 md:w-13 md:h-13 lg:w-15 lg:h-15 flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200 touch-manipulation shadow-md hover:shadow-lg"
+                className=" sm:w-10 sm:h-4 md:w-10 md:h-8 lg:w-15 lg:h-10 flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200 touch-manipulation shadow-md hover:shadow-lg"
                 onClick={handlePrevious}
                 style={{
                   backgroundColor: "rgba(16, 25, 48, 0.8)",
@@ -94,7 +94,7 @@ export default function Team() {
               <Button
                 shape="circle"
                 icon={<RightOutlined className="text-xs sm:text-sm md:text-base lg:text-lg" />}
-                className="w-8 h-8 sm:w-11 sm:h-11 md:w-13 md:h-13 lg:w-15 lg:h-15 flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200 touch-manipulation shadow-md hover:shadow-lg"
+                className="sm:w-10 sm:h-4 md:w-13 md:h-8 lg:w-15 lg:h-10 flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200 touch-manipulation shadow-md hover:shadow-lg"
                 onClick={handleNext}
                 style={{
                   backgroundColor: "rgba(16, 25, 48, 0.8)",
@@ -123,8 +123,8 @@ export default function Team() {
                         <Image
                           src={member.image || "/kanji.png"}
                           alt={`${member.name} - ${member.position}`}
-                          width={250}
-                          height={250}
+                          width={350}
+                          height={350}
                           className="w-full h-full object-cover rounded-lg sm:rounded-xl md:rounded-2xl"
                         />
                       </div>
