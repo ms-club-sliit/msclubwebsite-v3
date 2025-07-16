@@ -14,9 +14,12 @@
     "framer-motion": "^12.20.2",
     "lucide-react": "^0.525.0",
     "next": "^14.2.30",
+    "owl.carousel": "^2.3.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "react-multi-carousel": "^2.8.6",
+    "react-owl-carousel": "^2.3.3"
   },
   "devDependencies": {
     "eslint": "^8",
