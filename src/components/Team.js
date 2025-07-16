@@ -74,8 +74,8 @@ export default function Team() {
             <div className="flex flex-row items-center justify-center mb-6 sm:mb-8 md:mb-12 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
               <Button
                 shape="circle"
-                icon={<LeftOutlined className="text-xs sm:text-sm md:text-base lg:text-lg" />}
-                className=" sm:w-10 sm:h-4 md:w-10 md:h-8 lg:w-15 lg:h-10 flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200 touch-manipulation shadow-md hover:shadow-lg"
+                icon={<LeftOutlined className="text-xs sm:text-sm md:text-sm lg:text-base" />}
+                className="w-8 h-8 sm:w-9 sm:h-9 md:w-9 md:h-9 lg:w-10 lg:h-10 flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200 touch-manipulation shadow-md hover:shadow-lg"
                 onClick={handlePrevious}
                 style={{
                   backgroundColor: "rgba(16, 25, 48, 0.8)",
@@ -93,8 +93,8 @@ export default function Team() {
               </div>
               <Button
                 shape="circle"
-                icon={<RightOutlined className="text-xs sm:text-sm md:text-base lg:text-lg" />}
-                className="sm:w-10 sm:h-4 md:w-13 md:h-8 lg:w-15 lg:h-10 flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200 touch-manipulation shadow-md hover:shadow-lg"
+                icon={<RightOutlined className="text-xs sm:text-sm md:text-sm lg:text-base" />}
+                className="w-8 h-8 sm:w-9 sm:h-9 md:w-9 md:h-9 lg:w-10 lg:h-10 flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200 touch-manipulation shadow-md hover:shadow-lg"
                 onClick={handleNext}
                 style={{
                   backgroundColor: "rgba(16, 25, 48, 0.8)",
@@ -129,8 +129,8 @@ export default function Team() {
                         />
                       </div>
                     </div>
-                    <div className="p-3 sm:p-4 md:p-4 flex-grow flex flex-col justify-between">
-                      <div>
+                    <div className="p-3 sm:p-4 md:p-2 flex-grow flex flex-col justify-between">
+                      <div className="text-left">
                         <h4 className="font-semibold text-white mb-1 sm:mb-2 text-sm sm:text-base md:text-base leading-tight line-clamp-2">
                           {member.name}
                         </h4>
@@ -140,7 +140,7 @@ export default function Team() {
                       </div>
                       
                       {/* Social Media Icons */}
-                      <div className="flex justify-center items-center gap-3 sm:gap-4 md:gap-2 mt-auto">
+                      <div className="flex justify-start items-center gap-3 sm:gap-4 md:gap-1 mt-auto">
                         <div 
                           className="rounded-full bg-blue-600/20 hover:bg-blue-600/40 transition-colors duration-200 touch-manipulation flex items-center justify-center cursor-pointer"
                           onClick={() => member.socialmedia?.linkedin && window.open(member.socialmedia.linkedin, "_blank")}
