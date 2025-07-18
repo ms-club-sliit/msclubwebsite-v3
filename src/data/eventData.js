@@ -108,5 +108,3 @@ export const workshopData = [
     buttonText: "Join Workshop",
   },
 ];
-
-export default workshopData;
