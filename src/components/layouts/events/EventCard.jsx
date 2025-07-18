@@ -1,4 +1,8 @@
 import React from 'react';
+import { Clock } from 'lucide-react';
+import { Calendar } from 'lucide-react';
+import { MapPin } from 'lucide-react';
+
 
 const EevntCard = ({
   badgeText = "Workshop",
@@ -13,7 +17,7 @@ const EevntCard = ({
   onRegister = () => {},
 }) => {
   return (
-    <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-[#121e3c] text-white p-6 relative">
+    <div className="rounded-lg overflow-hidden shadow-lg bg-card-bg text-white p-6 relative">
       {/* Badge */}
       {badgeText && (
         <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -40,19 +44,19 @@ const EevntCard = ({
       <div className="space-y-2 text-sm">
         {date && (
           <div className="flex items-center">
-            <span className="mr-2">📅</span>
+            <span className="mr-2"><Calendar className='w-[16px]' /></span>
             {date}
           </div>
         )}
         {time && (
           <div className="flex items-center">
-            <span className="mr-2">⏰</span>
+            <span className="mr-2"><Clock className='w-[16px]' /></span>
             {time}
           </div>
         )}
         {location && (
           <div className="flex items-center">
-            <span className="mr-2">📍</span>
+            <span className="mr-2"><MapPin className='w-[16px]' /></span>
             {location}
           </div>
         )}
