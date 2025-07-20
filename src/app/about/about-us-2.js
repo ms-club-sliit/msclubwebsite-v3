@@ -71,7 +71,7 @@ export default function AboutUs() {
 
             {/* Right Column - Large Content Area */}
             <div className="flex flex-col items-center justify-start mt-10 lg:mt-52">
-              <div className="h-auto w-full max-w-md bg-[#101930]/40 border border-slate-300 rounded-lg backdrop-blur-lg p-4">
+              <div className="h-auto w-full max-w-md  border-slate-300 rounded-lg backdrop-blur-lg p-4">
                 <Image
                   src="/msclub.png"
                   alt="About Us Illustration"

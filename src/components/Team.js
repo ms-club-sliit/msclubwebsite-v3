@@ -9,6 +9,7 @@ import {
   RightOutlined,
 } from "@ant-design/icons";
 import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
+import BackgroundContainer from "./BackgroundContainer.jsx";
 
 export default function Team() {
   const [currentYearIndex, setCurrentYearIndex] = useState(0);
@@ -67,114 +68,107 @@ export default function Team() {
         },
       }}
     >
-      {/* Container */}
-      <div className="relative min-h-screen w-full mx-auto max-w-7xl">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: "url('/contactBgImage.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "",
-            backgroundRepeat: "no-repeat",
-          }}
-        />
-        {/* Optional overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#101930] to-[#0d1524] opacity-60 z-0" />
-
-        {/* Content */}
-        <div className="relative z-10 py-16">
-          <div className="max-w-6xl mx-auto px-5">
-            <div className="mb-16">
-            <div className="flex items-center justify-center mb-12">
+      <BackgroundContainer className="flex items-center justify-center min-h-screen !mx-1 !sm:mx-2 !lg:mx-2">
+        <div className="w-full max-w-full mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6">
+          <div className="text-center">
+            <div className="flex flex-row items-center justify-center mb-6 sm:mb-8 md:mb-12 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
               <Button
                 shape="circle"
-                icon={<LeftOutlined />}
-                className="mr-4"
+                icon={<LeftOutlined className="text-xs sm:text-sm md:text-sm lg:text-base" />}
+                className="w-8 h-8 sm:w-9 sm:h-9 md:w-9 md:h-9 lg:w-10 lg:h-10 flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200 touch-manipulation shadow-md hover:shadow-lg"
                 onClick={handlePrevious}
                 style={{
-                  backgroundColor: "rgba(16, 25, 48, 0.7)",
-                  borderColor: "#334155",
+                  backgroundColor: "rgba(16, 25, 48, 0.8)",
+                  borderColor: "#475569",
                   color: "#ffffff",
                 }}
               />
-              <h2 className="text-2xl md:text-3xl font-bold text-center">
-                Meet Our Team{" "}
-                <span className="text-blue-400">
+              <div className="px-3 sm:px-4 md:px-6 lg:px-8 text-center">
+                <h2 className="text-base sm:text-xl md:text-2xl lg:text-3xl font-bold leading-tight">
+                  Meet Our Team
+                </h2>
+                <div className="text-blue-400 text-sm sm:text-lg md:text-xl lg:text-2xl font-semibold mt-0.5 sm:mt-1">
                   {currentTeam.year}/{parseInt(currentTeam.year) + 1}
-                </span>
-              </h2>
+                </div>
+              </div>
               <Button
                 shape="circle"
-                icon={<RightOutlined />}
-                className="ml-4"
+                icon={<RightOutlined className="text-xs sm:text-sm md:text-sm lg:text-base" />}
+                className="w-8 h-8 sm:w-9 sm:h-9 md:w-9 md:h-9 lg:w-10 lg:h-10 flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200 touch-manipulation shadow-md hover:shadow-lg"
                 onClick={handleNext}
                 style={{
-                  backgroundColor: "rgba(16, 25, 48, 0.7)",
-                  borderColor: "#334155",
+                  backgroundColor: "rgba(16, 25, 48, 0.8)",
+                  borderColor: "#475569",
                   color: "#ffffff",
                 }}
               />
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 px-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-5 px-1 sm:px-2 md:px-4">
               {currentTeam.board.map((member) => (
                 <Card
                   key={`${member.id}-${currentTeam.year}`}
-                  className="h-auto border border-gray-500 rounded-2xl p-1 backdrop-blur-lg relative overflow-hidden"
+                  className="h-full border border-slate-700 rounded-lg sm:rounded-xl md:rounded-2xl p-0.5 sm:p-1 backdrop-blur-lg relative overflow-hidden card-bg flex flex-col"
                   style={{
-                    backgroundColor: "rgba(13, 21, 36, 0.85)", // semi-transparent
-                    borderColor: "#6b7280",
+                    backgroundColor: "rgba(29, 41, 68, 0.6)",
+                    borderColor: "#334155",
+                    backdropFilter: "blur(16px)",
                   }}
                   styles={{
-                    body: { padding: "0" },
+                    body: { padding: "0", backgroundColor: "transparent", height: "100%" },
                   }}
                 >
-                  <div className="relative z-10">
-                    <div className="h-60 overflow-hidden rounded-t-3xl flex items-center justify-center bg-[#101930]">
-                      <div className="w-full h-full flex items-center justify-center p-1">
+                  <div className="relative z-10 flex flex-col h-full">
+                    <div className="h-48 sm:h-52 md:h-56 lg:h-60 overflow-hidden rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl flex items-center justify-center">
+                      <div className="w-full h-full flex items-center justify-center p-0.5 sm:p-1">
                         <Image
                           src={member.image || "/kanji.png"}
                           alt={`${member.name} - ${member.position}`}
-                          width={250}
-                          height={250}
-                          className="w-full h-full object-cover rounded-2xl"
+                          width={350}
+                          height={350}
+                          className="w-full h-full object-cover rounded-lg sm:rounded-xl md:rounded-2xl"
                         />
                       </div>
                     </div>
-                    <div className="p-4">
-                      <h4 className="font-semibold text-white mb-1 text-base">
-                        {member.name}
-                      </h4>
-                      <p className="text-blue-400 text-sm mb-3">
-                        {member.position}
-                      </p>
+                    <div className="sm:p-4 md:p-2 flex-grow flex flex-col justify-between">
+                      <div className="text-left">
+                        <h4 className="font-semibold text-white sm:mb-2 text-sm sm:text-base md:text-base leading-tight line-clamp-2">
+                          {member.name}
+                        </h4>
+                        <p className="text-blue-400 text-xs sm:text-sm md:text-sm sm:mb-4 line-clamp-2">
+                          {member.position}
+                        </p>
+                      </div>
                       
                       {/* Social Media Icons */}
-                      <div className="flex justify-start items-center gap-3">
-                        <button
+                      <div className="flex justify-start items-center gap-3 sm:gap-4 md:gap-1 mt-auto">
+                        <div 
+                          className="rounded-full bg-blue-600/20 hover:bg-blue-600/40 transition-colors duration-200 touch-manipulation flex items-center justify-center cursor-pointer"
                           onClick={() => member.socialmedia?.linkedin && window.open(member.socialmedia.linkedin, "_blank")}
-                          className="p-2 rounded-full bg-blue-600/20 hover:bg-blue-600/40 transition-colors duration-200"
+                          style={{ width: "2rem", height: "2rem", aspectRatio: "1/1", minWidth: "2rem", minHeight: "2rem" }}
                         >
-                          <FaLinkedin className="w-4 h-4 text-blue-400" />
-                        </button>
-                        <button
+                          <FaLinkedin style={{ width: "1rem", height: "1rem", color: "#3b82f6" }} />
+                        </div>
+                        <div 
+                          className="rounded-full bg-gray-600/20 hover:bg-gray-600/40 transition-colors duration-200 touch-manipulation flex items-center justify-center cursor-pointer"
                           onClick={() => member.socialmedia?.twitter && window.open(member.socialmedia.twitter, "_blank")}
-                          className="p-2 rounded-full bg-gray-600/20 hover:bg-gray-600/40 transition-colors duration-200"
+                          style={{ width: "2rem", height: "2rem", aspectRatio: "1/1", minWidth: "2rem", minHeight: "2rem" }}
                         >
-                          <FaGithub className="w-4 h-4 text-gray-400" />
-                        </button>
-                        <button
+                          <FaGithub style={{ width: "1rem", height: "1rem", color: "#9ca3af" }} />
+                        </div>
+                        <div 
+                          className="rounded-full bg-blue-800/20 hover:bg-blue-800/40 transition-colors duration-200 touch-manipulation flex items-center justify-center cursor-pointer"
                           onClick={() => member.socialmedia?.facebook && window.open(member.socialmedia.facebook, "_blank")}
-                          className="p-2 rounded-full bg-blue-800/20 hover:bg-blue-800/40 transition-colors duration-200"
+                          style={{ width: "2rem", height: "2rem", aspectRatio: "1/1", minWidth: "2rem", minHeight: "2rem" }}
                         >
-                          <FaFacebook className="w-4 h-4 text-blue-500" />
-                        </button>
-                        <button
+                          <FaFacebook style={{ width: "1rem", height: "1rem", color: "#2563eb" }} />
+                        </div>
+                        <div 
+                          className="rounded-full bg-pink-600/20 hover:bg-pink-600/40 transition-colors duration-200 touch-manipulation flex items-center justify-center cursor-pointer"
                           onClick={() => member.socialmedia?.instagram && window.open(member.socialmedia.instagram, "_blank")}
-                          className="p-2 rounded-full bg-pink-600/20 hover:bg-pink-600/40 transition-colors duration-200"
+                          style={{ width: "2rem", height: "2rem", aspectRatio: "1/1", minWidth: "2rem", minHeight: "2rem" }}
                         >
-                          <FaInstagram className="w-4 h-4 text-pink-400" />
-                        </button>
+                          <FaInstagram style={{ width: "1rem", height: "1rem", color: "#d53f8c" }} />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -182,9 +176,8 @@ export default function Team() {
               ))}
             </div>
           </div>
-          </div>
         </div>
-      </div>
+      </BackgroundContainer>
     </ConfigProvider>
   );
 }
