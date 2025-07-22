@@ -44,19 +44,19 @@ const EevntCard = ({
       <div className="space-y-2 text-sm">
         {date && (
           <div className="flex items-center">
-            <span className="mr-2"><Calendar className='w-[16px]' /></span>
+            <span className="mr-2"><Calendar className='w-[16px] text-blue-500' /></span>
             {date}
           </div>
         )}
         {time && (
           <div className="flex items-center">
-            <span className="mr-2"><Clock className='w-[16px]' /></span>
+            <span className="mr-2"><Clock className='w-[16px] text-blue-500' /></span>
             {time}
           </div>
         )}
         {location && (
           <div className="flex items-center">
-            <span className="mr-2"><MapPin className='w-[16px]' /></span>
+            <span className="mr-2"><MapPin className='w-[16px] text-blue-500' /></span>
             {location}
           </div>
         )}
