@@ -19,14 +19,14 @@ const EventCard = ({ title, description, image }) => {
         <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
         <p className="text-gray-400 mb-4">{description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
-          <span className="bg-blue-900 text-blue-300 text-xs px-2 py-1 rounded cursor-default">
-            Demo
+          <span className="bg-[#1E293B] text-blue-300 text-xs px-2 py-1 rounded-full cursor-default">
+            ReactJs
           </span>
-          <span className="bg-purple-900 text-purple-300 text-xs px-2 py-1 rounded cursor-default">
-            Workshop
+          <span className="bg-[#1E293B] text-blue-300 text-xs px-2 py-1 rounded-full cursor-default">
+            NextJs
           </span>
-          <span className="bg-green-900 text-green-300 text-xs px-2 py-1 rounded cursor-default">
-            Networking
+          <span className="bg-[#1E293B] text-blue-300 text-xs px-2 py-1 rounded-full cursor-default">
+            Springboot
           </span>
         </div>
         <div className="flex space-x-4">

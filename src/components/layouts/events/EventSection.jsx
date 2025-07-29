@@ -1,11 +1,12 @@
 import React from 'react'
 import {workshopData} from '@/data/eventData'
 import EevntCard from './EventCard'
+import BackgroundContainer from "@/components/BackgroundContainer";
 
 const EventSection = () => {
   return (
-    <div className='event-showcase py-[40px] md:py-[80px] lg:py-[100px] md:mx-[80px]'>
-        <div className='w-4/5 mx-auto grid grid-rows-3  gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+    <BackgroundContainer>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-14'>
             {
                 workshopData.map(event => (
                     <EevntCard 
@@ -22,7 +23,7 @@ const EventSection = () => {
                 ))
             }
         </div>
-    </div>
+    </BackgroundContainer>
   )
 }
 
