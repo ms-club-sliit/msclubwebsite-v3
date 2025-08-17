@@ -310,7 +310,7 @@ const JoinUsFormSection = () => {
               Basic Information
             </h3>
             <p className="text-gray-400 text-sm sm:text-base">
-              Let's start with your basic details
+              Let&apos;s start with your basic details
             </p>
           </div>
 
@@ -523,7 +523,7 @@ const JoinUsFormSection = () => {
                 Application Form
               </h2>
               <p className="text-gray-400 text-sm sm:text-base">
-                We'll need a few details to get you started!
+                We&apos;ll need a few details to get you started!
               </p>
             </div>
 
