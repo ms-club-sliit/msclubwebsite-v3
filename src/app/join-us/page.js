@@ -9,7 +9,7 @@ function page() {
       <Header />
 
       {/* Hero Section */}
-      <section className="min-h-screen  pb-20 px-6 lg:px-16">
+      <section className="min-h-screen px-6 lg:px-16">
         <div className="max-w-5xl w-full px-6 lg:px-16 mx-auto">
           <div className="flex flex-col items-start justify-start mt-6">
             <p className="text-gray-400 text-base sm:text-lg lg:text-xl mb-2">
