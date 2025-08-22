@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import BlogCard from "@/components/blog/BlogCard";
 import BackgroundContainer from "@/components/common/BackgroundContainer";
-import { fetchBlogPosts } from "@/api/blogPosts";
+import { fetchBlogPosts } from "@/api";
 
 const BlogSection = () => {
   const [searchTerm, setSearchTerm] = useState("");

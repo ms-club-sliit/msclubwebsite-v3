@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, User, FileText } from "lucide-react";
 import BackgroundContainer from "@/components/common/BackgroundContainer";
+import {submitJoinForm} from "@/api";
 
 const InputField = ({
                       id,
@@ -322,7 +323,7 @@ const JoinUsFormSection = () => {
     try {
       const submissionData = prepareSubmissionData();
       console.log("Prepared submission data:", JSON.stringify(submissionData, null, 2));
-
+      await submitJoinForm(submissionData);
       alert("Application submitted successfully!");
       setFormData(initialFormState);
       setCurrentStep(1);
