@@ -7,13 +7,15 @@ import HistorySection from "@/components/HistorySection";
 import EventSection from "@/components/EventsSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import JoinSection from "@/components/JoinSection";
+import HeroNew from "@/components/HeroNew";
 
 
 export default function Home() {
   return (
     <>
       <Header />
-      <Hero />
+      {/* <Hero /> */}
+      <HeroNew />
       <AboutSection />
       <HistorySection />
       <EventSection />
