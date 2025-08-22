@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { Card, ConfigProvider } from "antd";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import JoinOurSection from "../../components/join-our-section";
-import Team from "../../components/Team";
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
+import JoinOurSection from "../../components/aboutUs/join-our-section";
+import Team from "../../components/aboutUs/Team";
 
 export default function AboutUs() {
   return (

@@ -1,8 +1,8 @@
-import Header from '@/components/Header'
+import Header from '@/components/common/Header'
 import React from 'react'
-import EventSection from '@/components/layouts/events/EventSection'
-import Footer from '@/components/Footer'
-import Hero from '@/components/Hero'
+import EventSection from '@/components/events/EventSection'
+import Footer from '@/components/common/Footer'
+import Hero from '@/components/common/Hero'
 
 const page = () => {
   return (

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, User, FileText } from "lucide-react";
-import BackgroundContainer from "@/components/BackgroundContainer";
+import BackgroundContainer from "@/components/common/BackgroundContainer";
 
 const InputField = ({
                       id,

@@ -1,6 +1,6 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import JoinUsFormSection from "@/components/JoinUsFormSection";
+import Footer from "@/components/common/Footer";
+import Header from "@/components/common/Header";
+import JoinUsFormSection from "@/components/joinUs/JoinUsFormSection";
 import React from "react";
 
 function page() {

@@ -97,7 +97,7 @@ const Header = () => {
       >
         <nav className="pt-4 pb-2 space-y-2">
           <Link
-            href="/"
+            href="/public"
             className="block text-white hover:text-blue-400 transition py-2"
             onClick={() => setIsMenuOpen(false)}
           >

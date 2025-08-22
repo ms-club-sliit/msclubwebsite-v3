@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import BlogCard from "@/components/BlogCard";
-import BackgroundContainer from "@/components/BackgroundContainer";
+import BlogCard from "@/components/blog/BlogCard";
+import BackgroundContainer from "@/components/common/BackgroundContainer";
 import { fetchBlogPosts } from "@/api/blogPosts";
 
 const BlogSection = () => {

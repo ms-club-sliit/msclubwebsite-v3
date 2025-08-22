@@ -1,7 +1,7 @@
 import React from 'react'
 import {workshopData} from '@/data/eventData'
 import EevntCard from './EventCard'
-import BackgroundContainer from "@/components/BackgroundContainer";
+import BackgroundContainer from "@/components/common/BackgroundContainer";
 
 const EventSection = () => {
   return (

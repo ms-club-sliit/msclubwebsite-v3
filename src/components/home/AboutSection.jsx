@@ -1,6 +1,6 @@
 import React from "react";
 import { Users2, Lightbulb, GraduationCap } from "lucide-react";
-import BackgroundContainer from "./BackgroundContainer";
+import BackgroundContainer from "../common/BackgroundContainer";
 
 const FeatureCard = ({ icon, title, description }) => {
   return (

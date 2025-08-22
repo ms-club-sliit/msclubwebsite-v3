@@ -1,8 +1,8 @@
 "use client";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import BlogSection from "@/components/BlogSection";
-import Hero from "@/components/Hero";
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
+import BlogSection from "@/components/blog/BlogSection";
+import Hero from "@/components/common/Hero";
 
 export default function blog() {
   return (
