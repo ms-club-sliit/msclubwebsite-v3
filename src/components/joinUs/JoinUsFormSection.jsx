@@ -1,18 +1,19 @@
 "use client";
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, User, FileText } from "lucide-react";
-import BackgroundContainer from "@/components/BackgroundContainer";
+import BackgroundContainer from "@/components/common/BackgroundContainer";
+import {submitJoinForm} from "@/api";
 
 const InputField = ({
-  id,
-  label,
-  type = "text",
-  value,
-  onChange,
-  placeholder = "",
-  required = false,
-  error = "",
-}) => {
+                      id,
+                      label,
+                      type = "text",
+                      value,
+                      onChange,
+                      placeholder = "",
+                      required = false,
+                      error = "",
+                    }) => {
   const getAutoComplete = (inputType) => {
     if (inputType === "email") return "email";
     if (inputType === "tel") return "tel";
@@ -245,16 +246,30 @@ const JoinUsFormSection = () => {
       newErrors.mobile = "Enter a 10-digit mobile number.";
     }
 
+    if (formData.studentId && !/^[A-Z]{2}\d{8}$/i.test(formData.studentId.trim())) {
+      newErrors.studentId = "Student ID should be in format: IT21012345";
+    }
+
     return newErrors;
   };
 
   const validateStep2 = () => {
     const newErrors = {};
-    const step2RequiredFields = ["whyJoin"];
 
-    step2RequiredFields.forEach((field) => {
-      if (!formData[field]?.trim()) {
-        newErrors[field] = "This field is required.";
+    // Required field validation
+    if (!formData.whyJoin?.trim()) {
+      newErrors.whyJoin = "This field is required.";
+    }
+
+    // URL validation for optional fields
+    const urlFields = ['linkedIn', 'github', 'blogPage'];
+    urlFields.forEach(field => {
+      if (formData[field] && formData[field].trim()) {
+        try {
+          new URL(formData[field]);
+        } catch {
+          newErrors[field] = "Please enter a valid URL.";
+        }
       }
     });
 
@@ -276,6 +291,25 @@ const JoinUsFormSection = () => {
     setCurrentStep(1);
   };
 
+  const prepareSubmissionData = () => {
+    return {
+      studentId: formData.studentId.trim(),
+      name: formData.fullName.trim(),
+      email: formData.email.trim(),
+      contactNumber: formData.mobile.trim(),
+      currentAcademicYear: formData.academicYear,
+      selfIntroduction: formData.selfIntroduction.trim(),
+      reasonForJoin: formData.whyJoin.trim(),
+      linkedIn: formData.linkedIn.trim() || "",
+      gitHub: formData.github.trim() || "",
+      blog: formData.blogPage.trim() || "",
+      experiences: formData.volunteeringExperience.trim() || "",
+      challenges: formData.challengeSolved.trim() || "",
+      goal: formData.futureVision.trim() || "",
+      skillsAndTalents: formData.skills.trim() ? formData.skills.split(',').map(skill => skill.trim()).filter(skill => skill) : []
+    };
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -287,10 +321,10 @@ const JoinUsFormSection = () => {
 
     setIsSubmitting(true);
     try {
-      console.log("Submitting Data:", formData);
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const submissionData = prepareSubmissionData();
+      console.log("Prepared submission data:", JSON.stringify(submissionData, null, 2));
+      await submitJoinForm(submissionData);
       alert("Application submitted successfully!");
-
       setFormData(initialFormState);
       setCurrentStep(1);
     } catch (error) {
@@ -406,77 +440,79 @@ const JoinUsFormSection = () => {
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:gap-6">
-          
           <TextareaField
-            id="whyJoin"
-            label="Why Join MS Club?"
-            rows={3}
-            value={formData.whyJoin}
-            onChange={handleInputChange}
-            placeholder="What motivates you to join our club?"
-            required
-            error={errors.whyJoin}
+              id="whyJoin"
+              label="Why Join MS Club?"
+              rows={3}
+              value={formData.whyJoin}
+              onChange={handleInputChange}
+              placeholder="What motivates you to join our club?"
+              required
+              error={errors.whyJoin}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <InputField
-              id="linkedIn"
-              label="LinkedIn Profile"
-              type="url"
-              value={formData.linkedIn}
-              onChange={handleInputChange}
-              placeholder="https://linkedin.com/in/yourprofile"
+                id="linkedIn"
+                label="LinkedIn Profile"
+                type="url"
+                value={formData.linkedIn}
+                onChange={handleInputChange}
+                placeholder="https://linkedin.com/in/yourprofile"
+                error={errors.linkedIn}
             />
 
             <InputField
-              id="github"
-              label="GitHub Profile"
-              type="url"
-              value={formData.github}
-              onChange={handleInputChange}
-              placeholder="https://github.com/yourusername"
+                id="github"
+                label="GitHub Profile"
+                type="url"
+                value={formData.github}
+                onChange={handleInputChange}
+                placeholder="https://github.com/yourusername"
+                error={errors.github}
             />
           </div>
 
           <InputField
-            id="blogPage"
-            label="Blog Page"
-            type="url"
-            value={formData.blogPage}
-            onChange={handleInputChange}
-            placeholder="https://yourblog.com"
+              id="blogPage"
+              label="Blog Page"
+              type="url"
+              value={formData.blogPage}
+              onChange={handleInputChange}
+              placeholder="https://yourblog.com"
+              error={errors.blogPage}
           />
 
           <TextareaField
-            id="skills"
-            label="Skills & Talents"
-            value={formData.skills}
-            onChange={handleInputChange}
-            placeholder="Programming languages, soft skills, hobbies..."
+              id="skills"
+              label="Skills & Talents"
+              value={formData.skills}
+              onChange={handleInputChange}
+              placeholder="Programming, Web Development, UI/UX Design, Public Speaking, Content Writing, Video Editing (comma separated)"
           />
 
           <TextareaField
-            id="volunteeringExperience"
-            label="Leadership & Volunteering Experience"
-            value={formData.volunteeringExperience}
-            onChange={handleInputChange}
-            placeholder="Any leadership roles or volunteering experience..."
+              id="volunteeringExperience"
+              label="Leadership & Volunteering Experience"
+              value={formData.volunteeringExperience}
+              onChange={handleInputChange}
+              placeholder="Any leadership roles or volunteering experience..."
           />
 
           <TextareaField
-            id="challengeSolved"
-            label="Challenge & Solution"
-            value={formData.challengeSolved}
-            onChange={handleInputChange}
-            placeholder="Describe a challenge you faced and how you solved it..."
+              id="challengeSolved"
+              label="Challenge & Solution"
+              value={formData.challengeSolved}
+              onChange={handleInputChange}
+              placeholder="Describe a challenge you faced and how you solved it..."
           />
 
           <TextareaField
-            id="futureVision"
-            label="Future Vision"
-            value={formData.futureVision}
-            onChange={handleInputChange}
-            placeholder="Where do you see yourself in 5 years?"
+              id="futureVision"
+              label="Future Vision"
+              value={formData.futureVision}
+              onChange={handleInputChange}
+              placeholder="Where do you see yourself in 5 years?"
           />
         </div>
 
@@ -493,6 +529,7 @@ const JoinUsFormSection = () => {
           <button
             type="submit"
             disabled={isSubmitting}
+            onClick={handleSubmit}
             className={`${
               isSubmitting
                 ? "bg-gray-600 cursor-not-allowed"

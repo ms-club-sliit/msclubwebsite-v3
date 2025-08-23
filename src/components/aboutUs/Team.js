@@ -3,13 +3,13 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Card, Button, ConfigProvider } from "antd";
-import boardMembers from "../data/boardMembers.json";
+import boardMembers from "../../data/boardMembers.json";
 import {
   LeftOutlined,
   RightOutlined,
 } from "@ant-design/icons";
 import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
-import BackgroundContainer from "./BackgroundContainer.jsx";
+import BackgroundContainer from "../common/BackgroundContainer.jsx";
 
 export default function Team() {
   const [currentYearIndex, setCurrentYearIndex] = useState(0);

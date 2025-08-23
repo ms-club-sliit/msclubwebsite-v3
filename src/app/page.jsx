@@ -1,12 +1,12 @@
 
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import Footer from "@/components/Footer";
-import AboutSection from "@/components/AboutSection";
-import HistorySection from "@/components/HistorySection";
-import EventSection from "@/components/EventsSection";
-import BenefitsSection from "@/components/BenefitsSection";
-import JoinSection from "@/components/JoinSection";
+import Header from "@/components/common/Header";
+import Hero from "@/components/common/Hero";
+import Footer from "@/components/common/Footer";
+import AboutSection from "@/components/home/AboutSection";
+import HistorySection from "@/components/home/HistorySection";
+import EventSection from "@/components/home/EventsSection";
+import BenefitsSection from "@/components/home/BenefitsSection";
+import JoinSection from "@/components/home/JoinSection";
 
 
 export default function Home() {

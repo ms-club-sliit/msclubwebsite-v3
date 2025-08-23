@@ -1,13 +1,13 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import Footer from "@/components/common/Footer";
+import Header from "@/components/common/Header";
+import Hero from "@/components/common/Hero";
 import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
   FaGithub,
 } from "react-icons/fa";
-import BackgroundContainer from "@/components/BackgroundContainer";
+import BackgroundContainer from "@/components/common/BackgroundContainer";
 
 export default function ContactPage() {
   return (
