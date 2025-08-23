@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, User, FileText } from "lucide-react";
 import BackgroundContainer from "@/components/common/BackgroundContainer";
 import {submitJoinForm} from "@/api";
+import {Bounce, toast} from "react-toastify";
 
 const InputField = ({
                       id,
@@ -322,14 +323,32 @@ const JoinUsFormSection = () => {
     setIsSubmitting(true);
     try {
       const submissionData = prepareSubmissionData();
-      console.log("Prepared submission data:", JSON.stringify(submissionData, null, 2));
       await submitJoinForm(submissionData);
-      alert("Application submitted successfully!");
+      toast.success('Application submitted successfully!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
       setFormData(initialFormState);
       setCurrentStep(1);
     } catch (error) {
-      console.error("Submission error:", error);
-      alert("Something went wrong! Please try again.");
+      toast.warn('Something went wrong! Please try again.', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
     } finally {
       setIsSubmitting(false);
     }
