@@ -15,19 +15,20 @@ export const fetchBlogPosts = async () => {
 
 export async function submitJoinForm(submissionData) {
     try {
-        const response = await fetch(`${BACKEND_URL}application`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(submissionData),
-        });
-
-        if (!response.ok) {
-            throw new Error(`Server error: ${response.status}`);
-        }
-        return await response.json();
+        const response = await axios.post(
+            `${BACKEND_URL}application`,
+            submissionData,
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            }
+        );
+        return response.data;
     } catch (error) {
+        if (error.response) {
+            throw new Error(`Server error: ${error.response.status}`);
+        }
         throw error;
     }
 }
