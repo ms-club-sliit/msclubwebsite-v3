@@ -4,12 +4,12 @@ import React, { useState, useEffect } from "react";
 import BlogCard from "@/components/blog/BlogCard";
 import BackgroundContainer from "@/components/common/BackgroundContainer";
 import { fetchBlogPosts } from "@/api";
+import {Bounce, toast} from "react-toastify";
 
 const BlogSection = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [blogData, setBlogData] = useState([]);
 
-  //use effect to fetch blog data
 
   useEffect(() => {
     const loadAllPosts = async () => {
@@ -23,7 +23,17 @@ const BlogSection = () => {
         }));
         setBlogData(transformedPosts);
       } catch (err) {
-        console.log(err);
+        toast.warn('Something went wrong! Please try again.', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+        });
       }
     };
 
