@@ -2,9 +2,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const navLinkClass = (path) =>
+  `text-white transition ${
+    pathname === path
+      ? "border-b-2 border-blue-400"
+      : "hover:text-blue-400"
+  }`;
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -25,33 +34,11 @@ const Header = () => {
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8 mr-8">
-          <Link href="/" className="text-white hover:text-blue-400 transition">
-            Home
-          </Link>
-          <Link
-            href="/about"
-            className="text-white hover:text-blue-400 transition"
-          >
-            About
-          </Link>
-          <Link
-            href="/blogs"
-            className="text-white hover:text-blue-400 transition"
-          >
-            Blogs
-          </Link>
-          <Link
-            href="/events"
-            className="text-white hover:text-blue-400 transition"
-          >
-            Events
-          </Link>
-          <Link
-            href="/contact"
-            className="text-white hover:text-blue-400 transition"
-          >
-            Contact
-          </Link>
+          <Link href="/" className={navLinkClass("/")}>Home</Link>
+          <Link href="/about" className={navLinkClass("/about")}>About</Link>
+          <Link href="/blogs" className={navLinkClass("/blogs")}>Blogs</Link>
+          <Link href="/events" className={navLinkClass("/events")}>Events</Link>
+          <Link href="/contact" className={navLinkClass("/contact")}>Contact</Link>
         </nav>
 
         {/* Desktop Join Us Button */}
