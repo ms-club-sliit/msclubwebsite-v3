@@ -3,8 +3,8 @@
 import React, { useState, useEffect } from "react";
 import BlogCard from "@/components/blog/BlogCard";
 import BackgroundContainer from "@/components/common/BackgroundContainer";
-import { fetchBlogPosts } from "@/api";
-import {Bounce, toast} from "react-toastify";
+import { fetchBlogPosts } from "@/apis";
+import ToastUtils from "@/utils/toastUtils";
 
 const BlogSection = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -16,24 +16,15 @@ const BlogSection = () => {
       try {
         const allPosts = await fetchBlogPosts();
         const limitedPosts = allPosts.slice(0, 6);
-        const transformedPosts = limitedPosts.map((post) => ({
+        const transformedPosts = limitedPosts.map((post, index) => ({
           ...post,
+          id: post.id || post.guid || `blog-${index}`,
           image: extractImageSrc(post.description),
           pubDate: formatPubDate(post.pubDate),
         }));
         setBlogData(transformedPosts);
       } catch (err) {
-        toast.warn('Something went wrong! Please try again.', {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-          transition: Bounce,
-        });
+        ToastUtils.warn('Something went wrong! Please try again.');
       }
     };
 
@@ -56,12 +47,10 @@ const BlogSection = () => {
     });
   }
 
-  // Filter blogs
   const filteredBlogs = blogData.filter((blog) =>
     blog.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Search Icon
   const SearchIcon = () => (
     <svg
       className="w-5 h-5 text-gray-400"
@@ -82,13 +71,11 @@ const BlogSection = () => {
   return (
     <section className="bg-primary-bg min-h-screen py-section-y px-section-x sm:px-2 sm:py-6">
       <BackgroundContainer>
-        {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 md:mb-0">
             Recent Blogs
           </h1>
 
-          {/* Search Bar */}
           <div className="relative min-w-[329px] md:w-auto">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <SearchIcon />
@@ -103,14 +90,12 @@ const BlogSection = () => {
           </div>
         </div>
 
-        {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-14">
           {filteredBlogs.map((blog) => (
             <BlogCard key={blog.id} blog={blog} />
           ))}
         </div>
 
-        {/* No Results Message */}
         {filteredBlogs.length === 0 && (
           <div className="text-center py-12">
             <div className="text-gray-400 text-lg mb-2">No blogs found</div>

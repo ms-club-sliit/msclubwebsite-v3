@@ -1,0 +1,4 @@
+export const BUILD_CONSTANTS = {
+    BACKEND_BASE_URL: process.env.NEXT_PUBLIC_BACKEND_BASE_URL,
+    BLOG_API_URL: process.env.NEXT_PUBLIC_BLOG_API_URL,
+};
