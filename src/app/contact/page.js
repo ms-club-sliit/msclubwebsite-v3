@@ -8,6 +8,7 @@ import {
   FaGithub,
 } from "react-icons/fa";
 import BackgroundContainer from "@/components/common/BackgroundContainer";
+import {SOCIAL_LINKS} from "@/constants/generalConstants";
 
 export default function ContactPage() {
   return (
@@ -24,11 +25,9 @@ export default function ContactPage() {
       />
     <div className="min-h-screen bg-[#0f172a] overflow-x-hidden flex justify-center px-4 py-10">
         <BackgroundContainer>
-          {/* Social Icons Section */}
           <div className="pt-11 flex flex-wrap justify-between w-full max-w-[480px] mx-auto z-10 gap-4 md:gap-0">
-            {/* Facebook */}
             <a className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px] mb-4"
-                href="https://www.facebook.com/msclubsliit"
+                href={SOCIAL_LINKS.FACEBOOK}
                 target="_blank"
                 rel="noopener noreferrer"
             >
@@ -43,9 +42,8 @@ export default function ContactPage() {
               </div>
             </a>
 
-            {/* Instagram */}
             <a className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px] mb-4"
-                href="https://www.instagram.com/msclub.sliit"
+                href={SOCIAL_LINKS.INSTAGRAM}
                 target="_blank"
                 rel="noopener noreferrer"
             >
@@ -60,9 +58,8 @@ export default function ContactPage() {
               </div>
             </a>
 
-            {/* LinkedIn */}
             <a className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px] mb-4"
-                href="https://www.linkedin.com/company/msclubsliit"
+                href={SOCIAL_LINKS.LINKEDIN}
                 target="_blank"
                 rel="noopener noreferrer"
             >
@@ -77,9 +74,8 @@ export default function ContactPage() {
               </div>
             </a>
 
-            {/* GitHub */}
             <a className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px] mb-4"
-                href="https://github.com/ms-club-sliit"
+                href={SOCIAL_LINKS.GITHUB}
                 target="_blank"
                 rel="noopener noreferrer"
             >
@@ -95,7 +91,6 @@ export default function ContactPage() {
             </a>
           </div>
 
-          {/* FAQ Title */}
           <div className="text-center mt-24 md:mt-28 z-10 relative px-4 md:px-0">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Frequently Asked Questions
@@ -105,7 +100,6 @@ export default function ContactPage() {
             </p>
           </div>
 
-          {/* FAQ Items */}
           <div className="mt-10 space-y-4 relative z-10 px-0 md:px-10 pb-10">
             <div className="bg-[#162135] p-6 rounded-xl">
               <h3 className="font-semibold text-lg mb-2 text-white">

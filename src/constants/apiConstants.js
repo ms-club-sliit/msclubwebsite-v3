@@ -1,0 +1,1 @@
+export const JOIN_API_ENDPOINT = "/application";
