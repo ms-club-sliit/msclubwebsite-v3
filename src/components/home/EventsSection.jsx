@@ -50,7 +50,7 @@ const EventsSection = () => {
             </div>
             <h3 className="text-2xl font-semibold text-white mb-3">No Upcoming Events</h3>
             <p className="text-gray-400 text-lg">
-              Stay tuned! We're planning exciting events and will announce them soon.
+              Stay tuned! We&apos;re planning exciting events and will announce them soon.
             </p>
           </div>
         </div>
