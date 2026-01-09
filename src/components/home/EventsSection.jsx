@@ -11,21 +11,21 @@ const EventsSection = () => {
       description:
         "A mobile app that helps students navigate the campus efficiently. Get directions to classrooms, labs, and facilities.",
       image:
-        "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
     },
     {
       title: "Study Group Matcher",
       description:
         "Web platform that matches students with similar interests and study preferences to form effective study groups.",
       image:
-        "https://images.unsplash.com/photo-1616587891945-94053c3ad1e6?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
     },
     {
       title: "Event Attendance System",
       description:
         "QR-code based attendance tracking system for club events with analytics dashboard for event organizers.",
       image:
-        "https://images.unsplash.com/photo-1635776062253-57c4d470ce41?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80",
     },
   ];
 

@@ -9,8 +9,8 @@ const EventCard = ({ title, description, image }) => {
         <Image
           src={image}
           alt={title}
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: 'cover' }}
           className="rounded-t-lg"
           priority={false}
         />
