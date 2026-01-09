@@ -4,10 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   FacebookIcon,
-  TwitterIcon,
+  LinkedinIcon,
   InstagramIcon,
   GithubIcon,
 } from "lucide-react";
+import {SOCIAL_LINKS} from "@/constants/generalConstants";
 
 const Footer = () => {
   return (
@@ -30,16 +31,16 @@ const Footer = () => {
               and industry professionals.
             </p>
             <div className="flex space-x-4 mt-6">
-              <Link href="#" className="hover:text-white">
+              <Link href={SOCIAL_LINKS.FACEBOOK} target="_blank" rel="noopener noreferrer" className="hover:text-white">
                 <FacebookIcon className="w-5 h-5" />
               </Link>
-              <Link href="#" className="hover:text-white">
-                <TwitterIcon className="w-5 h-5" />
+              <Link href={SOCIAL_LINKS.LINKEDIN} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                <LinkedinIcon className="w-5 h-5" />
               </Link>
-              <Link href="#" className="hover:text-white">
+              <Link href={SOCIAL_LINKS.INSTAGRAM} target="_blank" rel="noopener noreferrer" className="hover:text-white">
                 <InstagramIcon className="w-5 h-5" />
               </Link>
-              <Link href="#" className="hover:text-white">
+              <Link href={SOCIAL_LINKS.GITHUB} target="_blank" rel="noopener noreferrer" className="hover:text-white">
                 <GithubIcon className="w-5 h-5" />
               </Link>
             </div>
@@ -50,21 +51,21 @@ const Footer = () => {
             <div>
               <h3 className="text-white font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2">
-                <li><Link href="#" className="hover:text-white">Home</Link></li>
-                <li><Link href="#" className="hover:text-white">About Us</Link></li>
-                <li><Link href="#" className="hover:text-white">Events</Link></li>
-                <li><Link href="#" className="hover:text-white">Team</Link></li>
-                <li><Link href="#" className="hover:text-white">Contact</Link></li>
+                <li><Link href="/" className="hover:text-white">Home</Link></li>
+                <li><Link href="/about" className="hover:text-white">About Us</Link></li>
+                <li><Link href="/events" className="hover:text-white">Events</Link></li>
+                <li><Link href="/blogs" className="hover:text-white">Blogs</Link></li>
+                <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
               </ul>
             </div>
 
             <div>
               <h3 className="text-white font-semibold mb-4">Resources</h3>
               <ul className="space-y-2">
-                <li><Link href="#" className="hover:text-white">Gallery</Link></li>
-                <li><Link href="#" className="hover:text-white">Downloads</Link></li>
-                <li><Link href="#" className="hover:text-white">Projects</Link></li>
-                <li><Link href="#" className="hover:text-white">FAQ</Link></li>
+                <li><Link href="/blogs" className="hover:text-white">Blogs</Link></li>
+                <li><Link href="/join-us" className="hover:text-white">Join Us</Link></li>
+                <li><Link href={SOCIAL_LINKS.GITHUB} target="_blank" rel="noopener noreferrer" className="hover:text-white">Projects</Link></li>
+                <li><Link href="/contact#faq" className="hover:text-white">FAQ</Link></li>
               </ul>
             </div>
 

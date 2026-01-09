@@ -1,7 +1,11 @@
 "use client";
 
-import { Button } from 'antd'
+import { Button } from 'antd';
+import { useRouter } from 'next/navigation';
+
 export default function JoinOurSection() {
+  const router = useRouter();
+  
   return (
     <div className="relative min-h-96 w-full">
      
@@ -30,6 +34,7 @@ export default function JoinOurSection() {
             <Button
               type="primary"
               size="large"
+              onClick={() => router.push('/join-us')}
               className="px-10 py-5 rounded-lg font-semibold transition-all duration-300 hover:scale-105 transform"
               style={{
                 backgroundColor: "#2563eb",

@@ -18,12 +18,12 @@ export default function ContactPage() {
         title="Let’s Connect"
         paragraph="Stay updated with our latest events, Projects and announcement by following us."
         button1Text="Follow us on Social Media"
-        button1Link=""
+        button1Link="#social-media"
         showSecondButton={true}
         button2Text="Subscribe on Youtube"
-        button2Link=""
-      />
-    <div className="min-h-screen bg-[#0f172a] overflow-x-hidden flex justify-center px-4 py-10">
+        button2Link={SOCIAL_LINKS.YOUTUBE}        
+        button2Target="_blank" />
+    <div id="social-media" className="min-h-screen bg-[#0f172a] overflow-x-hidden flex justify-center px-4 py-10">
         <BackgroundContainer>
           <div className="pt-11 flex flex-wrap justify-between w-full max-w-[480px] mx-auto z-10 gap-4 md:gap-0">
             <a className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px] mb-4"
@@ -91,7 +91,7 @@ export default function ContactPage() {
             </a>
           </div>
 
-          <div className="text-center mt-24 md:mt-28 z-10 relative px-4 md:px-0">
+          <div id="faq" className="text-center mt-24 md:mt-28 z-10 relative px-4 md:px-0">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Frequently Asked Questions
             </h2>

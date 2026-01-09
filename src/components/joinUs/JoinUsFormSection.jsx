@@ -1,10 +1,11 @@
 "use client";
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {ChevronLeft, ChevronRight, FileText, User} from "lucide-react";
 import BackgroundContainer from "@/components/common/BackgroundContainer";
 import {submitJoinForm} from "@/apis";
 import ToastUtils from "@/utils/toastUtils";
 import {joinUsSchema1, joinUsSchema2} from "@/types/joinUs";
+import {useSearchParams} from "next/navigation";
 
 const InputField = ({
                         id,
@@ -15,6 +16,8 @@ const InputField = ({
                         placeholder = "",
                         required = false,
                         error = "",
+                        maxLength,
+                        pattern,
                     }) => {
     const getAutoComplete = (inputType) => {
         if (inputType === "email") return "email";
@@ -37,6 +40,8 @@ const InputField = ({
                 value={value}
                 onChange={onChange}
                 placeholder={placeholder}
+                maxLength={maxLength}
+                pattern={pattern}
                 className={`w-full px-3 sm:px-4 py-3 sm:py-4 bg-gray-800 text-white text-sm sm:text-base border ${
                     error ? 'border-red-500' : 'border-gray-600'
                 } rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200`}
@@ -179,6 +184,7 @@ const StepIndicator = ({ currentStep, totalSteps }) => {
 };
 
 const JoinUsFormSection = () => {
+    const searchParams = useSearchParams();
     const [currentStep, setCurrentStep] = useState(1);
     const totalSteps = 2;
 
@@ -214,6 +220,56 @@ const JoinUsFormSection = () => {
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
 
+    const validateMobile = (mobile) => {
+        if (!mobile) {
+            return "Mobile number is required";
+        }
+        // Remove spaces and special characters for validation
+        const cleanMobile = mobile.replace(/[\s-]/g, '');
+        
+        // Check if it's a valid Sri Lankan mobile number (10 digits starting with 0)
+        const mobileRegex = /^0[1-9]\d{8}$/;
+        
+        if (!mobileRegex.test(cleanMobile)) {
+            return "Invalid format (e.g., 0771234567)";
+        }
+        
+        return "";
+    };
+
+    const handleMobileChange = (e) => {
+        let mobile = e.target.value;
+        
+        // Only allow digits and limit to 10 characters
+        mobile = mobile.replace(/\D/g, '').slice(0, 10);
+        
+        setFormData(prev => ({ ...prev, mobile }));
+        
+        // Clear error when user starts typing
+        if (mobile) {
+            const mobileError = validateMobile(mobile);
+            setErrors(prev => ({ ...prev, mobile: mobileError }));
+        } else {
+            setErrors(prev => ({ ...prev, mobile: "" }));
+        }
+    };
+
+    // Auto-fill form from URL parameters
+    useEffect(() => {
+        const fullName = searchParams.get('fullName');
+        const email = searchParams.get('email');
+        const yearOfStudy = searchParams.get('yearOfStudy');
+
+        if (fullName || email || yearOfStudy) {
+            setFormData(prev => ({
+                ...prev,
+                ...(fullName && { fullName }),
+                ...(email && { email }),
+                ...(yearOfStudy && { academicYear: yearOfStudy })
+            }));
+        }
+    }, [searchParams]);
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData((prev) => ({
@@ -225,6 +281,12 @@ const JoinUsFormSection = () => {
 
     const validateStep1 = async () => {
         try {
+            // Additional mobile validation before schema validation
+            const mobileError = validateMobile(formData.mobile);
+            if (mobileError) {
+                return { mobile: mobileError };
+            }
+            
             await joinUsSchema1.validate(formData, { abortEarly: false });
             return {};
         } catch (err) {
@@ -354,9 +416,11 @@ const JoinUsFormSection = () => {
                         <InputField
                             id="mobile"
                             label="Mobile Number"
+                            maxLength={10}
+                            pattern="[0-9]{10}"
                             type="tel"
                             value={formData.mobile}
-                            onChange={handleInputChange}
+                            onChange={handleMobileChange}
                             placeholder="0771234567"
                             required
                             error={errors.mobile}

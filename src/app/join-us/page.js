@@ -1,7 +1,7 @@
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
 import JoinUsFormSection from "@/components/joinUs/JoinUsFormSection";
-import React from "react";
+import React, { Suspense } from "react";
 
 function page() {
   return (
@@ -22,7 +22,9 @@ function page() {
         </div>
 
         {/* Form Wrapper */}
-        <JoinUsFormSection />
+        <Suspense fallback={<div className="flex justify-center items-center py-20"><div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div></div>}>
+          <JoinUsFormSection />
+        </Suspense>
       </section>
 
       <Footer />

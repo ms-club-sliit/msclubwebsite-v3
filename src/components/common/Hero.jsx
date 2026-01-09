@@ -13,6 +13,7 @@ const Hero = ({
   button2Text = "Explore Events",
   button2Link = "/events",
   showSecondButton = true,
+  button2Target = "_self",
 }) => {
   return (
     <section className="relative min-h-screen py-section-y px-section-x md:px-12 bg-hero-bg text-white flex flex-col md:flex-row items-center justify-between overflow-hidden">
@@ -57,7 +58,7 @@ const Hero = ({
           </Link>
 
           {showSecondButton && (
-            <Link href={button2Link}>
+            <Link href={button2Link} target={button2Target} rel={button2Target === "_blank" ? "noopener noreferrer" : undefined}>
               <button className="px-8 py-4 font-semibold text-white transition-all duration-300 transform border-2 border-gray-500 rounded-lg hover:border-blue-400 hover:scale-105 backdrop-blur-sm bg-white/5 hover:bg-white/10">
                 {button2Text}
               </button>
