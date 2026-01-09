@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import EventCard from "./EventCard";
 import { ArrowRightIcon } from "lucide-react";
+import {SOCIAL_LINKS} from "@/constants/generalConstants";
 
 const EventsSection = () => {
   const events = [
@@ -50,7 +51,9 @@ const EventsSection = () => {
         </div>
         <div className="text-center">
           <Link
-            href="/projects"
+            href={SOCIAL_LINKS.GITHUB}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center text-blue-400 hover:text-white transition duration-200"
           >
             View All Projects

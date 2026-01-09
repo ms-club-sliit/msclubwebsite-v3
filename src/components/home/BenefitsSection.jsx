@@ -72,7 +72,7 @@ const BenefitsSection = () => {
             />
           ))}
         </div>
-        <div className="text-center mt-8">
+        {/* <div className="text-center mt-8">
           <Link
             href="/membership"
             className="inline-flex items-center text-gray-300 hover:text-white"
@@ -80,7 +80,7 @@ const BenefitsSection = () => {
             Learn more about our membership{' '}
             <ArrowRightIcon className="ml-2 w-4 h-4" />
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );

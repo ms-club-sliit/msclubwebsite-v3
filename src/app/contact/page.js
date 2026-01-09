@@ -91,7 +91,7 @@ export default function ContactPage() {
             </a>
           </div>
 
-          <div className="text-center mt-24 md:mt-28 z-10 relative px-4 md:px-0">
+          <div id="faq" className="text-center mt-24 md:mt-28 z-10 relative px-4 md:px-0">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Frequently Asked Questions
             </h2>
