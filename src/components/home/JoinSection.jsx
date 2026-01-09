@@ -1,9 +1,75 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { CheckIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const JoinSection = () => {
+  const router = useRouter();
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    yearOfStudy: ""
+  });
+  const [errors, setErrors] = useState({
+    fullName: "",
+    email: "",
+    yearOfStudy: ""
+  });
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!email) {
+      return "Email is required";
+    }
+    if (!emailRegex.test(email)) {
+      return "Please enter a valid email address";
+    }
+    return "";
+  };
+
+  const handleEmailChange = (e) => {
+    const email = e.target.value;
+    setFormData(prev => ({ ...prev, email }));
+    setErrors(prev => ({ ...prev, email: "" }));
+  };
+
+  const handleFullNameChange = (e) => {
+    const fullName = e.target.value;
+    setFormData(prev => ({ ...prev, fullName }));
+    setErrors(prev => ({ ...prev, fullName: "" }));
+  };
+
+  const handleYearChange = (e) => {
+    const yearOfStudy = e.target.value;
+    setFormData(prev => ({ ...prev, yearOfStudy }));
+    setErrors(prev => ({ ...prev, yearOfStudy: "" }));
+  };
+
+  const validateForm = () => {
+    const newErrors = {
+      fullName: "",
+      email: "",
+      yearOfStudy: ""
+    };
+
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = "Full name is required";
+    }
+
+    const emailError = validateEmail(formData.email);
+    if (emailError) {
+      newErrors.email = emailError;
+    }
+
+    if (!formData.yearOfStudy) {
+      newErrors.yearOfStudy = "Please select your year of study";
+    }
+
+    setErrors(newErrors);
+    return !newErrors.fullName && !newErrors.email && !newErrors.yearOfStudy;
+  };
+
   const benefits = [
     "Hands-on workshops and training",
     "Networking with industry professionals",
@@ -37,33 +103,71 @@ const JoinSection = () => {
         <div className="w-full md:w-1/2">
           <div className="bg-[#1e293b] p-6 sm:p-8 rounded-lg max-w-md mx-auto">
             <h3 className="text-xl font-semibold mb-6 text-center md:text-left">Apply to Join</h3>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={(e) => {
+              e.preventDefault();
+              
+              if (!validateForm()) {
+                return;
+              }
+              
+              const params = new URLSearchParams();
+              if (formData.fullName) params.set('fullName', formData.fullName);
+              if (formData.email) params.set('email', formData.email);
+              if (formData.yearOfStudy) params.set('yearOfStudy', formData.yearOfStudy);
+              router.push(`/join-us?${params.toString()}`);
+            }}>
               <div>
-                <label className="block text-sm text-[#8898aa] mb-1">Full Name</label>
+                <label className="block text-sm text-[#8898aa] mb-1">
+                  Full Name <span className="text-red-400">*</span>
+                </label>
                 <input
                   type="text"
                   placeholder="John Doe"
-                  className="w-full bg-transparent border border-[#8898aa] rounded-md px-4 py-3 focus:outline-none focus:border-blue-500 text-base"
+                  value={formData.fullName}
+                  onChange={handleFullNameChange}
+                  className={`w-full bg-transparent border ${errors.fullName ? 'border-red-500' : 'border-[#8898aa]'} rounded-md px-4 py-3 focus:outline-none ${errors.fullName ? 'focus:border-red-500' : 'focus:border-blue-500'} text-base`}
                 />
+                {errors.fullName && (
+                  <p className="text-red-400 text-xs mt-1">{errors.fullName}</p>
+                )}
               </div>
               <div>
-                <label className="block text-sm text-[#8898aa] mb-1">Email Address</label>
+                <label className="block text-sm text-[#8898aa] mb-1">
+                  Email Address <span className="text-red-400">*</span>
+                </label>
                 <input
                   type="email"
                   placeholder="john@example.com"
-                  className="w-full bg-transparent border border-[#8898aa] rounded-md px-4 py-3 focus:outline-none focus:border-blue-500 text-base"
+                  value={formData.email}
+                  onChange={handleEmailChange}
+                  className={`w-full bg-transparent border ${errors.email ? 'border-red-500' : 'border-[#8898aa]'} rounded-md px-4 py-3 focus:outline-none ${errors.email ? 'focus:border-red-500' : 'focus:border-blue-500'} text-base`}
                 />
+                {errors.email && (
+                  <p className="text-red-400 text-xs mt-1">{errors.email}</p>
+                )}
               </div>
               <div>
-                <label className="block text-sm text-[#8898aa] mb-1">Year of Study</label>
+                <label className="block text-sm text-[#8898aa] mb-1">
+                  Year of Study <span className="text-red-400">*</span>
+                </label>
                 <select
-                  className="w-full bg-transparent border border-[#8898aa] rounded-md px-4 py-3 focus:outline-none focus:border-blue-500 text-base appearance-none bg-no-repeat bg-right bg-[length:16px] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xIDFMNiA2TDExIDEiIHN0cm9rZT0iIzlDQTNBRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==')]"
+                  value={formData.yearOfStudy}
+                  onChange={handleYearChange}
+                  className={`w-full bg-transparent border ${errors.yearOfStudy ? 'border-red-500' : 'border-[#8898aa]'} rounded-md px-4 py-3 focus:outline-none ${errors.yearOfStudy ? 'focus:border-red-500' : 'focus:border-blue-500'} text-base appearance-none bg-no-repeat bg-right bg-[length:16px] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xIDFMNiA2TDExIDEiIHN0cm9rZT0iIzlDQTNBRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==')]`}
                 >
-                  <option>First Year</option>
-                  <option>Second Year</option>
-                  <option>Third Year</option>
-                  <option>Fourth Year</option>
+                  <option value="">Select Year</option>
+                  <option value="1st Year - Semester 1">First Year - Semester 1</option>
+                  <option value="1st Year - Semester 2">First Year - Semester 2</option>
+                  <option value="2nd Year - Semester 1">Second Year - Semester 1</option>
+                  <option value="2nd Year - Semester 2">Second Year - Semester 2</option>
+                  <option value="3rd Year - Semester 1">Third Year - Semester 1</option>
+                  <option value="3rd Year - Semester 2">Third Year - Semester 2</option>
+                  <option value="4th Year - Semester 1">Fourth Year - Semester 1</option>
+                  <option value="4th Year - Semester 2">Fourth Year - Semester 2</option>
                 </select>
+                {errors.yearOfStudy && (
+                  <p className="text-red-400 text-xs mt-1">{errors.yearOfStudy}</p>
+                )}
               </div>
               <button
                 type="submit"

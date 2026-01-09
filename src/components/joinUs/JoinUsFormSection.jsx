@@ -1,10 +1,11 @@
 "use client";
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {ChevronLeft, ChevronRight, FileText, User} from "lucide-react";
 import BackgroundContainer from "@/components/common/BackgroundContainer";
 import {submitJoinForm} from "@/apis";
 import ToastUtils from "@/utils/toastUtils";
 import {joinUsSchema1, joinUsSchema2} from "@/types/joinUs";
+import {useSearchParams} from "next/navigation";
 
 const InputField = ({
                         id,
@@ -179,6 +180,7 @@ const StepIndicator = ({ currentStep, totalSteps }) => {
 };
 
 const JoinUsFormSection = () => {
+    const searchParams = useSearchParams();
     const [currentStep, setCurrentStep] = useState(1);
     const totalSteps = 2;
 
@@ -213,6 +215,22 @@ const JoinUsFormSection = () => {
     const [formData, setFormData] = useState(initialFormState);
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    // Auto-fill form from URL parameters
+    useEffect(() => {
+        const fullName = searchParams.get('fullName');
+        const email = searchParams.get('email');
+        const yearOfStudy = searchParams.get('yearOfStudy');
+
+        if (fullName || email || yearOfStudy) {
+            setFormData(prev => ({
+                ...prev,
+                ...(fullName && { fullName }),
+                ...(email && { email }),
+                ...(yearOfStudy && { academicYear: yearOfStudy })
+            }));
+        }
+    }, [searchParams]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
