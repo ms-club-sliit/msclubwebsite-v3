@@ -1,14 +1,14 @@
 [
   {
     "id": 1,
-    "background": "/hero-images/hero- section-01.jpg"
+    "background": "/hero-images/hero-section-01.jpg"
   },
   {
     "id": 2,
-    "background": "/hero-images/hero- section-02.jpg"
+    "background": "/hero-images/hero-section-02.jpg"
   },
   {
     "id": 3,
-    "background": "/hero-images/hero- section-03.jpg"
+    "background": "/hero-images/hero-section-03.jpg"
   }
 ]
