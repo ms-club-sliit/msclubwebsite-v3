@@ -1,12 +1,12 @@
 export const workshopData = [
   {
     id: 1,
-    badgeText: "Mini hackthon 2025",
+    badgeText: "Mini Hackathon 2025",
     boardYear: "24/25",
     imageSrc: "/events/minihack25.jpeg",
-    altText: "Mini hackthon 2025",
-    title: "Mini hackthon 2025",
-    description: "Mini hackthon 2025 organized by MS club in collaboration with Microsoft",
+    altText: "Mini Hackathon 2025",
+    title: "Mini Hackathon 2025",
+    description: "Mini Hackathon 2025 organized by MS club in collaboration with Microsoft",
   },
    {
     id: 2,
@@ -29,11 +29,11 @@ export const workshopData = [
   },
   {
     id: 4,
-    badgeText: "BlockChain & Web3 Workshop",
+    badgeText: "Blockchain & Web3 Workshop",
     boardYear: "24/25",
     imageSrc: "/events/item3.jpg",
-    altText: "BlockChain & Web3 Workshop",
-    title: "BlockChain & Web3 Workshop",
+    altText: "Blockchain & Web3 Workshop",
+    title: "Blockchain & Web3 Workshop",
     description: "A session dedicated to exploring the latest updates and features announced at GitHub Universe.",
   },
   {
@@ -47,11 +47,11 @@ export const workshopData = [
   },
   {
     id: 6,
-    badgeText: "Silver Jubliee",
+    badgeText: "Silver Jubilee",
     boardYear: "24/25",
     imageSrc: "/events/silverjublie.jpeg",
-    altText: "Silver Jubliee",
-    title: "Silver Jubliee",
+    altText: "Silver Jubilee",
+    title: "Silver Jubilee",
     description: "A celebration of 25 years . We present our MS Club inovation and creative ideas.",
   },
   {
@@ -74,20 +74,20 @@ export const workshopData = [
   },
   {
     id: 16,
-    badgeText: "Mini Hackthon 2024",
+    badgeText: "Mini Hackathon 2024",
     boardYear: "23/24",
     imageSrc: "/events/minihack24.jpeg",
-    altText: "Mini-Hackthon",
-    title: "Mini-Hackthon 2024",
+    altText: "Mini Hackathon",
+    title: "Mini Hackathon 2024",
     description: "MS Club organized a Mini Hackathon for the students of MS Club. The event was a great success and provided a platform for students to showcase their technical skills and creativity.",
   },
   {
     id: 17,
-    badgeText: "Mini Hackthon 2022",
+    badgeText: "Mini Hackathon 2022",
     boardYear: "19/20",
     imageSrc: "/events/item15.jpg",
-    altText: "Mini-Hackthon",
-    title: "Mini-Hackthon 2022",
+    altText: "Mini Hackathon",
+    title: "Mini Hackathon 2022",
     description: "MS Club organized a Mini Hackathon for the students of MS Club. The event was a great success and provided a platform for students to showcase their technical skills and creativity.",
   },
 ];
