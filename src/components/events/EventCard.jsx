@@ -4,18 +4,13 @@ import { Clock } from 'lucide-react';
 import { Calendar } from 'lucide-react';
 import { MapPin } from 'lucide-react';
 
-
-const EevntCard = ({
-  badgeText = "Workshop",
+const EventCard = ({
+  badgeText,
   imageSrc,
-  altText = "Workshop Image",
+  altText = "Event Image",
   title,
   description,
-  date,
-  time,
-  location,
-  buttonText = "Register Now",
-  onRegister = () => {},
+  boardYear,
 }) => {
   return (
     <div className="rounded-lg overflow-hidden shadow-lg bg-card-bg text-white p-6 relative">
@@ -51,28 +46,41 @@ const EevntCard = ({
             {date}
           </div>
         )}
-        {time && (
-          <div className="flex items-center">
-            <span className="mr-2"><Clock className='w-[16px] text-blue-500' /></span>
-            {time}
+        {/* Badge */}
+        {badgeText && (
+          <div className={`absolute top-4 right-4 ${badgeText === 'Current Board' ? 'bg-blue-600' : 'bg-gray-600'} text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-lg backdrop-blur-md`}>
+            {badgeText}
           </div>
         )}
-        {location && (
-          <div className="flex items-center">
-            <span className="mr-2"><MapPin className='w-[16px] text-blue-500' /></span>
-            {location}
+        {/* Year Overly for Past Events */}
+        {boardYear && boardYear !== "24/25" && (
+          <div className="absolute bottom-4 left-4 bg-black/60 text-white px-2 py-1 rounded text-xs font-mono backdrop-blur-sm">
+            Board {boardYear}
           </div>
         )}
       </div>
 
-      {/* Button */}
-      <button
-        className="mt-6 w-full bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded"
-      >
-        {buttonText}
-      </button>
+      <div className="p-6 flex flex-col flex-grow">
+        {/* Title */}
+        <h2 className="text-xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors duration-300 line-clamp-2">
+          {title}
+        </h2>
+
+        {/* Description */}
+        <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-grow line-clamp-3">
+          {description}
+        </p>
+
+        {/* Visual Decoration */}
+        <div className="mt-auto pt-4 border-t border-gray-700/30 flex justify-between items-center">
+          <span className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">
+            {boardYear === "24/25" ? "Current Board" : "Legacy Archive"}
+          </span>
+          <div className={`h-1 w-12 ${boardYear === "24/25" ? 'bg-blue-500' : 'bg-gray-500'} rounded-full transition-all duration-300 group-hover:w-20`}></div>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default EevntCard;
+export default EventCard;

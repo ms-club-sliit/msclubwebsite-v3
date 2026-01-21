@@ -21,7 +21,7 @@ const page = () => {
       />
       <EventSection />
       <Footer />
-        
+
     </div>
   )
 }

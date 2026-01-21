@@ -494,6 +494,7 @@ const JoinUsFormSection = () => {
                             value={formData.linkedIn}
                             onChange={handleInputChange}
                             placeholder="https://linkedin.com/in/yourprofile"
+                            required
                             error={errors.linkedIn}
                         />
 
@@ -504,6 +505,7 @@ const JoinUsFormSection = () => {
                             value={formData.github}
                             onChange={handleInputChange}
                             placeholder="https://github.com/yourusername"
+                            required
                             error={errors.github}
                         />
                     </div>
@@ -524,6 +526,7 @@ const JoinUsFormSection = () => {
                         value={formData.skills}
                         onChange={handleInputChange}
                         placeholder="Programming, Web Development, UI/UX Design, Public Speaking, Content Writing, Video Editing (comma separated)"
+                        required
                     />
 
                     <TextareaField
@@ -548,6 +551,7 @@ const JoinUsFormSection = () => {
                         value={formData.futureVision}
                         onChange={handleInputChange}
                         placeholder="Where do you see yourself in 5 years?"
+                        required
                     />
                 </div>
 

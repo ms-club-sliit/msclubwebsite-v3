@@ -153,17 +153,17 @@ const JoinSection = () => {
                 <select
                   value={formData.yearOfStudy}
                   onChange={handleYearChange}
-                  className={`w-full bg-transparent border ${errors.yearOfStudy ? 'border-red-500' : 'border-[#8898aa]'} rounded-md px-4 py-3 focus:outline-none ${errors.yearOfStudy ? 'focus:border-red-500' : 'focus:border-blue-500'} text-base appearance-none bg-no-repeat bg-right bg-[length:16px] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xIDFMNiA2TDExIDEiIHN0cm9rZT0iIzlDQTNBRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==')]`}
+                  className={`w-full bg-transparent border ${errors.yearOfStudy ? 'border-red-500' : 'border-[#8898aa]'} rounded-md px-4 py-3 pr-10 focus:outline-none ${errors.yearOfStudy ? 'focus:border-red-500' : 'focus:border-blue-500'} text-base appearance-none bg-no-repeat bg-[center_right_1rem] bg-[length:16px] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xIDFMNiA2TDExIDEiIHN0cm9rZT0iIzlDQTNBRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==')] [&>option]:bg-[#1e293b] [&>option]:text-white`}
                 >
-                  <option value="">Select Year</option>
-                  <option value="1st Year - Semester 1">First Year - Semester 1</option>
-                  <option value="1st Year - Semester 2">First Year - Semester 2</option>
-                  <option value="2nd Year - Semester 1">Second Year - Semester 1</option>
-                  <option value="2nd Year - Semester 2">Second Year - Semester 2</option>
-                  <option value="3rd Year - Semester 1">Third Year - Semester 1</option>
-                  <option value="3rd Year - Semester 2">Third Year - Semester 2</option>
-                  <option value="4th Year - Semester 1">Fourth Year - Semester 1</option>
-                  <option value="4th Year - Semester 2">Fourth Year - Semester 2</option>
+                  <option value="" className="bg-[#1e293b] text-gray-400">Select Year</option>
+                  <option value="1st Year - Semester 1" className="bg-[#1e293b] text-white">1st Year - Semester 1</option>
+                  <option value="1st Year - Semester 2" className="bg-[#1e293b] text-white">1st Year - Semester 2</option>
+                  <option value="2nd Year - Semester 1" className="bg-[#1e293b] text-white">2nd Year - Semester 1</option>
+                  <option value="2nd Year - Semester 2" className="bg-[#1e293b] text-white">2nd Year - Semester 2</option>
+                  <option value="3rd Year - Semester 1" className="bg-[#1e293b] text-white">3rd Year - Semester 1</option>
+                  <option value="3rd Year - Semester 2" className="bg-[#1e293b] text-white">3rd Year - Semester 2</option>
+                  <option value="4th Year - Semester 1" className="bg-[#1e293b] text-white">4th Year - Semester 1</option>
+                  <option value="4th Year - Semester 2" className="bg-[#1e293b] text-white">4th Year - Semester 2</option>
                 </select>
                 {errors.yearOfStudy && (
                   <p className="text-red-400 text-xs mt-1">{errors.yearOfStudy}</p>
