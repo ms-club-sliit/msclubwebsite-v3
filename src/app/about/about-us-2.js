@@ -33,7 +33,7 @@ export default function AboutUs() {
             <div className="flex flex-col gap-8 mt-10">
               <br />
 
-              <div className="max-w-2xl gap-8 mb-6 mt-10 lg:mt-20">
+              <div className="max-w-2xl gap-8 mb-6 -mt-10 -lg:mt-20">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mt-10 mb-4">
                   About Us
                 </h1>
@@ -41,31 +41,6 @@ export default function AboutUs() {
                   A MLSA driven student community aiming to bridge the skill gap
                   between an Undergraduate and an Industry Professional.
                 </p>
-              </div>
-              <div className="flex flex-col mt-6 lg:mt-10">
-                <Card
-                  className="bg-[#212144]/60 border-slate-700 backdrop-blur-lg"
-                  style={{
-                    backgroundColor: "rgba(29, 41, 68, 0.6)",
-                    borderColor: "#334155",
-                    backdropFilter: "blur(16px)",
-                  }}
-                  styles={{
-                    body: {
-                      padding: "16px sm:20px lg:24px",
-                      backgroundColor: "transparent",
-                      color: "white",
-                    },
-                  }}
-                >
-                  <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-white">
-                    Our Mission
-                  </h3>
-                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                    We aim to inspire young minds to be a better version of
-                    themselves by improving their technical and soft skills.
-                  </p>
-                </Card>
               </div>
             </div>
 
@@ -84,9 +59,33 @@ export default function AboutUs() {
             </div>
           </div>
 
-          {/* Strategy and Vision Section */}
+          {/* Mission, Vision and Strategy Section */}
           <div className="mb-20 -mt-5 lg:-mt-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <Card
+                className="bg-[#212144]/60 border-slate-700 backdrop-blur-lg"
+                style={{
+                  backgroundColor: "rgba(29, 41, 68, 0.6)",
+                  borderColor: "#334155",
+                  backdropFilter: "blur(16px)",
+                }}
+                styles={{
+                  body: {
+                    padding: "24px",
+                    backgroundColor: "transparent",
+                    color: "white",
+                  },
+                }}
+              >
+                <h3 className="text-2xl font-semibold mb-4 text-white">
+                  Our Mission
+                </h3>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  We aim to inspire young minds to be a better version of
+                  themselves by improving their technical and soft skills.
+                </p>
+              </Card>
+
               <Card
                 className="bg-[#1d2944]/60 border-slate-700 backdrop-blur-lg"
                 style={{
