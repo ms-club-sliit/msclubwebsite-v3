@@ -11,6 +11,7 @@ const EventCard = ({
   title,
   description,
   boardYear,
+  date,
 }) => {
   return (
     <div className="rounded-lg overflow-hidden shadow-lg bg-card-bg text-white p-6 relative">
