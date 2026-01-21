@@ -6,6 +6,10 @@ import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import JoinOurSection from "../../components/aboutUs/join-our-section";
 import Team from "../../components/aboutUs/Team";
+import { Canvas } from "@react-three/fiber";
+import { Suspense } from "react";
+import { OrbitControls, ContactShadows } from "@react-three/drei";
+import Logo3DModel from "../../components/logo-3d-model";
 
 export default function AboutUs() {
   return (
@@ -45,7 +49,7 @@ export default function AboutUs() {
             </div>
 
             {/* Right Column - Large Content Area */}
-            <div className="flex flex-col items-center justify-start mt-10 lg:mt-52">
+            {/* <div className="flex flex-col items-center justify-start mt-10 lg:mt-52">
               <div className="h-auto w-full max-w-md  border-slate-300 rounded-lg backdrop-blur-lg p-4">
                 <Image
                   src="/msclub.png"
@@ -56,7 +60,35 @@ export default function AboutUs() {
                   priority
                 />
               </div>
-            </div>
+            </div> */}
+
+            <div className="col-sm-12 col-md-6 col-lg-6 home-3d-model">
+        <Canvas shadows camera={{ position: [0, 0, 1.6], fov: 45 }}>
+          <fog attach="fog" args={["#f5f5f5", 0, 40]} />
+          <ambientLight intensity={0.5} />
+          <directionalLight
+            castShadow
+            position={[0, 10, 0]}
+            intensity={0.5}
+          />
+          <pointLight position={[0, 1, 10]} intensity={0.2} />
+          <OrbitControls
+            addEventListener={undefined}
+            hasEventListener={undefined}
+            removeEventListener={undefined}
+            dispatchEvent={undefined}
+            maxDistance={2}
+            minDistance={1.6}
+            enablePan={false}
+            minPolarAngle={Math.PI / 3}
+            maxPolarAngle={Math.PI / 1.6}
+            rotateSpeed={0.1} />
+          <Suspense fallback={null}>
+            <Logo3DModel />
+            <ContactShadows rotation-x={Math.PI / 2} position={[0, -0.4, 0]} opacity={0.55} width={10} height={10} blur={1} far={9} />
+          </Suspense>
+        </Canvas>
+      </div>
           </div>
 
           {/* Mission, Vision and Strategy Section */}
