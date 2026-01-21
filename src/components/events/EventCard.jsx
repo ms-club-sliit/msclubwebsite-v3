@@ -1,8 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
-import { Clock } from 'lucide-react';
-import { Calendar } from 'lucide-react';
-import { MapPin } from 'lucide-react';
 
 const EventCard = ({
   badgeText,
@@ -11,41 +7,17 @@ const EventCard = ({
   title,
   description,
   boardYear,
-  date,
 }) => {
   return (
-    <div className="rounded-lg overflow-hidden shadow-lg bg-card-bg text-white p-6 relative">
-      {/* Badge */}
-      {badgeText && (
-        <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-          {badgeText}
-        </div>
-      )}
-
-      {/* Image */}
-      {imageSrc && (
-        <Image
-          className="rounded-md mb-4"
-          src={imageSrc}
-          alt={altText}
-          width={400}
-          height={300}
-        />
-      )}
-
-      {/* Title */}
-      <h2 className="text-xl font-bold mb-2">{title}</h2>
-
-      {/* Description */}
-      <p className="text-gray-300 mb-4">{description}</p>
-
-      {/* Info Section */}
-      <div className="space-y-2 text-sm">
-        {date && (
-          <div className="flex items-center">
-            <span className="mr-2"><Calendar className='w-[16px] text-blue-500' /></span>
-            {date}
-          </div>
+    <div className="group rounded-xl overflow-hidden shadow-2xl bg-gray-800/40 backdrop-blur-sm border border-gray-700/50 transition-all duration-300 hover:scale-[1.02] hover:bg-gray-800 hover:border-blue-500/30 flex flex-col h-full">
+      {/* Image Container */}
+      <div className="relative aspect-video overflow-hidden">
+        {imageSrc && (
+          <img
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            src={imageSrc}
+            alt={altText}
+          />
         )}
         {/* Badge */}
         {badgeText && (
