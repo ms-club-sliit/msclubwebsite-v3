@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Clock } from 'lucide-react';
 import { Calendar } from 'lucide-react';
 import { MapPin } from 'lucide-react';
@@ -27,10 +28,12 @@ const EevntCard = ({
 
       {/* Image */}
       {imageSrc && (
-        <img
+        <Image
           className="rounded-md mb-4"
           src={imageSrc}
           alt={altText}
+          width={400}
+          height={300}
         />
       )}
 
