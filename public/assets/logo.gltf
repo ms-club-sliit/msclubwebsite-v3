@@ -159,9 +159,9 @@
             "name" : "Red",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
-                    0.8879234790802002,
-                    0.08021970838308334,
-                    0.015996314585208893,
+                    1.0,
+                    0.0,
+                    0.0,
                     1
                 ],
                 "metallicFactor" : 0,
@@ -173,9 +173,9 @@
             "name" : "Light Blue",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
-                    0,
-                    0.3712379038333893,
-                    0.863157331943512,
+                    0.0,
+                    0.75,
+                    1.0,
                     1
                 ],
                 "metallicFactor" : 0,
@@ -187,9 +187,9 @@
             "name" : "Light Green",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
-                    0.21223077178001404,
-                    0.4910208582878113,
-                    0,
+                    0.3,
+                    1.0,
+                    0.0,
                     1
                 ],
                 "metallicFactor" : 0,
@@ -201,9 +201,9 @@
             "name" : "Yellow",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
-                    0.9646865725517273,
-                    0.5028864145278931,
-                    0.0012141615152359009,
+                    1.0,
+                    0.95,
+                    0.0,
                     1
                 ],
                 "metallicFactor" : 0,
