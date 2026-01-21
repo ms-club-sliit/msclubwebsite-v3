@@ -1,81 +1,57 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import EventCard from "./EventCard";
+import EventCard from "@/components/events/EventCard";
 import { ArrowRightIcon } from "lucide-react";
-import {SOCIAL_LINKS} from "@/constants/generalConstants";
+import { workshopData } from "@/data/eventData";
 
 const EventsSection = () => {
-  // const events = [
-  //   {
-  //     title: "Campus Navigation App",
-  //     description:
-  //       "A mobile app that helps students navigate the campus efficiently. Get directions to classrooms, labs, and facilities.",
-  //     image:
-  //       "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
-  //   },
-  //   {
-  //     title: "Study Group Matcher",
-  //     description:
-  //       "Web platform that matches students with similar interests and study preferences to form effective study groups.",
-  //     image:
-  //       "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
-  //   },
-  //   {
-  //     title: "Event Attendance System",
-  //     description:
-  //       "QR-code based attendance tracking system for club events with analytics dashboard for event organizers.",
-  //     image:
-  //       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80",
-  //   },
-  // ];
+  // Get the most recent current events (from board 24/25) - show first 3
+  const currentEvents = workshopData
+    .filter(event => event.boardYear === "24/25")
+    .slice(0, 3);
 
   return (
-    <section id="events" className="py-20 px-6 md:px-12 bg-[#0c1629]">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
-          Our Upcoming Events
+    <section id="events" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12 bg-[#0c1629]">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-white mb-3 sm:mb-4">
+          Event Highlights
         </h2>
-        <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-          Explore some of the innovative projects and events our members are working on.
+        <p className="text-sm sm:text-base text-gray-400 text-center mb-8 sm:mb-10 md:mb-12 max-w-2xl mx-auto px-2">
+          Explore some of our recent events and workshops organized by MS Club.
         </p>
         
-        {/* No upcoming events message */}
-        <div className="flex flex-col items-center justify-center py-16 mb-10">
-          <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-12 max-w-2xl text-center">
-            <div className="mb-4">
-              <svg className="w-16 h-16 mx-auto text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
+        {/* Events Grid */}
+        {currentEvents.length > 0 ? (
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-10">
+              {currentEvents.map((event) => (
+                <EventCard
+                  key={event.id}
+                  imageSrc={event.imageSrc}
+                  altText={event.altText || event.title}
+                  title={event.title}
+                  description={event.description}
+                  badgeText={event.badgeText}
+                  boardYear={event.boardYear}
+                />
+              ))}
             </div>
-            <h3 className="text-2xl font-semibold text-white mb-3">No Upcoming Events</h3>
-            <p className="text-gray-400 text-lg">
-              Stay tuned! We&apos;re planning exciting events and will announce them soon.
-            </p>
+            <div className="text-center">
+              <Link
+                href="/events"
+                className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25"
+              >
+                View All Events
+                <ArrowRightIcon className="ml-2 w-5 h-5" />
+              </Link>
+            </div>
+          </>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-gray-400">No events available at the moment.</p>
           </div>
-        </div>
-
-        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
-          {events.map((event, index) => (
-            <EventCard
-              key={index}
-              title={event.title}
-              description={event.description}
-              image={event.image}
-            />
-          ))}
-        </div> */}
-        <div className="text-center">
-          <Link
-            href={SOCIAL_LINKS.GITHUB}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-blue-400 hover:text-white transition duration-200"
-          >
-            View All Projects
-            <ArrowRightIcon className="ml-2 w-4 h-4" />
-          </Link>
-        </div>
+        )}
       </div>
     </section>
   );
