@@ -47,7 +47,7 @@ const EventCard = ({
         {/* Visual Decoration */}
         <div className="mt-auto pt-4 border-t border-gray-700/30 flex justify-between items-center">
           <span className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">
-            {boardYear === "24/25" ? "Current Vision" : "Legacy Archive"}
+            {boardYear === "24/25" ? "Current Board" : "Legacy Archive"}
           </span>
           <div className={`h-1 w-12 ${boardYear === "24/25" ? 'bg-blue-500' : 'bg-gray-500'} rounded-full transition-all duration-300 group-hover:w-20`}></div>
         </div>
