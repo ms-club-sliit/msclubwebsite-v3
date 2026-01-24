@@ -75,56 +75,70 @@ const Header = () => {
 
       {/* Mobile Menu Dropdown */}
       <div
-        className={`absolute md:hidden mt-4 border-t border-gray-700 bg-gray-900 w-full z-20 transition-all duration-500 ease-in-out ${
+        className={`absolute md:hidden left-0 right-0 border-t border-gray-700 bg-gray-900 z-20 transition-all duration-300 ease-in-out ${
           isMenuOpen
             ? 'opacity-100 translate-y-0 pointer-events-auto'
             : 'opacity-0 -translate-y-4 pointer-events-none'
         }`}
         style={{ top: '100%' }}
       >
-        <nav className="pt-4 pb-2 space-y-2">
+        <nav className="px-6 py-3 space-y-1">
           <Link
-            href="/public"
-            className="block text-white hover:text-blue-400 transition py-2"
+            href="/"
+            className={`block text-white hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${
+              pathname === "/" ? "bg-gray-800 text-blue-400" : ""
+            }`}
             onClick={() => setIsMenuOpen(false)}
           >
             Home
           </Link>
           <Link
             href="/about"
-            className="block text-white hover:text-blue-400 transition py-2"
+            className={`block text-white hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${
+              pathname === "/about" ? "bg-gray-800 text-blue-400" : ""
+            }`}
             onClick={() => setIsMenuOpen(false)}
           >
             About
           </Link>
           <Link
             href="/blogs"
-            className="block text-white hover:text-blue-400 transition py-2"
+            className={`block text-white hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${
+              pathname === "/blogs" ? "bg-gray-800 text-blue-400" : ""
+            }`}
             onClick={() => setIsMenuOpen(false)}
           >
             Blogs
           </Link>
           <Link
             href="/events"
-            className="block text-white hover:text-blue-400 transition py-2"
+            className={`block text-white hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${
+              pathname === "/events" ? "bg-gray-800 text-blue-400" : ""
+            }`}
             onClick={() => setIsMenuOpen(false)}
           >
             Events
           </Link>
           <Link
             href="/contact"
-            className="block text-white hover:text-blue-400 transition py-2"
+            className={`block text-white hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${
+              pathname === "/contact" ? "bg-gray-800 text-blue-400" : ""
+            }`}
             onClick={() => setIsMenuOpen(false)}
           >
             Contact
           </Link>
-          <Link
-            href="/join-us"
-            className="block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm transition mt-4 w-fit"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Join Us
-          </Link>
+          
+          {/* Mobile Join Us Button */}
+          <div className="pt-3">
+            <Link
+              href="/join-us"
+              className="block bg-blue-600 hover:bg-blue-700 text-white text-center px-6 py-3 rounded-lg text-base font-medium transition-all"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Join Us
+            </Link>
+          </div>
         </nav>
       </div>
     </header>

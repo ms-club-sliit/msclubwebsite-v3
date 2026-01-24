@@ -8,19 +8,8 @@ export default function JoinOurSection() {
   
   return (
     <div className="relative min-h-96 w-full">
-     
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: "url('/contactBgImageRevert.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
       
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#101930] to-[#0d1524] opacity-60 z-0" />
-
      
       <div className="relative z-10 py-16">
         <div className="max-w-6xl mx-auto px-5">
