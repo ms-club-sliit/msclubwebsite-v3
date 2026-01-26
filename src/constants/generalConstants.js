@@ -5,4 +5,6 @@ export const SOCIAL_LINKS = {
     LINKEDIN: "https://www.linkedin.com/company/msclubsliit",
     GITHUB: "https://github.com/ms-club-sliit",
     YOUTUBE: "https://www.youtube.com/@msclubofsliit",
+    EMAIL: "mailto:msclub.foc@sliit.lk",
+    CONTACT_NUMBER: "tel:+94715835840",
 };
