@@ -77,7 +77,11 @@ const Footer = () => {
                           Email: msclub.foc@sliit.lk
                       </a>
                   </li>
-                <li>Phone: +94 71 583 5840</li>
+                  <li>
+                      <a href={SOCIAL_LINKS.CONTACT_NUMBER} className="hover:text-white">
+                          Phone: +94 71 583 5840
+                      </a>
+                  </li>
               </ul>
             </div>
           </div>
