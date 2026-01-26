@@ -1,6 +1,5 @@
 import React from "react";
 import { Users2, Lightbulb, GraduationCap } from "lucide-react";
-import BackgroundContainer from "../common/BackgroundContainer";
 
 const FeatureCard = ({ icon, title, description }) => {
   return (
@@ -39,7 +38,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <BackgroundContainer>
+    <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12 bg-secondary-bg" >
       <div className="relative w-full max-w-7xl mx-auto">
         {/* Content box */}
         <div className="bg-[#0f1a2e]/20 backdrop-blur-sm rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-2xl shadow-black/20">
@@ -49,8 +48,8 @@ const AboutSection = () => {
               Who We Are?
             </h2>
             <p className="max-w-4xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed text-gray-300 px-2 sm:px-4">
-              MS Club of SLIIT is a community group to support students in their quest of being a significant IT Professional. 
-              We encourage a peer-to-peer learning environment to facilitate an organic growth of knowledge. Our members 
+              MS Club of SLIIT is a community group to support students in their quest of being a significant IT Professional.
+              We encourage a peer-to-peer learning environment to facilitate an organic growth of knowledge. Our members
               are volunteers who aim to provide value back to their community.
             </p>
           </div>
@@ -70,13 +69,13 @@ const AboutSection = () => {
           {/* Bottom text */}
           <div className="text-center px-2 sm:px-4">
             <p className="max-w-3xl mx-auto text-sm sm:text-base leading-relaxed text-gray-300">
-              Since 2018, the Microsoft Student Club has been empowering students to explore 
+              Since 2018, the Microsoft Student Club has been empowering students to explore
               technology, develop skills, and build connections that last beyond graduation.
             </p>
           </div>
         </div>
       </div>
-    </BackgroundContainer>
+    </section>
   );
 };
 
