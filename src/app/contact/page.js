@@ -103,35 +103,71 @@ export default function ContactPage() {
           <div className="mt-10 space-y-4 relative z-10 px-0 md:px-10 pb-10">
             <div className="bg-[#162135] p-6 rounded-xl">
               <h3 className="font-semibold text-lg mb-2 text-white">
-                How can I join the Microsoft Student Club?
+                What is the MS Club of SLIIT?
               </h3>
               <p className="text-gray-300 text-sm">
-                You can join by filling out the membership form on our website or
-                by visiting our office during office hours. We also have
-                membership drives at the beginning of each semester.
+                The MS Club of SLIIT is an MLSA-driven student community that aims to bridge the skill gap between an undergraduate and an industry professional. The club focuses on technology, innovation, leadership, and industry-level exposure for students.
               </p>
             </div>
 
             <div className="bg-[#162135] p-6 rounded-xl">
               <h3 className="font-semibold text-lg mb-2 text-white">
-                Are there any membership fees?
+                How can I join the MS Club of SLIIT?
               </h3>
               <p className="text-gray-300 text-sm">
-                No, membership is completely free for all university students. We
-                believe in making technology education and resources accessible to
-                everyone.
+                To join the MS Club, you need to visit our website and fill out the registration form.
+Once you register, one of our members will contact you for a short interview. If you are selected after the interview, you will be added to the Alpha Group of the MS Club.
               </p>
             </div>
 
             <div className="bg-[#162135] p-6 rounded-xl">
               <h3 className="font-semibold text-lg mb-2 text-white">
-                Do I need to be a Computer Science student to join?
+                Who can join the MS Club?
               </h3>
               <p className="text-gray-300 text-sm">
-                Not at all! We welcome students from all academic backgrounds who
-                are interested in technology and innovation. Our diverse community
-                is one of our greatest strengths.
+                All SLIIT students from Year 1 to Year 4 are eligible to apply, regardless of their degree program.
               </p>
+            </div>
+
+            <div className="bg-[#162135] p-6 rounded-xl">
+              <h3 className="font-semibold text-lg mb-2 text-white">
+                What is the Alpha Group of the MS Club?
+              </h3>
+              <p className="text-gray-300 text-sm">
+                The Alpha Group is the initial group you join after successfully completing the interview.
+                Your contributions, work, and engagement will be evaluated during this phase. Based on your performance, you will later be moved to the main group of the MS Club of SLIIT.
+              </p>
+            </div>
+            <div className="bg-[#162135] p-6 rounded-xl">
+              <h3 className="font-semibold text-lg mb-2 text-white">
+                What can I gain by joining the MS Club?
+              </h3>
+              <div className="text-gray-300 text-sm">
+                <p className="mb-3">By joining the MS Club, you will:</p>
+                <ul className="list-disc list-inside space-y-2 ml-2">
+                  <li>Meet industry experts and professionals</li>
+                  <li>Gain teamwork and leadership experience</li>
+                  <li>Improve problem-solving skills</li>
+                  <li>Learn development and design skills</li>
+                  <li>Take part in workshops, events, and hands-on activities</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-[#162135] p-6 rounded-xl">
+              <h3 className="font-semibold text-lg mb-2 text-white">
+                What areas can I contribute to in the MS Club?
+              </h3>
+              <div className="text-gray-300 text-sm">
+                <p className="mb-3">You can contribute in multiple areas, including:</p>
+                <ul className="list-disc list-inside space-y-2 ml-2">
+                  <li>Development</li>
+                  <li>Design</li>
+                  <li>Content Writing</li>
+                  <li>Public Speaking</li>
+                  <li>Event Management</li>
+                </ul>
+              </div>
             </div>
           </div>
         </BackgroundContainer>
