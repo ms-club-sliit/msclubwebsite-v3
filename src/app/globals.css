@@ -26,6 +26,22 @@ body {
   animation: fade-in-up 0.6s ease-out both;
 }
 
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
 .event-showcase {
   background-image: url("../../public/assets/contactBgImage.png");
   background-size: contain;

@@ -6,7 +6,7 @@ export const workshopData = [
     imageSrc: "/events/minihack25.jpeg",
     altText: "Mini Hackathon 2025",
     title: "Mini Hackathon 2025",
-    description: "Mini Hackathon 2025 organized by MS club in collaboration with Microsoft",
+    description: "Mini Hackathon 2025 organized by MS club of SLIIT .With  three  competitive rounds final top 10 teams showcased their innovative ideas for the real word problems.",
   },
    {
     id: 2,
@@ -25,7 +25,7 @@ export const workshopData = [
     imageSrc: "/events/net.jpg",
     altText: ".NET Workshop",
     title: ".NET Workshop",
-    description: "A session on .NET framework organized by MS club. Helped students to learn about .NET framework and its features.",
+    description: "A session on .NET framework organized by MS club. This was conducted by industry experts from the Ascentic. It Helped students to learn about .NET framework from the industry experts.",
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ export const workshopData = [
     imageSrc: "/events/web3.jpeg",
     altText: "Blockchain & Web3 Workshop",
     title: "Blockchain & Web3 Workshop",
-    description: "A session dedicated to exploring the latest updates and features announced at GitHub Universe.",
+    description: "A session on Blockchain organized by MS Club .This was conducted by industry experts from the Maash . It was interactive session where students got to learn about blockchain and Web3.",
   },
   {
     id: 5,
@@ -43,7 +43,7 @@ export const workshopData = [
     imageSrc: "/events/itp10.jpg",
     altText: "ITP GUIDE 10.1",
     title: "ITP GUIDE 10.1",
-    description: "Exploring the world of Artificial Intelligence and give comprehnsive knowledge to students about ITP Module.",
+    description: "A workshop conducted as a support for the ITP module by an Industry expert. Students gained hands on experience with MERN stack where they built a full completed application.",
   },
   {
     id: 6,
@@ -52,7 +52,7 @@ export const workshopData = [
     imageSrc: "/events/silverjublie.jpeg",
     altText: "Silver Jubilee",
     title: "Silver Jubilee",
-    description: "A celebration of 25 years . We present our MS Club inovation and creative ideas.",
+    description: "As SLIIT celebrated 25 years , MS club of SLIIT  presented innovation and creativity during the silver jubilee exhibition. We held a game corner and showcased our developed projects in the exhibition.",
   },
   {
     id: 7,
@@ -61,7 +61,7 @@ export const workshopData = [
     imageSrc: "/events/itp9.jpg",
     altText: "ITP GUIDE 9.1",
     title: "ITP GUIDE 9.1",
-    description: "A hands-on workshop on modern web development practices, focusing on React and Next.js.",
+    description: "A workshop conducted as a support for the ITP module by Industry experts. Students gained hands on experience with Spring Boot and Next.js where they built a full completed application.",
   },
   {
     id: 8,
@@ -70,7 +70,16 @@ export const workshopData = [
     imageSrc: "/events/init.jpg",
     altText: "Alpha Init",
     title: "Alpha Init",
-    description: "A networking event for ms club students to share experiences and plan future club activities.",
+    description: "An networking event held for new and current members of MS Club of SLIIT. Members did networking activities and games and  new members got to know about each other.",
+  },
+  {
+    id: 9,
+    badgeText: "Rebuild Their Future : Phase 01",
+    boardYear: "24/25",
+    imageSrc: "/events/rebuild.jpeg",
+    altText: "Rebuild Their Future : Phase 01",
+    title: "Rebuild Their Future : Phase 01",
+    description: "Udahena Junior School, Galagedara  with school suppliments.",
   },
   {
     id: 16,
@@ -93,7 +102,7 @@ export const workshopData = [
    {
     id: 18,
     badgeText: "Mini Hackathon 2022",
-    boardYear: "22/23",
+    boardYear: "22/21",
     imageSrc: "/events/minihack22.jpg",
     altText: "Mini Hackathon",
     title: "Mini Hackathon 2022",
@@ -111,20 +120,20 @@ export const workshopData = [
    
   {
     id: 20,
-    badgeText: "AGM-2019",
+    badgeText: "Annual General Meeting -2019",
     boardYear: "19/20",
     imageSrc: "/events/agm-2019.jpg",
     altText: "AGM-2019",
-    title: "AGM-2019",
+    title: "Annual General Meeting -2019",
     description: "Annual General Meeting of MS Club held on 2019.",
   },
     {
     id: 21,
-    badgeText: "Open Day-2019",
+    badgeText: "SLIIT Open Day - 2019",
     boardYear: "19/20",
     imageSrc: "/events/open-2019.jpg",
     altText: "Open Day",
-    title: "Open Day",
+    title: "SLIIT Open Day - 2019",
     description: "SLIIT Open day held on 2019.",
   },
 ];

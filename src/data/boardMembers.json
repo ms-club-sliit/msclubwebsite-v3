@@ -7,7 +7,7 @@
         "id": 1,
         "name": "Irushi Gunawardana",
         "position": "President",
-        "image": "/boards/2024/Irushi Gunawardana.jpg",
+        "image": "/boards/2024/Irushi Gunawardana.jpeg",
         "socialmedia": {
           "linkedin": "https://lk.linkedin.com/in/irushi-gunawardana-941893250",
           "instagram": "https://www.instagram.com/irushiii.g/",
@@ -112,6 +112,17 @@
           "instagram": "https://www.instagram.com/osadha_madhuwantha_ganewaththa?igsh=cGxpZ2FhM3Q4bmhn&utm_source=qr",
           "mlsa": "https://studentambassadors.microsoft.com/en-US/profile/madhuwanthagko-8693"
         }
+      },
+      {
+        "id": 11,
+        "name": "Thimira Niromin",
+        "position": "Committee Member",
+        "image": "/boards/2024/Thimira Niromin.jpeg",
+        "socialmedia": {
+          "facebook": "https://www.facebook.com/madhuwantha.osadha?mibextid=wwXIfr&mibextid=wwXIfr",
+          "linkedin": "https://www.linkedin.com/in/tniromin/",
+          "instagram": "https://www.instagram.com/tniromin2/"
+        }
       }
     ]
   },
@@ -215,7 +226,7 @@
         "id": 9,
         "name": "Susith Rupasinghe",
         "position": "Head of Dev Infrastructure ",
-        "image": "/boards/2023/Susith Rupasinghe.jfif",
+        "image": "/boards/2023/Susith Rupasinghe.jpeg",
         "socialmedia": {
           "facebook": "https://www.facebook.com/rupasinghe.susith",
           "linkedin": "https://www.linkedin.com/in/susith-rupasinghe/"
@@ -359,7 +370,7 @@
         "id": 9,
         "name": "Susith Rupasinghe",
         "position": "Head of Dev Infrastructure ",
-        "image": "/boards/2022/Susith Rupasinghe.jfif",
+        "image": "/boards/2022/Susith Rupasinghe.jpeg",
         "socialmedia": {
           "facebook": "https://www.facebook.com/rupasinghe.susith",
           "linkedin": "https://www.linkedin.com/in/susith-rupasinghe/"
@@ -558,7 +569,7 @@
         "id": 9,
         "name": "Susith Rupasinghe",
         "position": "Automation Lead",
-        "image": "/boards/2021/Susith.jpg",
+        "image": "/boards/2021/Susith Rupasinghe.jpeg",
         "socialmedia": {
           "facebook": "https://www.facebook.com/profile.php?id=100070098803999",
           "linkedin": "https://www.linkedin.com/in/susith-rupasinghe/",
