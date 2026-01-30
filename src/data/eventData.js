@@ -6,7 +6,7 @@ export const workshopData = [
     imageSrc: "/events/minihack25.jpeg",
     altText: "Mini Hackathon 2025",
     title: "Mini Hackathon 2025",
-    description: "Mini Hackathon 2025 organized by MS club of SLIIT .With  three  competitive rounds final top 10 teams showcased their innovative ideas for the real word problems.",
+    description: "Mini Hackathon 2025 organized by MS Club of SLIIT .With  three  competitive rounds final top 10 teams showcased their innovative ideas for the real word problems.",
   },
    {
     id: 2,
@@ -15,7 +15,7 @@ export const workshopData = [
     imageSrc: "/events/genai.jpg",
     altText: "Gen AI",
     title: "Gen AI",
-    description: "Gen AI workshop organized by MS club in collaboration with Postman. Helped students to learn about Gen AI and its features.",
+    description: "Gen AI workshop organized by MS Club in collaboration with Postman. Helped students to learn about Gen AI and its features.",
   },
 
   {
@@ -25,7 +25,7 @@ export const workshopData = [
     imageSrc: "/events/net.jpg",
     altText: ".NET Workshop",
     title: ".NET Workshop",
-    description: "A session on .NET framework organized by MS club. This was conducted by industry experts from the Ascentic. It Helped students to learn about .NET framework from the industry experts.",
+    description: "A session on .NET framework organized by MS Club. This was conducted by industry experts from the Ascentic. It Helped students to learn about .NET framework from the industry experts.",
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ export const workshopData = [
     imageSrc: "/events/web3.jpeg",
     altText: "Blockchain & Web3 Workshop",
     title: "Blockchain & Web3 Workshop",
-    description: "A session on Blockchain organized by MS Club .This was conducted by industry experts from the Maash . It was interactive session where students got to learn about blockchain and Web3.",
+    description: "A session on Blockchain organized by MS Club .This was conducted by industry experts from Maash . It was interactive session where students got to learn about blockchain and Web3.",
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ export const workshopData = [
     imageSrc: "/events/silverjublie.jpeg",
     altText: "Silver Jubilee",
     title: "Silver Jubilee",
-    description: "As SLIIT celebrated 25 years , MS club of SLIIT  presented innovation and creativity during the silver jubilee exhibition. We held a game corner and showcased our developed projects in the exhibition.",
+    description: "As SLIIT celebrated 25 years , MS Club of SLIIT  presented innovation and creativity during the Silver Jubilee exhibition. We held a game corner and showcased our developed projects at the exhibition.",
   },
   {
     id: 7,
@@ -70,7 +70,7 @@ export const workshopData = [
     imageSrc: "/events/init.jpg",
     altText: "Alpha Init",
     title: "Alpha Init",
-    description: "An networking event held for new and current members of MS Club of SLIIT. Members did networking activities and games and  new members got to know about each other.",
+    description: "A networking event held for new and current members of MS Club of SLIIT. Members did networking activities and games and  new members got to know about each other.",
   },
   {
     id: 9,
