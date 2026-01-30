@@ -16,7 +16,7 @@ export default function ContactPage() {
     <Header />
     <Hero
         title="Let’s Connect"
-        paragraph="Stay updated with our latest events, Projects and announcement by following us."
+        paragraph="Stay updated with our latest events, projects and announcements by following us."
         button1Text="Follow us on Social Media"
         button1Link="#social-media"
         showSecondButton={true}
