@@ -9,11 +9,10 @@ const Header = () => {
   const pathname = usePathname();
 
   const navLinkClass = (path) =>
-  `text-white transition ${
-    pathname === path
+    `text-white transition ${pathname === path
       ? "border-b-2 border-blue-400"
       : "hover:text-blue-400"
-  }`;
+    }`;
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -28,10 +27,12 @@ const Header = () => {
             alt="MS Club SLIIT Logo"
             width={40}
             height={40}
-            className="w-auto h-10"
+            className="w-auto h-10 filter-none"
+            style={{ filter: 'none' }}
+            unoptimized
           />
         </div>
-        
+
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8 mr-8">
           <Link href="/" className={navLinkClass("/")}>Home</Link>
@@ -56,79 +57,70 @@ const Header = () => {
           aria-label="Toggle menu"
         >
           <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ease-in-out ${
-              isMenuOpen ? "rotate-45 translate-y-1.5" : "mb-1"
-            }`}
+            className={`block w-6 h-0.5 bg-white transition-all duration-300 ease-in-out ${isMenuOpen ? "rotate-45 translate-y-1.5" : "mb-1"
+              }`}
           ></span>
           <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ease-in-out ${
-              isMenuOpen ? "opacity-0" : "mb-1"
-            }`}
+            className={`block w-6 h-0.5 bg-white transition-all duration-300 ease-in-out ${isMenuOpen ? "opacity-0" : "mb-1"
+              }`}
           ></span>
           <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ease-in-out ${
-              isMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
-            }`}
+            className={`block w-6 h-0.5 bg-white transition-all duration-300 ease-in-out ${isMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
+              }`}
           ></span>
         </button>
       </div>
 
       {/* Mobile Menu Dropdown */}
       <div
-        className={`absolute md:hidden left-0 right-0 border-t border-gray-700 bg-gray-900 z-20 transition-all duration-300 ease-in-out ${
-          isMenuOpen
-            ? 'opacity-100 translate-y-0 pointer-events-auto'
-            : 'opacity-0 -translate-y-4 pointer-events-none'
-        }`}
+        className={`absolute md:hidden left-0 right-0 border-t border-gray-700 bg-gray-900 z-20 transition-all duration-300 ease-in-out ${isMenuOpen
+          ? 'opacity-100 translate-y-0 pointer-events-auto'
+          : 'opacity-0 -translate-y-4 pointer-events-none'
+          }`}
         style={{ top: '100%' }}
       >
         <nav className="px-6 py-3 space-y-1">
           <Link
             href="/"
-            className={`block text-white hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${
-              pathname === "/" ? "bg-gray-800 text-blue-400" : ""
-            }`}
+            className={`block text-white hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${pathname === "/" ? "bg-gray-800 text-blue-400" : ""
+              }`}
             onClick={() => setIsMenuOpen(false)}
           >
             Home
           </Link>
           <Link
             href="/about"
-            className={`block text-white hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${
-              pathname === "/about" ? "bg-gray-800 text-blue-400" : ""
-            }`}
+            className={`block text-white hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${pathname === "/about" ? "bg-gray-800 text-blue-400" : ""
+              }`}
             onClick={() => setIsMenuOpen(false)}
           >
             About
           </Link>
           <Link
             href="/blogs"
-            className={`block text-white hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${
-              pathname === "/blogs" ? "bg-gray-800 text-blue-400" : ""
-            }`}
+            className={`block text-white hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${pathname === "/blogs" ? "bg-gray-800 text-blue-400" : ""
+              }`}
             onClick={() => setIsMenuOpen(false)}
           >
             Blogs
           </Link>
           <Link
             href="/events"
-            className={`block text-white hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${
-              pathname === "/events" ? "bg-gray-800 text-blue-400" : ""
-            }`}
+            className={`block text-white hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${pathname === "/events" ? "bg-gray-800 text-blue-400" : ""
+              }`}
             onClick={() => setIsMenuOpen(false)}
           >
             Events
           </Link>
           <Link
             href="/contact"
-            className={`block text-white hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${
-              pathname === "/contact" ? "bg-gray-800 text-blue-400" : ""
-            }`}
+            className={`block text-white hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${pathname === "/contact" ? "bg-gray-800 text-blue-400" : ""
+              }`}
             onClick={() => setIsMenuOpen(false)}
           >
             Contact
           </Link>
-          
+
           {/* Mobile Join Us Button */}
           <div className="pt-3">
             <Link

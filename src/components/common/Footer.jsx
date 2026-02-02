@@ -8,7 +8,7 @@ import {
   InstagramIcon,
   GithubIcon,
 } from "lucide-react";
-import {SOCIAL_LINKS} from "@/constants/generalConstants";
+import { SOCIAL_LINKS } from "@/constants/generalConstants";
 
 const Footer = () => {
   return (
@@ -23,7 +23,9 @@ const Footer = () => {
                 alt="MS Club SLIIT Logo"
                 width={48}
                 height={48}
-                className="w-auto h-12"
+                className="w-auto h-12 filter-none"
+                style={{ filter: 'none' }}
+                unoptimized
               />
             </div>
             <p>
@@ -72,16 +74,16 @@ const Footer = () => {
             <div>
               <h3 className="text-white font-semibold mb-4">Contact Us</h3>
               <ul className="space-y-2">
-                  <li>
-                      <a href={SOCIAL_LINKS.EMAIL} className="hover:text-white">
-                          Email: msclub.foc@sliit.lk
-                      </a>
-                  </li>
-                  <li>
-                      <a href={SOCIAL_LINKS.CONTACT_NUMBER} className="hover:text-white">
-                          Phone: +94 71 583 5840
-                      </a>
-                  </li>
+                <li>
+                  <a href={SOCIAL_LINKS.EMAIL} className="hover:text-white">
+                    Email: msclub.foc@sliit.lk
+                  </a>
+                </li>
+                <li>
+                  <a href={SOCIAL_LINKS.CONTACT_NUMBER} className="hover:text-white">
+                    Phone: +94 71 583 5840
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
