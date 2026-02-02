@@ -56,8 +56,10 @@ export default function AboutUs() {
                       alt="About Us Illustration"
                       width={300}
                       height={300}
-                      className="w-full max-w-[300px] h-auto object-contain drop-shadow-2xl animate-float"
+                      className="w-full max-w-[300px] h-auto object-contain drop-shadow-2xl animate-float filter-none"
+                      style={{ filter: 'none' }}
                       priority
+                      unoptimized
                     />
                 </div>
 
@@ -91,8 +93,10 @@ export default function AboutUs() {
                     alt="About Us Illustration"
                     width={400}
                     height={400}
-                    className="w-full h-auto object-contain drop-shadow-2xl mx-auto animate-float"
+                    className="w-full h-auto object-contain drop-shadow-2xl mx-auto animate-float filter-none"
+                    style={{ filter: 'none' }}
                     priority
+                    unoptimized
                   />
               </div>
             </div>
