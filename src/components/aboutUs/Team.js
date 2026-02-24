@@ -15,7 +15,6 @@ export default function Team() {
   const [currentYearIndex, setCurrentYearIndex] = useState(0);
   const [isClient, setIsClient] = useState(false);
 
-  const years = boardMembers.map((team) => team.year);
   const currentTeam = boardMembers[currentYearIndex];
 
   useEffect(() => {
@@ -121,7 +120,7 @@ export default function Team() {
                     <div className="h-48 sm:h-52 md:h-56 lg:h-60 overflow-hidden rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl flex items-center justify-center">
                       <div className="w-full h-full flex items-center justify-center p-0.5 sm:p-1">
                         <Image
-                          src={member.image || "/kanji.png"}
+                          src={member.image || "/board/maleAvatar.jpg"}
                           alt={`${member.name} - ${member.position}`}
                           width={350}
                           height={350}

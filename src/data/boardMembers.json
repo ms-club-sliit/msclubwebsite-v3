@@ -1,6 +1,232 @@
 [
   {
     "id": 1,
+    "year": "2025",
+    "board": [
+      {
+        "id": 1,
+        "name": "Senith Udara",
+        "position": "President",
+        "image": "/boards/2025/Senith_Udara.png",
+        "socialmedia": {
+          "linkedin": "www.linkedin.com/in/senith-udara",
+          "instagram": "https://instagram.com/s3nith",
+          "twitter": "https://github.com/senithudara"
+        }
+      },
+      {
+        "id": 2,
+        "name": "Janukshan Sivakumar",
+        "position": "Vice President",
+        "image": "/boards/2025/Janukshan_Sivakumar.png",
+        "socialmedia": {
+          "linkedin": "https://www.linkedin.com/in/janukshansivakumar/",
+          "instagram": "https://www.instagram.com/_janu.07_?igsh=OTNidzNmYnB1MThj",
+          "twitter": "https://github.com/JanukshanS"
+        }
+      },
+      {
+        "id": 3,
+        "name": "Kavindu Herath",
+        "position": "Secretary",
+        "image": "/boards/2025/Kavindu_Madushan.jpeg",
+        "socialmedia": {
+          "linkedin": "http://www.linkedin.com/in/kavindu-herath-ai",
+          "instagram": "https://www.instagram.com/kavindu_herath_0?igsh=MTVsYzg4anRycXRlbA==",
+          "twitter": "https://github.com/kavindugit"
+        }
+      },
+      {
+        "id": 4,
+        "name": "Hiruni Kathaluwage",
+        "position": "Assistant Secretary",
+        "image": "/boards/2025/Hiruni_Kathaluwage.jpg",
+        "socialmedia": {
+          "linkedin": "http://www.linkedin.com/in/hiruni-kathaluwage-948424247",
+          "instagram": "https://www.instagram.com/hmxlee_/",
+          "twitter": "https://github.com/Hirunikathaluwage"
+        }
+      },
+      {
+        "id": 5,
+        "name": "Aathif Azeez",
+        "position": "Treasurer",
+        "image": "/boards/2025/Aathif_Azeez.jpeg",
+        "socialmedia": {
+          "linkedin": "https://www.linkedin.com/in/aathif-azeez-231851316/",
+          "instagram": "https://www.instagram.com/aathifazeez?igsh=MTcxZ2tpNDY4MTFhbg%3D%3D&utm_source=qr",
+          "twitter": "https://github.com/aathifazeez"
+        }
+      },
+      {
+        "id": 6,
+        "name": "Nomasha Nethmini",
+        "position": "Assistant-Treasurer",
+        "image": "/boards/2025/Nomasha.jpeg",
+        "socialmedia": {
+          "linkedin": "",
+          "instagram": "",
+          "twitter": "https://github.com/ModithaM"
+        }
+      },
+      {
+        "id": 7,
+        "name": "Daniru Ranathunga",
+        "position": "Main Organizer",
+        "image": "/boards/2025/Daniru_Punsith.jpg",
+        "socialmedia": {
+          "linkedin": "https://www.linkedin.com/in/nomasha/",
+          "instagram": "https://www.instagram.com/nomash_a?igsh=MWJxcTk1NmlsdWY0bw==",
+          "twitter": "https://github.com/Nomasha"
+        }
+      },
+      {
+        "id": 8,
+        "name": "Chamal Nanayakkara",
+        "position": "Event Coordinator",
+        "image": "/boards/2025/Chamal_Nanayakkara.jpg",
+        "socialmedia": {
+          "linkedin": "https://www.linkedin.com/in/chamal-nanayakkara-602793341?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+          "instagram": "https://www.instagram.com/chamal_nanayakkara?igsh=bmM4a2oxZDNhcTBl",
+          "twitter": "https://github.com/ChamalNanayakkara"
+        }
+      },
+      {
+        "id": 9,
+        "name": "Moditha Marasingha",
+        "position": "Head of Development",
+        "image": "/boards/2025/Moditha_Marasingha.png",
+        "socialmedia": {
+          "linkedin": "http://www.linkedin.com/in/moditha-marasingha",
+          "instagram": "https://www.instagram.com/moditha_marasingha",
+          "twitter": "https://github.com/ModithaM"
+        }
+      },
+      {
+        "id": 10,
+        "name": "Lasan Navodya",
+        "position": "Sub Head of Development",
+        "image": "/boards/2025/result_0.png",
+        "socialmedia": {
+          "linkedin": "",
+          "instagram": "",
+          "twitter": "https://github.com/LaSan99"
+        }
+      },
+      {
+        "id": 11,
+        "name": "Primesh Marasinghe",
+        "position": "Editor",
+        "image": "/boards/2025/Primesh_Marasinghe.jpeg",
+        "socialmedia": {
+          "linkedin": "https://www.linkedin.com/in/primeshmarasinghe?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+          "instagram": "https://www.instagram.com/primesh.official?igsh=NDU3cjd1dHhpZ3o4&utm_source=qr",
+          "twitter": "https://github.com/primemarasinghe"
+        }
+      },
+      {
+        "id": 12,
+        "name": "Chandupa Weerakkody",
+        "position": "Assistant Editor",
+        "image": "/boards/2025/Chandupa_Weerakkody.jpg",
+        "socialmedia": {
+          "linkedin": "https://www.linkedin.com/in/chandupa-weerakkody/",
+          "instagram": "https://www.instagram.com/chandupa.mp4/",
+          "twitter": "https://github.com/Chandupa"
+        }
+      },
+      {
+        "id": 13,
+        "name": "Thejandeera Sandeepana",
+        "position": "Marketing Lead",
+        "image": "/boards/2025/Thejandeera_Sandeepana.jpg",
+        "socialmedia": {
+          "linkedin": "https://www.linkedin.com/in/thejandeera",
+          "instagram": "https://www.instagram.com/just.thejan?igsh=d2JscmVyamptMHJh",
+          "twitter": "http://github.com/thejandeera"
+        }
+      },
+      {
+        "id": 14,
+        "name": "Kavindu Umayanga",
+        "position": "Marketing Sub Lead",
+        "image": "/boards/2025/Kavindu_Umayanga.png",
+        "socialmedia": {
+          "linkedin": "https://www.linkedin.com/in/kavindu-umayanga",
+          "instagram": "https://www.instagram.com/kavinduumayanga_",
+          "twitter": "https://github.com/kavinduumayanga"
+        }
+      },
+      {
+        "id": 15,
+        "name": "Methush Anjula",
+        "position": "Committee Member",
+        "image": "/boards/2025/Methush_Anjula.jpeg",
+        "socialmedia": {
+          "linkedin": "https://www.linkedin.com/in/methush?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+          "instagram": "",
+          "twitter": "https://github.com/MethZ0"
+        }
+      },
+      {
+        "id": 16,
+        "name": "Dhumesh Priya",
+        "position": "Committee Member",
+        "image": "/boards/2025/Dhumesh_Priya.jpg",
+        "socialmedia": {
+          "linkedin": "http://www.linkedin.com/in/dhumeshpriya05",
+          "instagram": "https://www.instagram.com/__d.priya___/",
+          "twitter": "https://github.com/Dhumesh"
+        }
+      },
+      {
+        "id": 17,
+        "name": "Imesha Dissanayaka",
+        "position": "Committee Member",
+        "image": "/boards/2025/Imesha_Dissanayaka.webp",
+        "socialmedia": {
+          "linkedin": "https://www.linkedin.com/in/imesha-dissanayaka/",
+          "instagram": "https://www.instagram.com/_imaa_x?igsh=MTMxZjdvZ2Vkcm5mOQ==",
+          "twitter": "https://github.com/ImeshaDissa"
+        }
+      },
+      {
+        "id": 18,
+        "name": "Naveen Khan",
+        "position": "Committee Member",
+        "image": "/boards/2025/Naveen_Khan.jpg",
+        "socialmedia": {
+          "linkedin": "http://www.linkedin.com/in/jnaveenkhan",
+          "instagram": "https://www.instagram.com/naveenk_23?igsh=MTF6ZHRna2t2MXJwaw==",
+          "twitter": "https://github.com/naveenkhanJ"
+        }
+      },
+      {
+        "id": 19,
+        "name": "Chamika Lakshan",
+        "position": "Committee Member",
+        "image": "/boards/2025/Chamika_Lakshan.png",
+        "socialmedia": {
+          "linkedin": "https://www.linkedin.com/in/chamika-lakshan",
+          "instagram": "https://www.instagram.com/chamikalakshaan/",
+          "twitter": "https://github.com/chamikalakshan"
+        }
+      },
+      {
+        "id": 20,
+        "name": "Jeeveith Thanaraj",
+        "position": "Committee Member",
+        "image": "/boards/2025/Jeevith.png",
+        "socialmedia": {
+          "linkedin": "https://www.linkedin.com/in/jeeveith-thanaraj-18721934a/",
+          "instagram": "https://www.instagram.com/jeeveith?igsh=MWhua2tuZXdtdjUzOQ==",
+          "twitter": "https://github.com/jeeviethofficial-crypto"
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
     "year": "2024",
     "board": [
       {
@@ -127,7 +353,7 @@
     ]
   },
   {
-    "id": 2,
+    "id": 3,
     "year": "2023",
     "board": [
       {
@@ -269,7 +495,7 @@
     ]
   },
   {
-    "id": 3,
+    "id": 4,
     "year": "2022",
     "board": [
       {
@@ -461,7 +687,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": 5,
     "year": "2021",
     "board": [
       {
@@ -588,7 +814,7 @@
     ]
   },
   {
-    "id": 5,
+    "id": 6,
     "year": "2020",
     "board": [
       {
@@ -695,7 +921,7 @@
     ]
   },
   {
-    "id": 6,
+    "id": 7,
     "year": "2019",
     "board": [
       {
