@@ -1,0 +1,59 @@
+name: "General Issue"
+description: For general discussions or issues
+title: "[General]: "
+labels: ["discussion"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        General issue form. Please provide details below.
+
+  #Description
+  - type: textarea
+    id: description
+    attributes:
+      label: Description / Steps to reproduce
+    validations:
+      required: true
+
+  #Expected vs Actual behavior
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+   # Screenshots
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Drag & drop images or paste screenshots here
+    validations:
+      required: false
+
+  # Environment info
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment / Version info
+    validations:
+      required: true
+
+   # Code of Conduct
+  - type: checkboxes
+    id: coc
+    attributes:
+      label: Code of Conduct
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
