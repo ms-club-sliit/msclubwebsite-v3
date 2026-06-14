@@ -7,51 +7,49 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for suggesting a feature. Please provide all details below.
-  
-  #Description
+        Thanks for suggesting a feature. Please provide the details below.
+
+  # Problem / Motivation
   - type: textarea
-    id: description
+    id: problem
     attributes:
-      label: Description / Steps to reproduce
+      label: Problem / Motivation
+      description: What problem or limitation would this feature address?
+      placeholder: Describe the challenge or pain point you are experiencing.
     validations:
       required: true
 
-  #Expected vs Actual behavior
+  # Proposed Solution
   - type: textarea
-    id: expected
+    id: solution
     attributes:
-      label: Expected behavior
+      label: Proposed Solution
+      description: Describe the feature or improvement you would like to see.
+      placeholder: Explain how you think this feature should work.
     validations:
       required: true
 
+  # Alternatives Considered
   - type: textarea
-    id: actual
+    id: alternatives
     attributes:
-      label: Actual behavior
-    validations:
-      required: true
-
-  # Screenshots
-  - type: textarea
-    id: screenshots
-    attributes:
-      label: Screenshots
-      description: Drag & drop images or paste screenshots here
+      label: Alternatives Considered
+      description: Describe any alternative solutions or features you have considered.
+      placeholder: Have you considered other approaches?
     validations:
       required: false
 
-  
-  # Environment info
+  # Additional Context
   - type: textarea
-    id: environment
+    id: context
     attributes:
-      label: Environment / Version info
-      description: OS, browser, app version, device, etc.
+      label: Additional Context
+      description: Add any other context, examples, mockups, or screenshots related to the request.
+      placeholder: Include any supporting information that may help reviewers understand the request.
     validations:
-      required: true
+      required: false
 
-   # Code of Conduct
+  # Code of Conduct
   - type: checkboxes
     id: coc
     attributes:
