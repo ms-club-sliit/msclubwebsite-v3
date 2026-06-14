@@ -1,5 +1,5 @@
 name: "General Issue"
-description: For general discussions or issues
+description: For general discussions, questions, or proposals
 title: "[General]: "
 labels: ["discussion"]
 
@@ -7,37 +7,37 @@ body:
   - type: markdown
     attributes:
       value: |
-        General issue form. Please provide details below.
+        General issue form. Please provide the details below.
 
-  #Description
+  # Type of Issue
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Type
+      description: Select the category that best describes your issue.
+      options:
+        - Question
+        - Proposal
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  # Description
   - type: textarea
     id: description
     attributes:
-      label: Description / Steps to reproduce
+      label: Description
+      description: Please provide details about your question, proposal, or discussion topic.
     validations:
       required: true
 
-  #Expected vs Actual behavior
-  - type: textarea
-    id: expected
-    attributes:
-      label: Expected behavior
-    validations:
-      required: true
-
-  - type: textarea
-    id: actual
-    attributes:
-      label: Actual behavior
-    validations:
-      required: true
-
-   # Screenshots
+  # Screenshots
   - type: textarea
     id: screenshots
     attributes:
       label: Screenshots
-      description: Drag & drop images or paste screenshots here
+      description: Drag & drop images or paste screenshots here, if applicable.
     validations:
       required: false
 
@@ -46,10 +46,11 @@ body:
     id: environment
     attributes:
       label: Environment / Version info
+      description: Provide relevant environment details if applicable.
     validations:
-      required: true
+      required: false
 
-   # Code of Conduct
+  # Code of Conduct
   - type: checkboxes
     id: coc
     attributes:
