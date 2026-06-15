@@ -14,3 +14,5 @@ function greet(name) {
 }
 
 greet(user.name);
+
+export { add, user, greet };
