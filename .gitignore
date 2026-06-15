@@ -38,3 +38,6 @@ next-env.d.ts
 
 #IDE
 .idea
+
+#Temp
+src/test.js
