@@ -1,3 +1,9 @@
 echo "Hi, I am 🐶"
 
-npx lint-staged
+if ! npx lint-staged; then
+  echo ""
+  echo "❌ Lint checks failed. Commit aborted."
+  exit 1
+fi
+
+echo "✅ All checks passed."
