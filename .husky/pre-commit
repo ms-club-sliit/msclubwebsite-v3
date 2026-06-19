@@ -4,12 +4,10 @@ echo "🔍 Running checks..."
 
 if ! npx lint-staged; then
   echo ""
-  echo "😬 Something's not quite right."
-  echo "👉 Fix the errors above, then try again."
-  echo "💔 Commit stopped."
+  echo "❌ Commit aborted."
+  echo "☝️ Please fix the errors above, then try again."
   exit 1
 fi
 
 echo ""
 echo "✨ Perfect! Everything looks good."
-echo "🚀 You're good to commit!"
