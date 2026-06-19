@@ -1,7 +1,6 @@
 "use client";
-import React from 'react';
-import Link from 'next/link'; // ✅ Import Link
-import BenefitCard from './BenefitCard';
+import React from "react";
+import BenefitCard from "./BenefitCard";
 import {
   CodeIcon,
   UsersIcon,
@@ -9,46 +8,45 @@ import {
   BriefcaseIcon,
   Users2Icon,
   AwardIcon,
-  ArrowRightIcon,
-} from 'lucide-react';
+} from "lucide-react";
 
 const BenefitsSection = () => {
   const benefits = [
     {
       icon: <CodeIcon className="w-8 h-8" />,
-      title: 'Skill Development',
+      title: "Skill Development",
       description:
-        'Access workshops, training sessions, and resources to build in-demand technical skills',
+        "Access workshops, training sessions, and resources to build in-demand technical skills",
     },
     {
       icon: <UsersIcon className="w-8 h-8" />,
-      title: 'Networking',
+      title: "Networking",
       description:
-        'Connect with industry professionals, alumni, and like-minded peers',
+        "Connect with industry professionals, alumni, and like-minded peers",
     },
     {
       icon: <TrophyIcon className="w-8 h-8" />,
-      title: 'Competitions',
+      title: "Competitions",
       description:
-        'Participate in hackathons, coding challenges, and other tech competitions',
+        "Participate in hackathons, coding challenges, and other tech competitions",
     },
     {
       icon: <BriefcaseIcon className="w-8 h-8" />,
-      title: 'Career Opportunities',
+      title: "Career Opportunities",
       description:
-        'Get exclusive access to internships, job openings, and career guidance',
+        "Get exclusive access to internships, job openings, and career guidance",
     },
     {
       icon: <Users2Icon className="w-8 h-8" />,
-      title: 'Community',
+      title: "Community",
       description:
-        'Be part of a supportive community that shares knowledge and experiences',
+        "Be part of a supportive community that shares knowledge and experiences",
     },
     {
       icon: <AwardIcon className="w-8 h-8" />,
-      title: 'Recognition',
+      title: "Recognition",
       description:
-        'Gain recognition for your projects and contributions to the tech community',
+        "Gain recognition for your projects and contributions to the tech community",
     },
   ];
 
@@ -56,7 +54,9 @@ const BenefitsSection = () => {
     <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12 bg-[#0c1629]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-white">Benefits Of Membership</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-white">
+            Benefits Of Membership
+          </h2>
           <p className="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto px-2">
             Join our club and unlock a world of opportunities to grow personally
             and professionally.

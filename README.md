@@ -5,6 +5,7 @@ Welcome to the MS Club Website v3 development repository! This is a Next.js appl
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js (v18 or higher)
 - npm or yarn package manager
 - Git
@@ -12,18 +13,21 @@ Welcome to the MS Club Website v3 development repository! This is a Next.js appl
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd msclubwebsite-v3
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 
 ```
 
 3. Run the development server:
+
 ```bash
 npm run dev
 
@@ -49,12 +53,15 @@ msclubwebsite-v3/
 ### Key Directories
 
 #### `src/api/`
+
 Contains all API-related functions using Axios for HTTP requests.
+
 - Create separate files for different API endpoints
 - Use consistent naming conventions
 - Handle errors appropriately
 
 Example structure:
+
 ```
 src/api/
 ├── auth.js
@@ -64,12 +71,15 @@ src/api/
 ```
 
 #### `src/components/`
+
 Houses all reusable React components.
+
 - Use PascalCase for component names
 - Create a separate folder for each component if it has multiple files
 - Include PropTypes or TypeScript for type checking
 
 Example structure:
+
 ```
 src/components/
 ├── Header/
@@ -81,12 +91,15 @@ src/components/
 ```
 
 #### `src/data/`
+
 Contains static JSON files used for frontend data.
+
 - Use descriptive filenames
 - Maintain consistent JSON structure
 - Validate JSON syntax
 
 Example structure:
+
 ```
 src/data/
 ├── events.json
@@ -107,6 +120,7 @@ To create a new page in Next.js 13+ App Router:
 4. Export your React component as default
 
 Example:
+
 ```bash
 # Create a new page called "about-us"
 mkdir src/app/about-us
@@ -152,16 +166,17 @@ export default function AboutUs() {
 
 ```javascript
 // src/api/events.js
-import axios from 'axios';
+import axios from "axios";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000/api";
 
 export const getEvents = async () => {
   try {
     const response = await axios.get(`${API_BASE_URL}/events`);
     return response.data;
   } catch (error) {
-    console.error('Error fetching events:', error);
+    console.error("Error fetching events:", error);
     throw error;
   }
 };
@@ -171,7 +186,7 @@ export const createEvent = async (eventData) => {
     const response = await axios.post(`${API_BASE_URL}/events`, eventData);
     return response.data;
   } catch (error) {
-    console.error('Error creating event:', error);
+    console.error("Error creating event:", error);
     throw error;
   }
 };
@@ -181,7 +196,7 @@ export const createEvent = async (eventData) => {
 
 ```javascript
 // src/components/EventCard.js
-import React from 'react';
+import React from "react";
 
 const EventCard = ({ title, date, description, image }) => {
   return (
@@ -238,7 +253,6 @@ export default EventCard;
    - Implement structured data
    - Ensure proper heading hierarchy
 
-
 3. **State Management**:
    - Use React hooks for local state
    - Consider Context API for global state
@@ -261,7 +275,8 @@ export default EventCard;
 7. Commit your changes: `git commit -m "Add your feature description"`
 8. Push to dev branch: `git push origin dev`
 
-**Important**: 
+**Important**:
+
 - All development work should be pushed directly to the `dev` branch
 - Always pull the latest changes before starting work to avoid conflicts
 - **Never push code that fails to build or has linting errors**
@@ -280,6 +295,5 @@ export default EventCard;
 1. **Port already in use**: Change the port in `package.json` or kill the process using the port
 2. **Module not found**: Ensure all dependencies are installed with `npm install`
 3. **Build errors**: Check for syntax errors and unused imports
-
 
 ---

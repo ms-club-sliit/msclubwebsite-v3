@@ -1,0 +1,13 @@
+echo "🐶 Hi! I'm your commit assistant"
+
+echo "🔍 Running checks..."
+
+if ! npx lint-staged; then
+  echo ""
+  echo "❌ Commit aborted."
+  echo "☝️ Please fix the errors above, then try again."
+  exit 1
+fi
+
+echo ""
+echo "✨ Perfect! Everything looks good."
