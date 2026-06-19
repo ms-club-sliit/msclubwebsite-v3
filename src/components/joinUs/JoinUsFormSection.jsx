@@ -360,7 +360,7 @@ const JoinUsFormSection = () => {
       ToastUtils.success("Application submitted successfully!");
       setFormData(initialFormState);
       setCurrentStep(1);
-    } catch (error) {
+    } catch (_error) {
       ToastUtils.warn("Something went wrong! Please try again.");
     } finally {
       setIsSubmitting(false);
