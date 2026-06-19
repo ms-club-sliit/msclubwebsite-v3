@@ -41,3 +41,4 @@ next-env.d.ts
 
 #Temp
 src/test.js
+pnpm-lock.yaml
