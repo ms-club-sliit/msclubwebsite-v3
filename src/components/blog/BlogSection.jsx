@@ -10,7 +10,6 @@ const BlogSection = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [blogData, setBlogData] = useState([]);
 
-
   useEffect(() => {
     const loadAllPosts = async () => {
       try {
@@ -23,8 +22,8 @@ const BlogSection = () => {
           pubDate: formatPubDate(post.pubDate),
         }));
         setBlogData(transformedPosts);
-      } catch (err) {
-        ToastUtils.warn('Something went wrong! Please try again.');
+      } catch (_err) {
+        ToastUtils.warn("Something went wrong! Please try again.");
       }
     };
 
@@ -48,7 +47,7 @@ const BlogSection = () => {
   }
 
   const filteredBlogs = blogData.filter((blog) =>
-    blog.title.toLowerCase().includes(searchTerm.toLowerCase())
+    blog.title.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   const SearchIcon = () => (

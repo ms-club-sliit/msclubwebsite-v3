@@ -1,4 +1,5 @@
-import React from 'react';
+import Image from "next/image";
+import React from "react";
 
 const EventCard = ({
   badgeText,
@@ -13,15 +14,18 @@ const EventCard = ({
       {/* Image Container */}
       <div className="relative aspect-video overflow-hidden">
         {imageSrc && (
-          <img
+          <Image
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             src={imageSrc}
             alt={altText}
+            fill
           />
         )}
         {/* Badge */}
         {badgeText && (
-          <div className={`absolute top-4 right-4 ${badgeText === 'Current Board' ? 'bg-blue-600' : 'bg-gray-600'} text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-lg backdrop-blur-md`}>
+          <div
+            className={`absolute top-4 right-4 ${badgeText === "Current Board" ? "bg-blue-600" : "bg-gray-600"} text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-lg backdrop-blur-md`}
+          >
             {badgeText}
           </div>
         )}
@@ -49,7 +53,9 @@ const EventCard = ({
           <span className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">
             {boardYear === "24/25" ? "Current Board" : "Legacy Archive"}
           </span>
-          <div className={`h-1 w-12 ${boardYear === "24/25" ? 'bg-blue-500' : 'bg-gray-500'} rounded-full transition-all duration-300 group-hover:w-20`}></div>
+          <div
+            className={`h-1 w-12 ${boardYear === "24/25" ? "bg-blue-500" : "bg-gray-500"} rounded-full transition-all duration-300 group-hover:w-20`}
+          />
         </div>
       </div>
     </div>
