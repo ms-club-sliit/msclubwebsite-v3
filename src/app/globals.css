@@ -194,3 +194,116 @@ body {
     min-height: 40px;
   }
 }
+
+:root {
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* Global light-mode overrides */
+html[data-theme="light"] body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] header {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+}
+
+html[data-theme="light"] nav a {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] nav a:hover {
+  color: #2563eb !important;
+}
+
+html[data-theme="light"] .bg-gray-900 {
+  background-color: #ffffff !important;
+}
+
+html[data-theme="light"] .bg-gray-800 {
+  background-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .border-gray-700 {
+  border-color: #cbd5e1 !important;
+}
+
+html[data-theme="light"] .input-style {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+html[data-theme="light"] .input-style::placeholder {
+  color: #64748b !important;
+}
+
+html[data-theme="light"] .team-nav-button {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(241, 245, 249, 0.95)) !important;
+  border: 1px solid rgba(148, 163, 184, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+html[data-theme="light"] .team-nav-button:hover {
+  background: linear-gradient(145deg, rgba(37, 99, 235, 0.12), rgba(59, 130, 246, 0.12)) !important;
+  border-color: rgba(59, 130, 246, 0.35) !important;
+}
+
+html[data-theme="light"] .event-showcase {
+  background-color: #f8fafc;
+}
+
+html[data-theme="light"] .hero-section {
+  position: relative;
+  isolation: isolate;
+}
+
+html[data-theme="light"] .hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.22);
+  z-index: 0;
+  pointer-events: none;
+}
+
+html[data-theme="light"] .hero-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+html[data-theme="light"] .join-us-section {
+  background-color: #f8fafc !important;
+}
+
+html[data-theme="light"] .join-us-panel {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(148, 163, 184, 0.25) !important;
+}
+
+/* Ensure form controls inside the join panel render correctly in light mode */
+html[data-theme="light"] .join-us-panel input,
+html[data-theme="light"] .join-us-panel textarea,
+html[data-theme="light"] .join-us-panel select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html[data-theme="light"] .join-us-panel .input-style::placeholder {
+  color: #64748b !important;
+}
+
+html[data-theme="light"] .join-us-panel .text-white {
+  color: #0f172a !important;
+}

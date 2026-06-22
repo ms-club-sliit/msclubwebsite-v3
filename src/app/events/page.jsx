@@ -7,7 +7,7 @@ import {SOCIAL_LINKS} from "@/constants/generalConstants";
 
 const page = () => {
   return (
-    <div className="relative min-h-screen bg-gray-900 text-white">
+    <div className="relative min-h-screen bg-slate-50 dark:bg-[#0F172A] text-slate-900 dark:text-white transition-colors duration-300">
 
       <Header />
       <Hero
