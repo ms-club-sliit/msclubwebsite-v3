@@ -30,21 +30,26 @@ const ContactForm = () => {
     const validate = () => {
         const newErrors = {};
 
-        if (!formData.name.trim() || formData.name.length < 3)
+        if (!formData.name.trim() || formData.name.length < 3) {
             newErrors.name = "Name must be at least 3 characters";
+        }
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!formData.email.trim() || !emailRegex.test(formData.email))
+        if (!formData.email.trim() || !emailRegex.test(formData.email)) {
             newErrors.email = "Enter a valid email";
+        }
 
-        if (!formData.regNo.trim() || formData.regNo.length < 10)
+        if (!formData.regNo.trim() || formData.regNo.length < 10) {
             newErrors.regNo = "Invalid registration number";
+        }
 
-        if (!formData.subject.trim() || formData.subject.length < 5)
+        if (!formData.subject.trim() || formData.subject.length < 5) {
             newErrors.subject = "Subject must be at least 5 characters";
+        }
 
-        if (!formData.message.trim() || formData.message.length < 10)
+        if (!formData.message.trim() || formData.message.length < 10) {
             newErrors.message = "Message must be at least 10 characters";
+        }
 
         return newErrors;
     };
@@ -53,7 +58,7 @@ const ContactForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (isSubmitting) return;
+        if (isSubmitting) {return};
 
         const validationErrors = validate();
         setErrors(validationErrors);
@@ -88,7 +93,7 @@ const ContactForm = () => {
                 // setting the sucess timeout 
                 successTimeout.current = setTimeout(() => {
                     setSuccess("");
-                }, 3000); 
+                }, 3000);
 
             } catch (err) {
                 console.error("Contact form error:", err);
