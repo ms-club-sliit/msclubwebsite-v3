@@ -31,7 +31,7 @@ const ContactForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (isSubmitting) return;
+        if (isSubmitting) {return};
 
         try {
             setIsSubmitting(true);
