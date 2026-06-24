@@ -2,6 +2,7 @@ import apiClient from "@/utils/apiUtils";
 import axios from "axios";
 import { BUILD_CONSTANTS } from "@/constants/build-constants";
 import {JOIN_API_ENDPOINT} from "@/constants/apiConstants";
+import {CONTACT_API_ENDPOINT} from "@/constants/apiConstants"
 
 export const fetchBlogPosts = async () => {
     try {
@@ -15,5 +16,10 @@ export const fetchBlogPosts = async () => {
 
 export const submitJoinForm = async (submissionData) => {
     const response = await apiClient.post(JOIN_API_ENDPOINT, submissionData);
+    return response.data;
+};
+
+export const submitContactForm = async (data) => {
+    const response = await apiClient.post(CONTACT_API_ENDPOINT, data);
     return response.data;
 };
