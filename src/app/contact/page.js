@@ -1,35 +1,31 @@
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
 import Hero from "@/components/common/Hero";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-  FaGithub,
-} from "react-icons/fa";
+import {FaFacebookF,FaInstagram,FaLinkedinIn,FaGithub,} from "react-icons/fa";
 import BackgroundContainer from "@/components/common/BackgroundContainer";
-import {SOCIAL_LINKS} from "@/constants/generalConstants";
+import { SOCIAL_LINKS } from "@/constants/generalConstants";
+import ContactForm from "@/components/contact/contactFormSection";
 
 export default function ContactPage() {
   return (
     <>
-    <Header />
-    <Hero
+      <Header />
+      <Hero
         title="Let’s Connect"
         paragraph="Stay updated with our latest events, projects and announcements by following us."
         button1Text="Follow us on Social Media"
         button1Link="#social-media"
         showSecondButton={true}
         button2Text="Subscribe on Youtube"
-        button2Link={SOCIAL_LINKS.YOUTUBE}        
+        button2Link={SOCIAL_LINKS.YOUTUBE}
         button2Target="_blank" />
-    <div id="social-media" className="min-h-screen bg-[#0f172a] overflow-x-hidden flex justify-center px-4 py-10">
+      <div id="social-media" className="min-h-screen bg-[#0f172a] overflow-x-hidden flex justify-center px-4 py-10">
         <BackgroundContainer>
           <div className="pt-11 flex flex-wrap justify-between w-full max-w-[480px] mx-auto z-10 gap-4 md:gap-0">
             <a className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px] mb-4"
-                href={SOCIAL_LINKS.FACEBOOK}
-                target="_blank"
-                rel="noopener noreferrer"
+              href={SOCIAL_LINKS.FACEBOOK}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FaFacebookF className="text-blue-500 text-3xl" />
               <div>
@@ -43,9 +39,9 @@ export default function ContactPage() {
             </a>
 
             <a className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px] mb-4"
-                href={SOCIAL_LINKS.INSTAGRAM}
-                target="_blank"
-                rel="noopener noreferrer"
+              href={SOCIAL_LINKS.INSTAGRAM}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FaInstagram className="text-pink-500 text-3xl" />
               <div>
@@ -59,9 +55,9 @@ export default function ContactPage() {
             </a>
 
             <a className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px] mb-4"
-                href={SOCIAL_LINKS.LINKEDIN}
-                target="_blank"
-                rel="noopener noreferrer"
+              href={SOCIAL_LINKS.LINKEDIN}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FaLinkedinIn className="text-blue-300 text-3xl" />
               <div>
@@ -75,9 +71,9 @@ export default function ContactPage() {
             </a>
 
             <a className="flex items-center gap-3 w-[45%] sm:w-[193.65px] h-[56px] mb-4"
-                href={SOCIAL_LINKS.GITHUB}
-                target="_blank"
-                rel="noopener noreferrer"
+              href={SOCIAL_LINKS.GITHUB}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FaGithub className="text-gray-300 text-3xl" />
               <div>
@@ -116,7 +112,7 @@ export default function ContactPage() {
               </h3>
               <p className="text-gray-300 text-sm">
                 To join the MS Club, you need to visit our website and fill out the registration form.
-Once you register, one of our members will contact you for a short interview. If you are selected after the interview, you will be added to the Alpha Group of the MS Club.
+                Once you register, one of our members will contact you for a short interview. If you are selected after the interview, you will be added to the Alpha Group of the MS Club.
               </p>
             </div>
 
@@ -169,10 +165,13 @@ Once you register, one of our members will contact you for a short interview. If
                 </ul>
               </div>
             </div>
+            <div className="bg-[#162135] p-6 rounded-xl">
+              <ContactForm></ContactForm>
+            </div>
           </div>
         </BackgroundContainer>
       </div>
-    <Footer/>
+      <Footer />
     </>
   );
 }
