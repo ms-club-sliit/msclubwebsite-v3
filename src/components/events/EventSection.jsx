@@ -61,7 +61,7 @@ const EventSection = () => {
     <BackgroundContainer>
       {/* Tab Switcher - Visual Buttons */}
       <div className="flex flex-col items-center mb-16">
-        <div className="bg-gray-800/80 p-1.5 rounded-2xl border border-gray-700/50 backdrop-blur-xl flex relative mb-6">
+        <div className="bg-slate-200/60 dark:bg-gray-800/80 p-1.5 rounded-2xl border border-slate-300/60 dark:border-gray-700/50 backdrop-blur-xl flex relative mb-6">
           <motion.div
             className="absolute inset-y-1.5 rounded-xl bg-blue-600 shadow-[0_0_20px_rgba(37,99,235,0.4)]"
             initial={false}
@@ -73,31 +73,31 @@ const EventSection = () => {
           />
           <button
             onClick={() => handleTabChange("current")}
-            className={`relative z-10 px-6 sm:px-10 py-3 rounded-xl text-xs sm:text-sm font-bold tracking-wider uppercase transition-colors duration-300 flex items-center gap-2 ${activeTab === "current" ? "text-white" : "text-gray-400 hover:text-gray-200"}`}
+            className={`relative z-10 px-6 sm:px-10 py-3 rounded-xl text-xs sm:text-sm font-bold tracking-wider uppercase transition-colors duration-300 flex items-center gap-2 ${activeTab === "current" ? "text-white" : "text-slate-600 dark:text-gray-400 hover:text-slate-800 dark:hover:text-gray-200"}`}
           >
             <Sparkles size={16} />
             <span>Current Board</span>
           </button>
           <button
             onClick={() => handleTabChange("past")}
-            className={`relative z-10 px-6 sm:px-10 py-3 rounded-xl text-xs sm:text-sm font-bold tracking-wider uppercase transition-colors duration-300 flex items-center gap-2 ${activeTab === "past" ? "text-white" : "text-gray-400 hover:text-gray-200"}`}
+            className={`relative z-10 px-6 sm:px-10 py-3 rounded-xl text-xs sm:text-sm font-bold tracking-wider uppercase transition-colors duration-300 flex items-center gap-2 ${activeTab === "past" ? "text-white" : "text-slate-600 dark:text-gray-400 hover:text-slate-800 dark:hover:text-gray-200"}`}
           >
             <History size={16} />
             <span>Legacy Archive</span>
           </button>
         </div>
 
-        <p className="text-gray-500 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-center px-4">
+        <p className="text-slate-500 dark:text-gray-400 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-center px-4">
           {activeTab === "current"
             ? "Exploring current milestones by Board 24/25"
             : "Browsing through our rich history of events"}
         </p>
         <div className="mt-4 flex gap-1 sm:hidden">
           <div
-            className={`h-1 w-8 rounded-full ${activeTab === "current" ? "bg-blue-500" : "bg-gray-700"}`}
+            className={`h-1 w-8 rounded-full ${activeTab === "current" ? "bg-blue-500" : "bg-slate-300 dark:bg-gray-700"}`}
           />
           <div
-            className={`h-1 w-8 rounded-full ${activeTab === "past" ? "bg-blue-500" : "bg-gray-700"}`}
+            className={`h-1 w-8 rounded-full ${activeTab === "past" ? "bg-blue-500" : "bg-slate-300 dark:bg-gray-700"}`}
           />
         </div>
       </div>
@@ -144,7 +144,7 @@ const EventSection = () => {
 
       {/* Swipe Hint for mobile */}
       <div className="mt-8 text-center sm:hidden">
-        <p className="text-gray-600 text-[10px] animate-pulse">
+        <p className="text-slate-500 dark:text-gray-600 text-[10px] animate-pulse">
           Swipe left or right to switch boards
         </p>
       </div>

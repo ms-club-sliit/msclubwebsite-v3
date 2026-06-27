@@ -5,24 +5,29 @@ import React, { Suspense } from "react";
 
 function page() {
   return (
-    <div className="bg-[#0F172A] text-white">
+    <div className="bg-slate-100 text-slate-900 dark:bg-[#0F172A] dark:text-white">
       <Header />
 
-      {/* Hero Section */}
       <section className="min-h-screen px-6 lg:px-16">
         <div className="max-w-5xl w-full px-6 lg:px-16 mx-auto">
           <div className="flex flex-col items-start justify-start mt-6">
-            <p className="text-gray-400 text-base sm:text-lg lg:text-xl mb-2">
+            <p className="text-slate-500 dark:text-slate-400 text-base sm:text-lg lg:text-xl mb-2">
               Have a question or idea?
             </p>
-            <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+
+            <h1 className="text-slate-900 dark:text-white text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
               Join With Us
             </h1>
           </div>
         </div>
 
-        {/* Form Wrapper */}
-        <Suspense fallback={<div className="flex justify-center items-center py-20"><div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div></div>}>
+        <Suspense
+          fallback={
+            <div className="flex justify-center items-center py-20">
+              <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+            </div>
+          }
+        >
           <JoinUsFormSection />
         </Suspense>
       </section>

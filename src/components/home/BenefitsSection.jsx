@@ -51,13 +51,13 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12 bg-[#0c1629]">
+    <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12 bg-slate-100 dark:bg-[#0c1629]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-white">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-slate-800 dark:text-white">
             Benefits Of Membership
           </h2>
-          <p className="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto px-2">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-gray-300 max-w-2xl mx-auto px-2">
             Join our club and unlock a world of opportunities to grow personally
             and professionally.
           </p>
