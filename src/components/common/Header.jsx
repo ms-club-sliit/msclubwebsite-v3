@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
@@ -9,9 +10,9 @@ const Header = () => {
   const pathname = usePathname();
 
   const navLinkClass = (path) =>
-    `text-white transition ${pathname === path
-      ? "border-b-2 border-blue-400"
-      : "hover:text-blue-400"
+    `text-slate-700 dark:text-white transition ${pathname === path
+      ? "border-b-2 border-blue-600 dark:border-blue-400"
+      : "hover:text-blue-600 dark:hover:text-blue-400"
     }`;
 
   const toggleMenu = () => {
@@ -19,7 +20,7 @@ const Header = () => {
   };
 
   return (
-    <header className="relative py-4 px-6 md:px-12 bg-gray-900 shadow-md">
+    <header className="relative py-4 px-6 md:px-12 bg-white dark:bg-gray-900 shadow-md dark:shadow-md border-b border-slate-200 dark:border-gray-700">
       <div className="flex items-center">
         <div className="flex items-center mr-auto">
           <Image
@@ -42,6 +43,11 @@ const Header = () => {
           <Link href="/contact" className={navLinkClass("/contact")}>Contact</Link>
         </nav>
 
+         {/* Desktop Theme Toggle */}
+        <div className="mr-4">
+          <ThemeToggle />
+        </div>
+
         {/* Desktop Join Us Button */}
         <Link
           href="/join-us"
@@ -57,15 +63,15 @@ const Header = () => {
           aria-label="Toggle menu"
         >
           <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ease-in-out ${isMenuOpen ? "rotate-45 translate-y-1.5" : "mb-1"
+            className={`block w-6 h-0.5 bg-slate-700 dark:bg-white transition-all duration-300 ease-in-out ${isMenuOpen ? "rotate-45 translate-y-1.5" : "mb-1"
               }`}
           ></span>
           <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ease-in-out ${isMenuOpen ? "opacity-0" : "mb-1"
+            className={`block w-6 h-0.5 bg-slate-700 dark:bg-white transition-all duration-300 ease-in-out ${isMenuOpen ? "opacity-0" : "mb-1"
               }`}
           ></span>
           <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ease-in-out ${isMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
+            className={`block w-6 h-0.5 bg-slate-700 dark:bg-white transition-all duration-300 ease-in-out ${isMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
               }`}
           ></span>
         </button>
@@ -73,7 +79,7 @@ const Header = () => {
 
       {/* Mobile Menu Dropdown */}
       <div
-        className={`absolute md:hidden left-0 right-0 border-t border-gray-700 bg-gray-900 z-20 transition-all duration-300 ease-in-out ${isMenuOpen
+        className={`absolute md:hidden left-0 right-0 border-t border-slate-200 dark:border-gray-700 bg-white dark:bg-gray-900 z-20 transition-all duration-300 ease-in-out ${isMenuOpen
           ? 'opacity-100 translate-y-0 pointer-events-auto'
           : 'opacity-0 -translate-y-4 pointer-events-none'
           }`}
@@ -82,7 +88,7 @@ const Header = () => {
         <nav className="px-6 py-3 space-y-1">
           <Link
             href="/"
-            className={`block text-white hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${pathname === "/" ? "bg-gray-800 text-blue-400" : ""
+            className={`block text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${pathname === "/" ? "bg-slate-100 dark:bg-gray-800 text-blue-600 dark:text-blue-400" : ""
               }`}
             onClick={() => setIsMenuOpen(false)}
           >
@@ -90,7 +96,7 @@ const Header = () => {
           </Link>
           <Link
             href="/about"
-            className={`block text-white hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${pathname === "/about" ? "bg-gray-800 text-blue-400" : ""
+            className={`block text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${pathname === "/about" ? "bg-slate-100 dark:bg-gray-800 text-blue-600 dark:text-blue-400" : ""
               }`}
             onClick={() => setIsMenuOpen(false)}
           >
@@ -98,7 +104,7 @@ const Header = () => {
           </Link>
           <Link
             href="/blogs"
-            className={`block text-white hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${pathname === "/blogs" ? "bg-gray-800 text-blue-400" : ""
+            className={`block text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${pathname === "/blogs" ? "bg-slate-100 dark:bg-gray-800 text-blue-600 dark:text-blue-400" : ""
               }`}
             onClick={() => setIsMenuOpen(false)}
           >
@@ -106,7 +112,7 @@ const Header = () => {
           </Link>
           <Link
             href="/events"
-            className={`block text-white hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${pathname === "/events" ? "bg-gray-800 text-blue-400" : ""
+            className={`block text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${pathname === "/events" ? "bg-slate-100 dark:bg-gray-800 text-blue-600 dark:text-blue-400" : ""
               }`}
             onClick={() => setIsMenuOpen(false)}
           >
@@ -114,12 +120,17 @@ const Header = () => {
           </Link>
           <Link
             href="/contact"
-            className={`block text-white hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${pathname === "/contact" ? "bg-gray-800 text-blue-400" : ""
+            className={`block text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-gray-800 transition-all py-3 px-4 rounded-lg ${pathname === "/contact" ? "bg-slate-100 dark:bg-gray-800 text-blue-600 dark:text-blue-400" : ""
               }`}
             onClick={() => setIsMenuOpen(false)}
           >
             Contact
           </Link>
+
+           {/* Mobile Theme Toggle */}
+          <div className="pt-3">
+            <ThemeToggle mobile />
+          </div>
 
           {/* Mobile Join Us Button */}
           <div className="pt-3">

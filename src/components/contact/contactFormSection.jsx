@@ -95,7 +95,7 @@ const ContactForm = () => {
 
     return (
         <>
-            <h2 className="text-2xl font-semibold mb-6 text-left text-white">
+            <h2 className="text-2xl font-semibold mb-6 text-left text-slate-900 dark:text-white">
                 Contact Us
             </h2>
 
@@ -107,42 +107,42 @@ const ContactForm = () => {
 
                         {/* Name */}
                         <div>
-                            <label className="block text-sm mb-1 text-white">Name</label>
+                            <label className="block text-sm mb-1 text-slate-700 dark:text-white">Name</label>
                             <input
                                 type="text"
                                 name="name"
                                 value={formData.name}
                                 onChange={handleChange}
                                 placeholder="Your name"
-                                className="w-full px-4 py-3 bg-gray-800 border text-white border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="w-full px-4 py-3 bg-slate-100 dark:bg-gray-800 border text-slate-900 dark:text-white border-slate-300 dark:border-gray-600 placeholder-slate-400 dark:placeholder-slate-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                             />
                             {errors.name && <p className="text-red-400 text-sm">{errors.name}</p>}
                         </div>
 
                         {/* Email */}
                         <div>
-                            <label className="block text-sm mb-1 text-white">Email</label>
+                            <label className="block text-sm mb-1 text-slate-700 dark:text-white">Email</label>
                             <input
                                 type="email"
                                 name="email"
                                 value={formData.email}
                                 onChange={handleChange}
                                 placeholder="you@example.com"
-                                className="w-full px-4 py-3 bg-gray-800 border text-white border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="w-full px-4 py-3 bg-slate-100 dark:bg-gray-800 border text-slate-900 dark:text-white border-slate-300 dark:border-gray-600 placeholder-slate-400 dark:placeholder-slate-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                             />
                             {errors.email && <p className="text-red-400 text-sm">{errors.email}</p>}
                         </div>
                     </div>
                     {/* Message */}
                     <div>
-                        <label className="block text-sm mb-1 text-white">Message</label>
+                        <label className="block text-sm mb-1 text-slate-700 dark:text-white">Message</label>
                         <textarea
                             rows={8}
                             name="message"
                             value={formData.message}
                             onChange={handleChange}
                             placeholder="Write your message..."
-                            className="w-full px-4 py-3 bg-gray-800 border text-white border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                            className="w-full px-4 py-3 bg-slate-100 dark:bg-gray-800 border text-slate-900 dark:text-white border-slate-300 dark:border-gray-600 placeholder-slate-400 dark:placeholder-slate-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
                         />
                         {errors.message && <p className="text-red-400 text-sm">{errors.message}</p>}
                     </div>
