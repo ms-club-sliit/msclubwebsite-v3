@@ -4,10 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Card, Button, ConfigProvider } from "antd";
 import boardMembers from "../../data/boardMembers.json";
-import {
-  LeftOutlined,
-  RightOutlined,
-} from "@ant-design/icons";
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 import BackgroundContainer from "../common/BackgroundContainer.jsx";
 
@@ -55,13 +52,13 @@ export default function Team() {
 
   const handlePrevious = () => {
     setCurrentYearIndex((prev) =>
-      prev > 0 ? prev - 1 : boardMembers.length - 1
+      prev > 0 ? prev - 1 : boardMembers.length - 1,
     );
   };
 
   const handleNext = () => {
     setCurrentYearIndex((prev) =>
-      prev < boardMembers.length - 1 ? prev + 1 : 0
+      prev < boardMembers.length - 1 ? prev + 1 : 0,
     );
   };
 
@@ -94,7 +91,9 @@ export default function Team() {
             <div className="flex flex-row items-center justify-center mb-6 sm:mb-8 md:mb-12 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
               <Button
                 shape="circle"
-                icon={<LeftOutlined className="text-xs sm:text-sm md:text-sm lg:text-base" />}
+                icon={
+                  <LeftOutlined className="text-xs sm:text-sm md:text-sm lg:text-base" />
+                }
                 className="w-8 h-8 sm:w-9 sm:h-9 md:w-9 md:h-9 lg:w-10 lg:h-10 flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200 touch-manipulation shadow-md hover:shadow-lg"
                 onClick={handlePrevious}
                 style={{
@@ -113,7 +112,9 @@ export default function Team() {
               </div>
               <Button
                 shape="circle"
-                icon={<RightOutlined className="text-xs sm:text-sm md:text-sm lg:text-base" />}
+                icon={
+                  <RightOutlined className="text-xs sm:text-sm md:text-sm lg:text-base" />
+                }
                 className="w-8 h-8 sm:w-9 sm:h-9 md:w-9 md:h-9 lg:w-10 lg:h-10 flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200 touch-manipulation shadow-md hover:shadow-lg"
                 onClick={handleNext}
                 style={{
@@ -134,7 +135,11 @@ export default function Team() {
                     backdropFilter: "blur(16px)",
                   }}
                   styles={{
-                    body: { padding: "0", backgroundColor: "transparent", height: "100%" },
+                    body: {
+                      padding: "0",
+                      backgroundColor: "transparent",
+                      height: "100%",
+                    },
                   }}
                 >
                   <div className="relative z-10 flex flex-col h-full">
@@ -158,36 +163,94 @@ export default function Team() {
                           {member.position}
                         </p>
                       </div>
-                      
+
                       {/* Social Media Icons */}
                       <div className="flex justify-start items-center gap-3 sm:gap-4 md:gap-1 mt-auto">
-                        <div 
+                        <div
                           className="rounded-full bg-blue-600/20 hover:bg-blue-600/40 transition-colors duration-200 touch-manipulation flex items-center justify-center cursor-pointer"
-                          onClick={() => member.socialmedia?.linkedin && window.open(member.socialmedia.linkedin, "_blank")}
-                          style={{ width: "2rem", height: "2rem", aspectRatio: "1/1", minWidth: "2rem", minHeight: "2rem" }}
+                          onClick={() =>
+                            member.socialmedia?.linkedin &&
+                            window.open(member.socialmedia.linkedin, "_blank")
+                          }
+                          title={member.socialmedia?.linkedin}
+                          style={{
+                            width: "2rem",
+                            height: "2rem",
+                            aspectRatio: "1/1",
+                            minWidth: "2rem",
+                            minHeight: "2rem",
+                          }}
                         >
-                          <FaLinkedin style={{ width: "1rem", height: "1rem", color: "#3b82f6" }} />
+                          <FaLinkedin
+                            style={{
+                              width: "1rem",
+                              height: "1rem",
+                              color: "#3b82f6",
+                            }}
+                          />
                         </div>
-                        <div 
+                        <div
                           className="rounded-full bg-gray-600/20 hover:bg-gray-600/40 transition-colors duration-200 touch-manipulation flex items-center justify-center cursor-pointer"
-                          onClick={() => member.socialmedia?.twitter && window.open(member.socialmedia.twitter, "_blank")}
-                          style={{ width: "2rem", height: "2rem", aspectRatio: "1/1", minWidth: "2rem", minHeight: "2rem" }}
+                          onClick={() =>
+                            member.socialmedia?.github &&
+                            window.open(member.socialmedia.github, "_blank")
+                          }
+                          title={member.socialmedia?.github}
+                          style={{
+                            width: "2rem",
+                            height: "2rem",
+                            aspectRatio: "1/1",
+                            minWidth: "2rem",
+                            minHeight: "2rem",
+                          }}
                         >
                           <FaGithub style={{ width: "1rem", height: "1rem", color: isDark ? "#9ca3af" : "#4b5563" }} />
                         </div>
-                        <div 
+                        <div
                           className="rounded-full bg-blue-800/20 hover:bg-blue-800/40 transition-colors duration-200 touch-manipulation flex items-center justify-center cursor-pointer"
-                          onClick={() => member.socialmedia?.facebook && window.open(member.socialmedia.facebook, "_blank")}
-                          style={{ width: "2rem", height: "2rem", aspectRatio: "1/1", minWidth: "2rem", minHeight: "2rem" }}
+                          onClick={() =>
+                            member.socialmedia?.facebook &&
+                            window.open(member.socialmedia.facebook, "_blank")
+                          }
+                          title={member.socialmedia?.facebook}
+                          style={{
+                            width: "2rem",
+                            height: "2rem",
+                            aspectRatio: "1/1",
+                            minWidth: "2rem",
+                            minHeight: "2rem",
+                          }}
                         >
-                          <FaFacebook style={{ width: "1rem", height: "1rem", color: "#2563eb" }} />
+                          <FaFacebook
+                            style={{
+                              width: "1rem",
+                              height: "1rem",
+                              color: "#2563eb",
+                            }}
+                          />
                         </div>
-                        <div 
+                        <div
                           className="rounded-full bg-pink-600/20 hover:bg-pink-600/40 transition-colors duration-200 touch-manipulation flex items-center justify-center cursor-pointer"
-                          onClick={() => member.socialmedia?.instagram && window.open(member.socialmedia.instagram, "_blank")}
-                          style={{ width: "2rem", height: "2rem", aspectRatio: "1/1", minWidth: "2rem", minHeight: "2rem" }}
+                          onClick={() =>
+                            member.socialmedia?.instagram &&
+                            window.open(member.socialmedia.instagram, "_blank")
+                          }
+                          title={member.socialmedia?.instagram}
+                          style={{
+                            width: "2rem",
+                            height: "2rem",
+                            aspectRatio: "1/1",
+                            minWidth: "2rem",
+                            minHeight: "2rem",
+                          }}
                         >
-                          <FaInstagram style={{ width: "1rem", height: "1rem", color: "#d53f8c" }} />
+                          <FaInstagram
+                            style={{
+                              width: "1rem",
+                              height: "1rem",
+                              color: "#d53f8c",
+                            }}
+                          />
                         </div>
                       </div>
                     </div>
