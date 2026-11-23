@@ -10,7 +10,7 @@ const Hero = ({
   title = "MS CLUB OF SLIIT",
   paragraph = "A MLSA driven student community aiming to bridge the skill gap between an Undergraduate and an Industry Professional.",
   button1Text = "Join the Club",
-  button1Link = "/join-us",
+  // button1Link = "/join-us", // uncomment this line when join-us page is fixed.
   button2Text = "Explore Events",
   button2Link = "/events",
   showSecondButton = true,
@@ -69,14 +69,25 @@ const Hero = ({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
           >
-            <Link href={button1Link} className="w-full sm:w-auto">
+            <Link
+              href="https://forms.cloud.microsoft/r/8hQ5ej4DuB"
+              target="_blank"
+              className="w-full sm:w-auto"
+            >
               <button className="w-full sm:w-auto px-8 py-3.5 text-sm md:text-base lg:text-lg xl:text-xl font-semibold text-white transition-all duration-300 bg-blue-600 rounded-lg hover:bg-blue-700 hover:scale-105 md:px-8 md:py-3 lg:px-10 lg:py-4 xl:px-12 xl:py-5">
                 {button1Text}
               </button>
             </Link>
 
             {showSecondButton && (
-              <Link href={button2Link} target={button2Target} rel={button2Target === "_blank" ? "noopener noreferrer" : undefined} className="w-full sm:w-auto">
+              <Link
+                href={button2Link}
+                target={button2Target}
+                rel={
+                  button2Target === "_blank" ? "noopener noreferrer" : undefined
+                }
+                className="w-full sm:w-auto"
+              >
                 <button className="w-full sm:w-auto px-8 py-3.5 text-sm md:text-base lg:text-lg xl:text-xl font-semibold text-white transition-all duration-300 border border-gray-500 rounded-lg hover:border-gray-300 hover:bg-white/10 md:px-8 md:py-3 lg:px-10 lg:py-4 xl:px-12 xl:py-5">
                   {button2Text}
                 </button>
@@ -186,10 +197,11 @@ const Hero = ({
           <motion.button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`h-1.5 rounded-full flex-shrink-0 ${currentSlide === index
+            className={`h-1.5 rounded-full flex-shrink-0 ${
+              currentSlide === index
                 ? "bg-blue-500 shadow-md shadow-blue-500/50"
                 : "bg-gray-400 opacity-60"
-              }`}
+            }`}
             initial={false}
             animate={{
               width: currentSlide === index ? 24 : 6,
